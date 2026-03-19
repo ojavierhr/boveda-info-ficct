@@ -1,0 +1,253 @@
+{
+  "main": {
+    "id": "7b0f75b20d297cf0",
+    "type": "split",
+    "children": [
+      {
+        "id": "18e855de55223605",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "bb4531039d969470",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "README"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "57458bd95ee13f36",
+    "type": "split",
+    "children": [
+      {
+        "id": "a62db9402c5bdd14",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a15740d27e18c078",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": true
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Explorador de archivos"
+            }
+          },
+          {
+            "id": "f69acc43536b7c36",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Buscar"
+            }
+          },
+          {
+            "id": "335111f7440239e9",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Marcadores"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 228.5
+  },
+  "right": {
+    "id": "884cfb1a0cc56f41",
+    "type": "split",
+    "children": [
+      {
+        "id": "f750e73c8fda64fd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "853fd92d4f18f17d",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Enlaces entrantes"
+            }
+          },
+          {
+            "id": "fe87371b1827ae6e",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Enlaces salientes"
+            }
+          },
+          {
+            "id": "c2b0ddce30626e89",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Etiquetas"
+            }
+          },
+          {
+            "id": "039d02bd4383eaf0",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Todas las propiedades"
+            }
+          },
+          {
+            "id": "ac8a53fd4c163f45",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Esquema"
+            }
+          },
+          {
+            "id": "56be583a959f8ec2",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "calendar"
+            }
+          },
+          {
+            "id": "c51098eb20a57874",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
+          }
+        ],
+        "currentTab": 6
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Abrir selector rápido": false,
+      "graph:Abrir vista gráfica": false,
+      "canvas:Crear nuevo lienzo": false,
+      "daily-notes:Abrir la nota de hoy": false,
+      "templates:Insertar plantilla": false,
+      "command-palette:Abrir paleta de comandos": false,
+      "bases:Crear nueva base": false,
+      "templater-obsidian:Templater": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "obsidian-kanban:Create new board": false,
+      "omnisearch:Omnisearch": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "vscode-editor:Create Code File": false,
+      "obsidian-git:Open Git source control": false,
+      "obsidian-to-anki-plugin:Obsidian_to_Anki - Scan Vault": false
+    }
+  },
+  "active": "bb4531039d969470",
+  "lastOpenFiles": [
+    "README.md",
+    "resumen_boveda.md",
+    "03-recursos/excalidraw/estructura_general_boveda.excalidraw.md",
+    "01-materias/sistemas-informacion-2/tareas/tareamateria.md",
+    "02-proyectos/proy-01_projectoGeneral/proy-01_tareas.md",
+    "Untitled.md",
+    "scripts/inicializar_proyecto.js",
+    "01-materias/sistemas-informacion-2/informe.md",
+    "01-materias/sistemas-informacion-2/proyectos/proy-01_proyectoMateria/proy-01_tareas.md",
+    "01-materias/sistemas-informacion-2/proyectos/proy-01_proyectoMateria/proy-01_kanban.md",
+    "01-materias/sistemas-informacion-2/proyectos/proy-01_proyectoMateria/tareas/titulotarea.md",
+    "01-materias/sistemas-informacion-2/proyectos/proy-01_proyectoMateria/tareas",
+    "09-tareas/tareasuelta.md",
+    "02-proyectos/proy-01_projectoGeneral/proy-01_kanban.md",
+    "02-proyectos/proy-01_projectoGeneral/proy-01_projectoGeneral.md",
+    "02-proyectos/proy-01_projectoGeneral",
+    "01-materias/sistemas-informacion-2/proyectos/proy-01_proyectoMateria/proy-01_proyectoMateria.md",
+    "01-materias/sistemas-informacion-2/proyectos/proy-01_proyectoMateria",
+    "scripts/inicializar_materia.js",
+    "01-materias/sistemas-informacion-2/proyectos/proy-01_nombreProyecto/proy-01_nombreProyecto.md",
+    "01-materias/sistemas-informacion-2/proyectos/proy-01_nombreProyecto/proy-01_kanban.md",
+    "01-materias/sistemas-informacion-2/proyectos/proy-01_nombreProyecto/proy-01_tareas.md",
+    "01-materias/sistemas-informacion-2/proyectos/proy-01_nombreProyecto",
+    "scripts/crear_tarea.js",
+    "01-materias/sistemas-informacion-2/proyectos/proy-01_nombreProyecto/tareaproyecto.md",
+    "01-materias/sistemas-informacion-2/proyectos/proy-01_nombreProyecto/tareaprojecto.md",
+    "01-materias/sistemas-informacion-2/proyectos/proy-01_nombreProyecto/titulotareita.md",
+    "09-tareas",
+    "scripts/Sin título.md",
+    "04-plantillas/plantilla_tarea.md",
+    "01-materias/sistemas-informacion-2/tareas/nombreTarea.md",
+    "01-materias/sistemas-informacion-2/tareas/nombreTarea1.md",
+    "nombreTarea1.md",
+    "crearTarea.md",
+    "01-materias/sistemas-informacion-2/laboratorios",
+    "01-materias/sistemas-informacion-2/recursos",
+    "03-recursos/excalidraw/estructura_general_boveda.svg",
+    "Sin título.canvas"
+  ]
+}

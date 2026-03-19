@@ -1,0 +1,15 @@
+# Ignorar archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar la papelera de Obsidian
+.trash/
+
+# Ignorar archivos de caché y workspace (se regeneran)
+.obsidian/workspace
+.obsidian/cache
+.obsidian/plugins.json
+
+# Ignorar archivos de respaldo de git
+*.orig
+*.bak

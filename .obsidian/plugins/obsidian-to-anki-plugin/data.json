@@ -1,0 +1,156 @@
+{
+  "settings": {
+    "CUSTOM_REGEXPS": {
+      "Básico": "",
+      "Básico (tarjeta invertida opcional)": "",
+      "Básico (teclear la respuesta)": "",
+      "Básico (y tarjeta invertida)": "",
+      "Oclusión de imagen": "",
+      "Respuesta anidada": ""
+    },
+    "FILE_LINK_FIELDS": {
+      "Básico": "Anverso",
+      "Básico (tarjeta invertida opcional)": "Anverso",
+      "Básico (teclear la respuesta)": "Anverso",
+      "Básico (y tarjeta invertida)": "Anverso",
+      "Oclusión de imagen": "Oclusión",
+      "Respuesta anidada": "Texto"
+    },
+    "CONTEXT_FIELDS": {},
+    "FOLDER_DECKS": {
+      "00-capturas": "",
+      "01-materias": "",
+      "02-proyectos": "",
+      "03-recursos": "",
+      "04-plantillas": "",
+      "05-diario": "",
+      "06-conocimiento": "",
+      "07-mapas": "",
+      "08-archivo": "",
+      "scripts": "",
+      "01-materias/sistemas-informacion-2": "",
+      "03-recursos/excalidraw": "",
+      "03-recursos/fuentes": "",
+      "03-recursos/imagenes": "",
+      "03-recursos/papers": "",
+      "03-recursos/pdf": "",
+      "01-materias/sistemas-informacion-2/clases": "",
+      "01-materias/sistemas-informacion-2/laboratorios": "",
+      "01-materias/sistemas-informacion-2/proyectos": "",
+      "01-materias/sistemas-informacion-2/recursos": "",
+      "01-materias/sistemas-informacion-2/tareas": "",
+      "01-materias/sistemas-informacion-2/temas": "",
+      "03-recursos/fuentes/Fira_Code": "",
+      "03-recursos/fuentes/Fira_Sans": "",
+      "03-recursos/fuentes/Fira_Code/static": ""
+    },
+    "FOLDER_TAGS": {
+      "00-capturas": "",
+      "01-materias": "",
+      "02-proyectos": "",
+      "03-recursos": "",
+      "04-plantillas": "",
+      "05-diario": "",
+      "06-conocimiento": "",
+      "07-mapas": "",
+      "08-archivo": "",
+      "scripts": "",
+      "01-materias/sistemas-informacion-2": "",
+      "03-recursos/excalidraw": "",
+      "03-recursos/fuentes": "",
+      "03-recursos/imagenes": "",
+      "03-recursos/papers": "",
+      "03-recursos/pdf": "",
+      "01-materias/sistemas-informacion-2/clases": "",
+      "01-materias/sistemas-informacion-2/laboratorios": "",
+      "01-materias/sistemas-informacion-2/proyectos": "",
+      "01-materias/sistemas-informacion-2/recursos": "",
+      "01-materias/sistemas-informacion-2/tareas": "",
+      "01-materias/sistemas-informacion-2/temas": "",
+      "03-recursos/fuentes/Fira_Code": "",
+      "03-recursos/fuentes/Fira_Sans": "",
+      "03-recursos/fuentes/Fira_Code/static": ""
+    },
+    "Syntax": {
+      "Begin Note": "START",
+      "End Note": "END",
+      "Begin Inline Note": "STARTI",
+      "End Inline Note": "ENDI",
+      "Target Deck Line": "TARGET DECK",
+      "File Tags Line": "FILE TAGS",
+      "Delete Note Line": "DELETE",
+      "Frozen Fields Line": "FROZEN"
+    },
+    "Defaults": {
+      "Scan Directory": "",
+      "Tag": "Obsidian_to_Anki",
+      "Deck": "OBSIDIAN_MAZO",
+      "Scheduling Interval": 0,
+      "Add File Link": false,
+      "Add Context": false,
+      "CurlyCloze": false,
+      "CurlyCloze - Highlights to Clozes": false,
+      "ID Comments": true,
+      "Add Obsidian Tags": false
+    },
+    "IGNORED_FILE_GLOBS": [
+      "**/*.excalidraw.md"
+    ]
+  },
+  "Added Media": [],
+  "File Hashes": {
+    "test.md": "18c821655b797196509695a864cb4fb6",
+    "resumen_boveda.md": "13cede3db6b5ac481e6e741748a9ae89",
+    "README.md": "31f7df9ffade6ebbca49a312b96d9504",
+    "04-plantillas/plantilla_tema.md": "0d5946770741f798baa832a576569c49",
+    "04-plantillas/plantilla_tarea.md": "ef234214ce45d6981073fab3309beb0b",
+    "04-plantillas/plantilla_proyecto.md": "f6c750271d38387df4eee8c7229e34f2",
+    "04-plantillas/plantilla_nota_diaria.md": "54813940b6dbede4b6969619e4a4131b",
+    "04-plantillas/plantilla_moc.md": "b053e896c0c24332c61c7aa70bdc6fb7",
+    "04-plantillas/plantilla_conocimiento.md": "26facb38aba2c01dd657368f45884260",
+    "04-plantillas/plantilla_clase.md": "a78f1c23d0784f2564be1f6accd4fe55",
+    "03-recursos/fuentes/fuentes.md": "d41d8cd98f00b204e9800998ecf8427e",
+    "03-recursos/fuentes/Fira_Sans/Fira_Sans.md": "d41d8cd98f00b204e9800998ecf8427e",
+    "03-recursos/fuentes/Fira_Code/static/static.md": "d41d8cd98f00b204e9800998ecf8427e",
+    "03-recursos/fuentes/Fira_Code/Fira_Code.md": "d41d8cd98f00b204e9800998ecf8427e",
+    "01-materias/sistemas-informacion-2/temas/temas.md": "d41d8cd98f00b204e9800998ecf8427e",
+    "01-materias/sistemas-informacion-2/tareas/tareas.md": "d41d8cd98f00b204e9800998ecf8427e",
+    "01-materias/sistemas-informacion-2/sistemas-informacion-2.md": "d41d8cd98f00b204e9800998ecf8427e",
+    "01-materias/sistemas-informacion-2/recursos/recursos.md": "d41d8cd98f00b204e9800998ecf8427e",
+    "01-materias/sistemas-informacion-2/proyectos/proyectos.md": "d41d8cd98f00b204e9800998ecf8427e",
+    "01-materias/sistemas-informacion-2/laboratorios/laboratorios.md": "d41d8cd98f00b204e9800998ecf8427e",
+    "01-materias/sistemas-informacion-2/informe.md": "e6391fdf22e7f4362cf717ffa2b6cfd8",
+    "01-materias/sistemas-informacion-2/clases/clases.md": "d41d8cd98f00b204e9800998ecf8427e",
+    "01-materias/sistemas-informacion-2/clases/2026-03-18_formacion-grupos.md": "c94745c94614b7db75ac9682161ac820"
+  },
+  "fields_dict": {
+    "Básico": [
+      "Anverso",
+      "Reverso"
+    ],
+    "Básico (tarjeta invertida opcional)": [
+      "Anverso",
+      "Reverso",
+      "Añadir reverso"
+    ],
+    "Básico (teclear la respuesta)": [
+      "Anverso",
+      "Reverso"
+    ],
+    "Básico (y tarjeta invertida)": [
+      "Anverso",
+      "Reverso"
+    ],
+    "Oclusión de imagen": [
+      "Oclusión",
+      "Imagen",
+      "Encabezado",
+      "Reverso Extra",
+      "Comentarios"
+    ],
+    "Respuesta anidada": [
+      "Texto",
+      "Reverso Extra"
+    ]
+  }
+}

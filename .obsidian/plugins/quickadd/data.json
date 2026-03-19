@@ -1,0 +1,323 @@
+{
+  "choices": [
+    {
+      "id": "ec3476b0-22fe-43ba-b45b-4d29896d505c",
+      "name": "crear moc materia",
+      "type": "Template",
+      "command": true,
+      "templatePath": "04-plantillas/plantilla_moc_materia.md",
+      "fileNameFormat": {
+        "enabled": true,
+        "format": "moc"
+      },
+      "folder": {
+        "enabled": true,
+        "folders": [
+          "01-materias"
+        ],
+        "chooseWhenCreatingNote": false,
+        "createInSameFolderAsActiveFile": false,
+        "chooseFromSubfolders": true
+      },
+      "appendLink": false,
+      "openFile": true,
+      "fileOpening": {
+        "location": "tab",
+        "direction": "vertical",
+        "mode": "default",
+        "focus": true
+      },
+      "fileExistsMode": "Increment the file name",
+      "setFileExistsBehavior": false
+    },
+    {
+      "id": "38a64dbe-227e-46ea-86fe-d2ec02b366cc",
+      "name": "crear diario para hoy",
+      "type": "Template",
+      "command": true,
+      "templatePath": "04-plantillas/plantilla_nota_diaria.md",
+      "fileNameFormat": {
+        "enabled": true,
+        "format": "{{DATE:YYYY-MM-DD}}"
+      },
+      "folder": {
+        "enabled": true,
+        "folders": [
+          "05-diario"
+        ],
+        "chooseWhenCreatingNote": false,
+        "createInSameFolderAsActiveFile": false,
+        "chooseFromSubfolders": false
+      },
+      "appendLink": false,
+      "openFile": true,
+      "fileOpening": {
+        "location": "tab",
+        "direction": "vertical",
+        "mode": "default",
+        "focus": true
+      },
+      "fileExistsMode": "Nothing",
+      "setFileExistsBehavior": true
+    },
+    {
+      "id": "99665bd1-a22d-4ebe-ba58-65f086cebba4",
+      "name": "crear materia",
+      "type": "Macro",
+      "command": true,
+      "runOnStartup": false,
+      "macro": {
+        "name": "crear materia",
+        "id": "a6fc2ccd-1c2d-4059-8a14-677902334494",
+        "commands": [
+          {
+            "name": "inicializar_materia",
+            "type": "UserScript",
+            "id": "850de7a2-0da2-474c-8374-8b23d1f05163",
+            "path": "scripts/inicializar_materia.js",
+            "settings": {}
+          }
+        ]
+      }
+    },
+    {
+      "id": "e073c213-8288-45f3-a998-acd1ba10a48b",
+      "name": "crear nota rapida",
+      "type": "Capture",
+      "command": true,
+      "appendLink": false,
+      "captureTo": "00-capturas/nota_rapida_{{DATE:YYYY-MM-DD_HHmmss}}.md",
+      "captureToActiveFile": false,
+      "captureToCanvasNodeId": "",
+      "activeFileWritePosition": "cursor",
+      "createFileIfItDoesntExist": {
+        "enabled": true,
+        "createWithTemplate": false,
+        "template": ""
+      },
+      "format": {
+        "enabled": true,
+        "format": "{{VALUE}}"
+      },
+      "insertAfter": {
+        "enabled": false,
+        "after": "",
+        "insertAtEnd": false,
+        "considerSubsections": false,
+        "createIfNotFound": false,
+        "createIfNotFoundLocation": "top",
+        "inline": false,
+        "replaceExisting": false,
+        "blankLineAfterMatchMode": "auto"
+      },
+      "newLineCapture": {
+        "enabled": false,
+        "direction": "below"
+      },
+      "prepend": false,
+      "task": false,
+      "openFile": true,
+      "fileOpening": {
+        "location": "tab",
+        "direction": "vertical",
+        "mode": "default",
+        "focus": true
+      },
+      "templater": {
+        "afterCapture": "none"
+      }
+    },
+    {
+      "id": "ae7d78b9-3e74-476d-88f8-e32bbef4d27a",
+      "name": "crear proyecto",
+      "type": "Macro",
+      "command": true,
+      "runOnStartup": false,
+      "macro": {
+        "name": "crear proyecto",
+        "id": "2db54146-fcfd-4391-8f96-ccc225212216",
+        "commands": [
+          {
+            "name": "inicializar_proyecto",
+            "type": "UserScript",
+            "id": "f219680d-442d-4a73-a3b5-68077da0e1a3",
+            "path": "scripts/inicializar_proyecto.js",
+            "settings": {}
+          }
+        ]
+      }
+    },
+    {
+      "id": "a595ba06-6735-4451-af1d-c142c418b9a0",
+      "name": "crear clase",
+      "type": "Macro",
+      "command": true,
+      "runOnStartup": false,
+      "macro": {
+        "name": "crear clase",
+        "id": "e0ca7f5b-acda-498e-a2db-a77ab1a2fced",
+        "commands": [
+          {
+            "name": "nueva_clase",
+            "type": "UserScript",
+            "id": "647c8b9a-cae9-40d8-ad85-faa482e9e250",
+            "path": "scripts/nueva_clase.js",
+            "settings": {}
+          }
+        ]
+      }
+    },
+    {
+      "id": "e491a311-d908-4c21-bd27-c9456335de67",
+      "name": "nuevo tema",
+      "type": "Macro",
+      "command": true,
+      "runOnStartup": false,
+      "macro": {
+        "name": "nuevo tema",
+        "id": "c9393d60-5249-432d-a840-abeddac4ec5e",
+        "commands": [
+          {
+            "name": "nuevo_tema",
+            "type": "UserScript",
+            "id": "f8381fbc-c3ea-4f44-87f7-fc4adf0bd31c",
+            "path": "scripts/nuevo_tema.js",
+            "settings": {}
+          }
+        ]
+      }
+    },
+    {
+      "id": "3b1a89b2-0f4f-4971-9ce2-6cff8b4e9c63",
+      "name": "Nueva tarea",
+      "type": "Macro",
+      "command": true,
+      "runOnStartup": false,
+      "macro": {
+        "name": "Nueva tarea",
+        "id": "1a1cf46d-a545-468c-8017-34b6d20c687c",
+        "commands": [
+          {
+            "name": "crear_tarea",
+            "type": "UserScript",
+            "id": "39f49cf2-57ca-4363-b42a-a8fd71f87ac1",
+            "path": "scripts/crear_tarea.js",
+            "settings": {}
+          }
+        ]
+      }
+    }
+  ],
+  "inputPrompt": "single-line",
+  "persistInputPromptDrafts": true,
+  "useSelectionAsCaptureValue": true,
+  "devMode": false,
+  "templateFolderPath": "",
+  "announceUpdates": "major",
+  "version": "2.12.0",
+  "globalVariables": {},
+  "onePageInputEnabled": false,
+  "disableOnlineFeatures": true,
+  "enableRibbonIcon": false,
+  "showCaptureNotification": true,
+  "showInputCancellationNotification": false,
+  "enableTemplatePropertyTypes": false,
+  "dateAliases": {
+    "t": "today",
+    "tm": "tomorrow",
+    "yd": "yesterday",
+    "nw": "next week",
+    "nm": "next month",
+    "ny": "next year",
+    "lw": "last week",
+    "lm": "last month",
+    "ly": "last year"
+  },
+  "ai": {
+    "defaultModel": "Ask me",
+    "defaultSystemPrompt": "As an AI assistant within Obsidian, your primary goal is to help users manage their ideas and knowledge more effectively. Format your responses using Markdown syntax. Please use the [[Obsidian]] link format. You can write aliases for the links by writing [[Obsidian|the alias after the pipe symbol]]. To use mathematical notation, use LaTeX syntax. LaTeX syntax for larger equations should be on separate lines, surrounded with double dollar signs ($$). You can also inline math expressions by wrapping it in $ symbols. For example, use $$w_{ij}^{\text{new}}:=w_{ij}^{\text{current}}+etacdotdelta_jcdot x_{ij}$$ on a separate line, but you can write \"($eta$ = learning rate, $delta_j$ = error term, $x_{ij}$ = input)\" inline.",
+    "promptTemplatesFolderPath": "",
+    "showAssistant": true,
+    "providers": [
+      {
+        "name": "OpenAI",
+        "endpoint": "https://api.openai.com/v1",
+        "apiKey": "",
+        "models": [
+          {
+            "name": "gpt-3.5-turbo",
+            "maxTokens": 4096
+          },
+          {
+            "name": "gpt-3.5-turbo-16k",
+            "maxTokens": 16384
+          },
+          {
+            "name": "gpt-3.5-turbo-1106",
+            "maxTokens": 16385
+          },
+          {
+            "name": "gpt-4",
+            "maxTokens": 8192
+          },
+          {
+            "name": "gpt-4-32k",
+            "maxTokens": 32768
+          },
+          {
+            "name": "gpt-4-1106-preview",
+            "maxTokens": 128000
+          },
+          {
+            "name": "gpt-4-turbo",
+            "maxTokens": 128000
+          },
+          {
+            "name": "gpt-4o",
+            "maxTokens": 128000
+          },
+          {
+            "name": "gpt-4o-mini",
+            "maxTokens": 128000
+          }
+        ],
+        "autoSyncModels": false,
+        "modelSource": "modelsDev"
+      },
+      {
+        "name": "Gemini",
+        "endpoint": "https://generativelanguage.googleapis.com",
+        "apiKey": "",
+        "models": [
+          {
+            "name": "gemini-1.5-pro",
+            "maxTokens": 1000000
+          },
+          {
+            "name": "gemini-1.5-flash",
+            "maxTokens": 1000000
+          },
+          {
+            "name": "gemini-1.5-flash-8b",
+            "maxTokens": 1000000
+          }
+        ],
+        "autoSyncModels": false,
+        "modelSource": "modelsDev"
+      }
+    ]
+  },
+  "migrations": {
+    "migrateToMacroIDFromEmbeddedMacro": true,
+    "useQuickAddTemplateFolder": true,
+    "incrementFileNameSettingMoveToDefaultBehavior": true,
+    "mutualExclusionInsertAfterAndWriteToBottomOfFile": true,
+    "setVersionAfterUpdateModalRelease": true,
+    "addDefaultAIProviders": true,
+    "removeMacroIndirection": true,
+    "migrateFileOpeningSettings": true,
+    "backfillFileOpeningDefaults": true,
+    "setProviderModelDiscoveryMode": true,
+    "migrateProviderApiKeysToSecretStorage": true
+  }
+}
