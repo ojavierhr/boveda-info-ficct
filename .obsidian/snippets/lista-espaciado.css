@@ -1,0 +1,20 @@
+:root {
+    --list-item-spacing: 1em; /* Ajusta este valor para más o menos espacio */
+}
+
+/* --- Modo Lectura --- */
+:is(ul, ol) li {
+    margin-bottom: var(--list-item-spacing);
+    &:last-child {
+        margin-bottom: unset;
+    }
+}
+
+/* --- Modo Edición (Live Preview) --- */
+/* Usamos padding-bottom en lugar de margin-bottom para evitar bugs de selección [citation:9] */
+.markdown-source-view.mod-cm6 .cm-contentContainer > .cm-content .cm-line.HyperMD-list-line {
+    padding-bottom: var(--list-item-spacing) !important;
+    &:last-child {
+        padding-bottom: unset !important;
+    }
+}

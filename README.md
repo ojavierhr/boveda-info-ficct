@@ -166,6 +166,7 @@ Aquí tienes el **baile de la productividad** en 8 pasos:
 | `Ctrl+Shift+A` | Captura rápida → `00-capturas/`    | **A** de **A**punte rápido            |
 | `Ctrl+Shift+M` | Inicializar nueva materia (script) | **M** de **M**ateria                  |
 | `Ctrl+Shift+O` | Abrir Omnisearch                   | **O** de **O**mnisearch               |
+| `Ctrl+Shift+R` | Nueva tarea                        | **R** de Ta**r**eas                   |
 
 > 🤓 **Truco:**
 > Si usas Mac, cambia `Ctrl` por `Cmd` mentalmente.

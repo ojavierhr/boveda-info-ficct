@@ -61,5 +61,32 @@
       ],
       "key": "Y"
     }
+  ],
+  "quickadd:choice:3b1a89b2-0f4f-4971-9ce2-6cff8b4e9c63": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "R"
+    }
+  ],
+  "quickadd:choice:a595ba06-6735-4451-af1d-c142c418b9a0": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "C"
+    }
+  ],
+  "quickadd:choice:e491a311-d908-4c21-bd27-c9456335de67": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "E"
+    }
   ]
 }

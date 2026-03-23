@@ -43,71 +43,101 @@ const maxDepth = 99; // 99 significa "enséñame todo, no me canso"
 // 4. ¿Qué tipo de archivos quieres mostrar? (por defecto solo .md, pero puedes añadir .pdf, .png...)
 const fileExtensions = [".md"];
 // ============================================
-// OBTENER TODAS LAS CARPETAS (EXCLUYENDO RAÍZ Y EXCLUIDAS)
-// ============================================
-const allFiles = dv.app.vault.getAllLoadedFiles();
-const folders = allFiles.filter(f => 
-  f.children &&                // es una carpeta
-  f.path !== '' &&              // no es la raíz
-  f.name !== '' &&              // tiene nombre
-  !excludeFolders.some(ex => f.path.includes(ex))
-);
-// Ordenar alfabéticamente por ruta para mantener la jerarquía
-folders.sort((a, b) => a.path.localeCompare(b.path));
-// ============================================
-// FUNCIÓN: ARCHIVOS DENTRO DE UNA CARPETA (SIN RECURSIÓN)
-// ============================================
-function getFilesDirectlyInFolder(folderPath) {
-  return dv.pages()
-    .where(p => {
-      // El archivo debe empezar con la ruta de la carpeta
-      if (!p.file.path.startsWith(folderPath)) return false;
-      // No debe ser la propia carpeta (no hay archivo con ese path)
-      if (p.file.path === folderPath) return false;
-      // La parte restante no debe contener más barras (archivo directo)
-      const relativePath = p.file.path.slice(folderPath.length);
-      return !relativePath.includes('/');
-    })
-    .map(p => p.file.path)
-    .sort();
-}
-// ============================================
-// CONSTRUIR LA LISTA JERÁRQUICA
-// ============================================
-let output = "";
-// 1. Archivos sueltos en la raíz (si los hay)
-const rootFiles = dv.pages()
-  .where(p => !p.file.path.includes('/') && p.file.path.endsWith('.md'))
-  .map(p => p.file.path)
-  .sort();
-if (rootFiles.length > 0) {
-  rootFiles.forEach(filePath => {
-    const fileName = filePath.split('/').pop();
-    output += '  - ' + `[[${filePath}|📄 ${fileName}]]\n`;
-  });
-  output += "\n";
-}
-// 2. Carpetas (y sus archivos directos)
-folders.forEach(f => {
-  const depth = f.path.split('/').length; // 1 = raíz (no existe), 2 = primer nivel, etc.
-  if (depth > maxDepth) return;
-  const name = f.name;
-  const indent = '  '.repeat(depth - 1); // Sin sangría para primer nivel
-  // Mostrar la carpeta
-  output += indent + '- ' + `📁 **${name}**\n`;
-  // Mostrar archivos directamente dentro de esta carpeta (si está activado)
-  if (showFiles && depth <= maxDepth) {
-    const files = getFilesDirectlyInFolder(f.path);
-    files.forEach(filePath => {
-      const fileName = filePath.split('/').pop();
-      if (fileExtensions.some(ext => fileName.endsWith(ext))) {
-        output += indent + '  ' + '- ' + `[[${filePath}|📄 ${fileName}]]\n`;
-      }
-    });
-  }
+
+// Obtener todos los archivos y carpetas de la bóveda
+const all = dv.app.vault.getAllLoadedFiles();
+
+// Separar carpetas y archivos
+const folders = all.filter(f => f.children && f.path !== ''); // carpetas (excluyendo la raíz)
+const files = all.filter(f => !f.children && f.path !== '');   // archivos
+
+// Construir un mapa rápido: carpeta padre -> lista de archivos
+const filesByParent = new Map();
+files.forEach(file => {
+    const parentPath = file.parent?.path || '';
+    if (!filesByParent.has(parentPath)) filesByParent.set(parentPath, []);
+    filesByParent.get(parentPath).push(file);
 });
+
+// Construir un mapa rápido: carpeta padre -> lista de subcarpetas
+const subfoldersByParent = new Map();
+folders.forEach(folder => {
+    const parentPath = folder.parent?.path || '';
+    if (!subfoldersByParent.has(parentPath)) subfoldersByParent.set(parentPath, []);
+    subfoldersByParent.get(parentPath).push(folder);
+});
+
+// Ordenar alfabéticamente los elementos dentro de cada mapa
+for (let [_, list] of filesByParent) list.sort((a, b) => a.name.localeCompare(b.name));
+for (let [_, list] of subfoldersByParent) list.sort((a, b) => a.name.localeCompare(b.name));
+
+// Función recursiva para imprimir una carpeta y todo su contenido
+function renderFolder(folderPath, indent, depth) {
+    if (depth > maxDepth) return ""; // Profundidad máxima alcanzada
+
+    // Obtener subcarpetas y archivos de esta carpeta
+    const subfolders = subfoldersByParent.get(folderPath) || [];
+    const childFiles = filesByParent.get(folderPath) || [];
+
+    // Construir la salida para esta carpeta
+    let output = "";
+
+    // Primero imprimir los archivos (si showFiles es true)
+    if (showFiles) {
+        for (const file of childFiles) {
+            const ext = '.' + file.extension;
+            if (fileExtensions.includes(ext)) {
+                const link = `[[${file.path}|📄 ${file.name}]]`;
+                output += `${indent}  - ${link}\n`;
+            }
+        }
+    }
+
+    // Luego imprimir las subcarpetas recursivamente
+    for (const sub of subfolders) {
+        // Verificar si la subcarpeta debe ser excluida
+        if (excludeFolders.some(ex => sub.path.includes(ex))) continue;
+        // Mostrar la carpeta con su nombre
+        const folderLink = `📁 ${sub.name}`;
+        output += `${indent}- ${folderLink}\n`;
+        // Llamar recursivamente para mostrar su contenido, aumentando la indentación y profundidad
+        output += renderFolder(sub.path, indent + '  ', depth + 1);
+    }
+
+    return output;
+}
+
+// ============================================
+// CONSTRUIR LA LISTA JERÁRQUICA DESDE LA RAÍZ
+// ============================================
+let finalOutput = "";
+
+// 1. Archivos sueltos en la raíz (si los hay)
+const rootFiles = files.filter(f => f.parent?.path === '');
+if (rootFiles.length > 0) {
+    rootFiles.sort((a, b) => a.name.localeCompare(b.name));
+    for (const file of rootFiles) {
+        const ext = '.' + file.extension;
+        if (fileExtensions.includes(ext)) {
+            finalOutput += `  - [[${file.path}|📄 ${file.name}]]\n`;
+        }
+    }
+    finalOutput += "\n";
+}
+
+// 2. Carpetas de primer nivel (directamente en la raíz)
+const rootFolders = subfoldersByParent.get('') || [];
+rootFolders.sort((a, b) => a.name.localeCompare(b.name));
+
+for (const folder of rootFolders) {
+    // Excluir carpetas no deseadas
+    if (excludeFolders.some(ex => folder.path.includes(ex))) continue;
+    finalOutput += `- 📁 ${folder.name}\n`;
+    finalOutput += renderFolder(folder.path, '  ', 1);
+}
+
 // Mostrar el resultado (si hay algo)
-dv.paragraph(output || "*No hay elementos visibles*");
+dv.paragraph(finalOutput || "*No hay elementos visibles*");
 ```
 
 ---

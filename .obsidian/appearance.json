@@ -4,5 +4,8 @@
   "textFontFamily": "Fira Sans",
   "monospaceFontFamily": "Fira Code",
   "baseFontSizeAction": false,
-  "theme": "obsidian"
+  "theme": "obsidian",
+  "enabledCssSnippets": [
+    "lista-espaciado"
+  ]
 }

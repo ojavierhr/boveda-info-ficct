@@ -3,5 +3,6 @@
   "showInlineTitle": false,
   "tabSize": 3,
   "strictLineBreaks": true,
-  "showUnsupportedFiles": true
+  "showUnsupportedFiles": true,
+  "alwaysUpdateLinks": true
 }

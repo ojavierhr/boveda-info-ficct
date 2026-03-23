@@ -47,12 +47,12 @@ module.exports = async (params) => {
   // ---
 
   if (tipoElegido === "📌 Tarea suelta (sin materia ni proyecto)") {
-    // Asegurar que existe la carpeta 00-tareas/
-    if (!(await vault.adapter.exists("00-tareas"))) {
-      await vault.createFolder("00-tareas");
-      new Notice("📁 Carpeta '00-tareas' creada automáticamente.");
+    // Asegurar que existe la carpeta 09-tareas/
+    if (!(await vault.adapter.exists("09-tareas"))) {
+      await vault.createFolder("09-tareas");
+      new Notice("📁 Carpeta '09-tareas' creada automáticamente.");
     }
-    rutaBase = "00-tareas";
+    rutaBase = "09-tareas";
     // Sin etiquetas especiales
   }
 
