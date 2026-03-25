@@ -12,5 +12,7 @@
   "obsidian-tasks-plugin",
   "vscode-editor",
   "obsidian-to-anki-plugin",
-  "obsidian-git"
+  "obsidian-git",
+  "painter",
+  "simple-columns"
 ]

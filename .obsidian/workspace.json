@@ -4,33 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "c776953639412a7c",
+        "id": "2c61ae50e02297af",
         "type": "tabs",
         "children": [
           {
-            "id": "27d31f0f7d5eb802",
+            "id": "6b807574cd25ceeb",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01-materias/sistemas-informacion-2/temas/1-fundamentos-sistemas-informacion/administracion-empresa-digital.md",
+                "file": "01-materias/sistemas-informacion-2/clases/2026-03-23_Indicaciones-perfil-proyecto.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "administracion-empresa-digital"
-            }
-          },
-          {
-            "id": "3edcbe8790adb47f",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "01-materias/sistemas-informacion-2/recursos/pdf/pressman-r-s_maxin-b-r_2021_ingenieria-del-software-un-enfoque-practico_9aed_macgraw-hill-interamericana.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "pressman-r-s_maxin-b-r_2021_ingenieria-del-software-un-enfoque-practico_9aed_macgraw-hill-interamericana"
+              "title": "2026-03-23_Indicaciones-perfil-proyecto"
             }
           }
         ]
@@ -213,40 +201,41 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "27d31f0f7d5eb802",
+  "active": "6b807574cd25ceeb",
   "lastOpenFiles": [
-    "01-materias/sistemas-informacion-2/recursos/pdf/pressman-r-s_maxin-b-r_2021_ingenieria-del-software-un-enfoque-practico_9aed_macgraw-hill-interamericana.pdf",
-    "01-materias/sistemas-informacion-2/temas/1-fundamentos-sistemas-informacion/administracion-empresa-digital.md",
-    "01-materias/sistemas-informacion-2/recursos/pdf/laudon-k-c_laudon-j-p_2016_sistemas-de-informacion-gerencial_14aed_pearson-educacion.pdf",
-    "01-materias/sistemas-informacion-2/recursos/pdf/kendall-k-e_kendall-j-e_2011_analisis-y-diseño-de-sistemas_8aed_pearson-educacion.pdf",
-    "01-materias/sistemas-informacion-2/temas/1-fundamentos-sistemas-informacion/infraestructura-tecnologica-informacion.md",
-    "01-materias/sistemas-informacion-2/informe.md",
+    "01-materias/sistemas-informacion-2/clases/2026-03-23_Indicaciones-perfil-proyecto.md",
     "01-materias/sistemas-informacion-2/temas/1-fundamentos-sistemas-informacion/concepto-sistema-informacion-basado-computadoras.md",
+    "01-materias/sistemas-informacion-2/temas/1-fundamentos-sistemas-informacion/analisis-procesos-negocios.md",
     "01-materias/sistemas-informacion-2/clases/2026-03-13_presentacion-materia.md",
     "01-materias/sistemas-informacion-2/clases/2026-03-11_creacion-instruccion-grupos.md",
-    "programa_analitico_si_2.pdf.md",
-    "programa_analitico_sistemas_informacion_2.md",
-    "01-materias/sistemas-informacion-2/temas/1-fundamentos-sistemas-informacion/analisis-procesos-negocios.md",
-    "resumen_boveda.md",
-    "README.md",
-    "01-materias/sistemas-informacion-2/recursos/pdf",
-    "01-materias/sistemas-informacion-2/recursos/pdf.md",
-    "01-materias/sistemas-informacion-2/recursos/pdf/programa_analitico_sistemas_informacion_2.pdf",
+    "01-materias/sistemas-informacion-2/informe.md",
     "01-materias/sistemas-informacion-2/temas/5-gestion-implantacion-sistemas/gestion-puesta-marcha.md",
-    "01-materias/sistemas-informacion-2/temas/5-gestion-implantacion-sistemas/gestion_puesta_marcha.md",
-    "01-materias/sistemas-informacion-2/temas/2-tipos-sistema-informacion/sistemas-procesamiento-transacciones.md",
-    "01-materias/sistemas-informacion-2/temas/tipos-sistema-informacion/sistemas-gestion-empresarial.md",
+    "01-materias/sistemas-informacion-2/temas/5-gestion-implantacion-sistemas/componentes-proyectos-software.md",
+    "01-materias/sistemas-informacion-2/temas/5-gestion-implantacion-sistemas/equipo-desarrollo-software.md",
+    "01-materias/sistemas-informacion-2/temas/4-proceso-desarrollo-software/evaluacion-diseño.md",
+    "01-materias/sistemas-informacion-2/temas/4-proceso-desarrollo-software/diseño-interfaces.md",
+    "01-materias/sistemas-informacion-2/temas/4-proceso-desarrollo-software/diseño-arquitectura-componentes.md",
+    "01-materias/sistemas-informacion-2/temas/4-proceso-desarrollo-software/diseño-estructura-datos.md",
+    "01-materias/sistemas-informacion-2/temas/4-proceso-desarrollo-software/analisis-arquitectura.md",
+    "01-materias/sistemas-informacion-2/temas/4-proceso-desarrollo-software/modelo-conceptual-analisis-interaccion.md",
+    "01-materias/sistemas-informacion-2/temas/4-proceso-desarrollo-software/estructuracion-analisis-requisitos.md",
+    "01-materias/sistemas-informacion-2/temas/4-proceso-desarrollo-software/especificacion-requisitos-software.md",
+    "01-materias/sistemas-informacion-2/temas/4-proceso-desarrollo-software/introduccion-uml-2.5.md",
+    "01-materias/sistemas-informacion-2/temas/4-proceso-desarrollo-software/proceso-unificado-desarrollo.md",
+    "01-materias/sistemas-informacion-2/temas/4-proceso-desarrollo-software/proceso-desarrollo-software-gestion.md",
+    "01-materias/sistemas-informacion-2/temas/4-proceso-desarrollo-software/analogia-distintos-enfoques-desarrollo.md",
+    "01-materias/sistemas-informacion-2/temas/3-tecnologias-herramientas-desarrollo/herramientas-desarrollo-web-movil-despliegue.md",
+    "01-materias/sistemas-informacion-2/temas/3-tecnologias-herramientas-desarrollo/herramientas-desarrollo-colaborativo.md",
+    "01-materias/sistemas-informacion-2/temas/3-tecnologias-herramientas-desarrollo/herramientas-gestion-proyectos.md",
+    "01-materias/sistemas-informacion-2/temas/3-tecnologias-herramientas-desarrollo/herramientas-generacion-modelos.md",
+    "01-materias/sistemas-informacion-2/temas/3-tecnologias-herramientas-desarrollo/herramientas-case.md",
+    "01-materias/sistemas-informacion-2/recursos/pdf/laudon-k-c_laudon-j-p_2016_sistemas-de-informacion-gerencial_14aed_pearson-educacion.pdf",
+    "01-materias/sistemas-informacion-2/recursos/pdf/kendall-k-e_kendall-j-e_2011_analisis-y-diseño-de-sistemas_8aed_pearson-educacion.pdf",
+    "01-materias/sistemas-informacion-2/recursos/pdf/pressman-r-s_maxin-b-r_2021_ingenieria-del-software-un-enfoque-practico_9aed_macgraw-hill-interamericana.pdf",
+    "01-materias/sistemas-informacion-2/recursos/pdf",
+    "01-materias/sistemas-informacion-2/recursos/pdf/programa_analitico_sistemas_informacion_2.pdf",
     "01-materias/sistemas-informacion-2/temas/Sin nombre",
-    "01-materias/sistemas-informacion-2/temas/fundamentos-sistemas-informacion/administracion-empresa-digital.md",
-    "01-materias/sistemas-informacion-2/temas/fundamentos-sistemas-informacion/analisis-procesos-negocios.md",
-    "01-materias/sistemas-informacion-2/temas/fundamentos-sistemas-informacion/infraestructura-tecnologica-informacion.md",
-    "01-materias/sistemas-informacion-2/temas/fundamentos-sistemas-informacion/concepto-sistema-informacion-basado-computadoras.md",
     "01-materias/sistemas-informacion-2/temas/fundamentos-sistemas-informacion",
-    "01-materias/sistemas-informacion-2/tareas/poner-dia-materia.md",
-    "01-materias/sistemas-informacion-2/proyectos/proy-01_proyecto-grupal/tareas/fase-1_investigacion-conceptos-previos.md",
-    "01-materias/sistemas-informacion-2/proyectos/proy-01_proyecto-grupal/proy-01_proyecto-grupal.md",
-    "01-materias/sistemas-informacion-2/tareas/crear_ruta_aprendizaje_materia.md",
-    "01-materias/sistemas-informacion-2/proyectos/proy-01_proyecto-grupal/proy-01_kanban.md",
     "01-materias/sistemas-informacion-2/proyectos/proy-01_proyecto-grupal/tareas",
     "01-materias/sistemas-informacion-2/proyectos/proy-01_proyecto-grupal",
     "scripts/nuevo_tema.js",
