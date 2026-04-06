@@ -1,15 +1,42 @@
-# Ignorar archivos del sistema
+# ── Workspace (personal, no compartir) ──────────────────────────────────────
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/workspace-mobile.json.bak
+.obsidian/cache
+.obsidian/backups/
+
+# ── Archivos de sistema ──────────────────────────────────────────────────────
+.trash/
 .DS_Store
 Thumbs.db
+desktop.ini
+*~
+*.swp
+*.swo
 
-# Ignorar la papelera de Obsidian
-.trash/
+# ── Notas personales (solo la estructura vacía se comparte) ──────────────────
+# Las carpetas se incluyen, pero los archivos .md dentro de ellas NO
+00_Inbox/Daily/*.md
+01_Notes/Lectures/**/*.md
+01_Notes/Concepts/**/*.md
+02_Projects/*.md
+03_Areas/**/*.md
+05_Reviews/Weekly/*.md
 
-# Ignorar archivos de caché y workspace (se regeneran)
-.obsidian/workspace
-.obsidian/cache
-.obsidian/plugins.json
+# Las carpetas Resources y Archive se incluyen (vacías), pero no su contenido
+04_Resources/**/*
+06_Archive/**/*
+!04_Resources/.gitkeep
+!06_Archive/.gitkeep
 
-# Ignorar archivos de respaldo de git
-*.orig
-*.bak
+# ── Excepciones: archivos y carpetas que SÍ se comparten ────────────────────
+!Dashboard-Global.md
+!LEEME.md
+!_Templates/**
+!.obsidian/app.json
+!.obsidian/appearance.json
+!.obsidian/snippets/
+!.obsidian/snippets/*.css
+!.gitignore
+!README.md
+!LICENSE

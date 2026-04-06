@@ -1,14 +1,5 @@
 {
-  "quickadd:choice:e2ed06eb-07c7-47c5-9055-dc5be90bf3a5": [
-    {
-      "modifiers": [
-        "Mod",
-        "Shift"
-      ],
-      "key": "C"
-    }
-  ],
-  "quickadd:choice:99665bd1-a22d-4ebe-ba58-65f086cebba4": [
+  "quickadd:choice:2bcc1c59-5855-44e1-b37c-b5971e2af9d6": [
     {
       "modifiers": [
         "Mod",
@@ -17,76 +8,40 @@
       "key": "M"
     }
   ],
-  "quickadd:choice:ae7d78b9-3e74-476d-88f8-e32bbef4d27a": [
+  "quickadd:choice:c6b82544-40bd-42f9-bcc5-de46f60775dd": [
     {
       "modifiers": [
         "Mod",
         "Shift"
       ],
-      "key": "P"
+      "key": "M"
     }
   ],
-  "quickadd:choice:e073c213-8288-45f3-a998-acd1ba10a48b": [
+  "quickadd:choice:a62811b0-1264-4acc-baed-589ac529be77": [
     {
       "modifiers": [
         "Mod",
         "Shift"
+      ],
+      "key": "M"
+    }
+  ],
+  "quickadd:choice:9867fbde-efa4-46b6-8d7d-ebd470f04e1a": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod"
+      ],
+      "key": "M"
+    }
+  ],
+  "obsidian-to-anki-plugin:anki-scan-vault": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod"
       ],
       "key": "A"
-    }
-  ],
-  "omnisearch:show-modal": [
-    {
-      "modifiers": [
-        "Mod",
-        "Shift"
-      ],
-      "key": "O"
-    }
-  ],
-  "quickadd:choice:ca090525-332d-4009-be74-45fdae62b29e": [
-    {
-      "modifiers": [
-        "Mod",
-        "Shift"
-      ],
-      "key": "E"
-    }
-  ],
-  "quickadd:choice:38a64dbe-227e-46ea-86fe-d2ec02b366cc": [
-    {
-      "modifiers": [
-        "Mod",
-        "Shift"
-      ],
-      "key": "Y"
-    }
-  ],
-  "quickadd:choice:3b1a89b2-0f4f-4971-9ce2-6cff8b4e9c63": [
-    {
-      "modifiers": [
-        "Mod",
-        "Shift"
-      ],
-      "key": "R"
-    }
-  ],
-  "quickadd:choice:a595ba06-6735-4451-af1d-c142c418b9a0": [
-    {
-      "modifiers": [
-        "Mod",
-        "Shift"
-      ],
-      "key": "C"
-    }
-  ],
-  "quickadd:choice:e491a311-d908-4c21-bd27-c9456335de67": [
-    {
-      "modifiers": [
-        "Mod",
-        "Shift"
-      ],
-      "key": "E"
     }
   ]
 }

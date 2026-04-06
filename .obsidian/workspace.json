@@ -1,24 +1,31 @@
 {
   "main": {
-    "id": "7b0f75b20d297cf0",
+    "id": "a19a4169f056dbc5",
     "type": "split",
     "children": [
       {
-        "id": "2c61ae50e02297af",
+        "id": "d0f7790f0b701129",
         "type": "tabs",
         "children": [
           {
-            "id": "6b807574cd25ceeb",
+            "id": "0591a7134700e80b",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "kanban",
               "state": {
-                "file": "01-materias/sistemas-informacion-2/clases/2026-03-23_Indicaciones-perfil-proyecto.md",
-                "mode": "source",
-                "source": false
+                "file": "02_Projects/sistemas-informacion-2/SGD-gestion-documental-clinicas.md",
+                "kanbanViewState": {
+                  "kanban-plugin": "board",
+                  "list-collapse": [
+                    null,
+                    null,
+                    null,
+                    null
+                  ]
+                }
               },
-              "icon": "lucide-file",
-              "title": "2026-03-23_Indicaciones-perfil-proyecto"
+              "icon": "lucide-trello",
+              "title": "SGD-gestion-documental-clinicas"
             }
           }
         ]
@@ -27,28 +34,28 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "57458bd95ee13f36",
+    "id": "8ff239922a6d11d5",
     "type": "split",
     "children": [
       {
-        "id": "a62db9402c5bdd14",
+        "id": "f1d8ff04961559fe",
         "type": "tabs",
         "children": [
           {
-            "id": "a15740d27e18c078",
+            "id": "69df78645ea44bf2",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": true
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Explorador de archivos"
             }
           },
           {
-            "id": "f69acc43536b7c36",
+            "id": "81e21370fffe4351",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -65,7 +72,7 @@
             }
           },
           {
-            "id": "335111f7440239e9",
+            "id": "69f3a6f02ab83c24",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -78,23 +85,24 @@
       }
     ],
     "direction": "horizontal",
-    "width": 500.5,
+    "width": 300,
     "collapsed": true
   },
   "right": {
-    "id": "884cfb1a0cc56f41",
+    "id": "4a95802edab643fa",
     "type": "split",
     "children": [
       {
-        "id": "f750e73c8fda64fd",
+        "id": "c5c60aa4a81dcdb0",
         "type": "tabs",
         "children": [
           {
-            "id": "853fd92d4f18f17d",
+            "id": "03aea65545aeda34",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
+                "file": "01_Notes/Lectures/sistemas-informacion-2/clase-2026-03-11-inicio-grupos-tematicas.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,11 +112,11 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Enlaces entrantes"
+              "title": "Enlaces entrantes de clase-2026-03-11-inicio-grupos-tematicas"
             }
           },
           {
-            "id": "fe87371b1827ae6e",
+            "id": "9efb291e81e8e669",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
@@ -121,7 +129,7 @@
             }
           },
           {
-            "id": "c2b0ddce30626e89",
+            "id": "411a2efbd9d77f98",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -136,7 +144,7 @@
             }
           },
           {
-            "id": "039d02bd4383eaf0",
+            "id": "c18f12482a993c76",
             "type": "leaf",
             "state": {
               "type": "all-properties",
@@ -150,32 +158,30 @@
             }
           },
           {
-            "id": "ac8a53fd4c163f45",
+            "id": "5359461b94ba7a3a",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "01-materias/sistemas-informacion-2/temas/1-fundamentos-sistemas-informacion/administracion-empresa-digital.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Esquema de administracion-empresa-digital"
+              "title": "Esquema"
             }
           },
           {
-            "id": "56be583a959f8ec2",
+            "id": "e594ec56753c1e65",
             "type": "leaf",
             "state": {
               "type": "calendar",
               "state": {},
-              "icon": "calendar-with-checkmark",
-              "title": "Calendar"
+              "icon": "lucide-ghost",
+              "title": "calendar"
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "horizontal",
@@ -192,54 +198,48 @@
       "command-palette:Abrir paleta de comandos": false,
       "bases:Crear nueva base": false,
       "templater-obsidian:Templater": false,
-      "obsidian-excalidraw-plugin:New drawing": false,
       "obsidian-kanban:Create new board": false,
-      "omnisearch:Omnisearch": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "vscode-editor:Create Code File": false,
       "obsidian-to-anki-plugin:Obsidian_to_Anki - Scan Vault": false,
-      "obsidian-git:Open Git source control": false
+      "periodic-notes:Open today": false
     }
   },
-  "active": "6b807574cd25ceeb",
+  "active": "0591a7134700e80b",
   "lastOpenFiles": [
-    "01-materias/sistemas-informacion-2/clases/2026-03-23_Indicaciones-perfil-proyecto.md",
-    "01-materias/sistemas-informacion-2/temas/1-fundamentos-sistemas-informacion/concepto-sistema-informacion-basado-computadoras.md",
-    "01-materias/sistemas-informacion-2/temas/1-fundamentos-sistemas-informacion/analisis-procesos-negocios.md",
-    "01-materias/sistemas-informacion-2/clases/2026-03-13_presentacion-materia.md",
-    "01-materias/sistemas-informacion-2/clases/2026-03-11_creacion-instruccion-grupos.md",
-    "01-materias/sistemas-informacion-2/informe.md",
-    "01-materias/sistemas-informacion-2/temas/5-gestion-implantacion-sistemas/gestion-puesta-marcha.md",
-    "01-materias/sistemas-informacion-2/temas/5-gestion-implantacion-sistemas/componentes-proyectos-software.md",
-    "01-materias/sistemas-informacion-2/temas/5-gestion-implantacion-sistemas/equipo-desarrollo-software.md",
-    "01-materias/sistemas-informacion-2/temas/4-proceso-desarrollo-software/evaluacion-diseño.md",
-    "01-materias/sistemas-informacion-2/temas/4-proceso-desarrollo-software/diseño-interfaces.md",
-    "01-materias/sistemas-informacion-2/temas/4-proceso-desarrollo-software/diseño-arquitectura-componentes.md",
-    "01-materias/sistemas-informacion-2/temas/4-proceso-desarrollo-software/diseño-estructura-datos.md",
-    "01-materias/sistemas-informacion-2/temas/4-proceso-desarrollo-software/analisis-arquitectura.md",
-    "01-materias/sistemas-informacion-2/temas/4-proceso-desarrollo-software/modelo-conceptual-analisis-interaccion.md",
-    "01-materias/sistemas-informacion-2/temas/4-proceso-desarrollo-software/estructuracion-analisis-requisitos.md",
-    "01-materias/sistemas-informacion-2/temas/4-proceso-desarrollo-software/especificacion-requisitos-software.md",
-    "01-materias/sistemas-informacion-2/temas/4-proceso-desarrollo-software/introduccion-uml-2.5.md",
-    "01-materias/sistemas-informacion-2/temas/4-proceso-desarrollo-software/proceso-unificado-desarrollo.md",
-    "01-materias/sistemas-informacion-2/temas/4-proceso-desarrollo-software/proceso-desarrollo-software-gestion.md",
-    "01-materias/sistemas-informacion-2/temas/4-proceso-desarrollo-software/analogia-distintos-enfoques-desarrollo.md",
-    "01-materias/sistemas-informacion-2/temas/3-tecnologias-herramientas-desarrollo/herramientas-desarrollo-web-movil-despliegue.md",
-    "01-materias/sistemas-informacion-2/temas/3-tecnologias-herramientas-desarrollo/herramientas-desarrollo-colaborativo.md",
-    "01-materias/sistemas-informacion-2/temas/3-tecnologias-herramientas-desarrollo/herramientas-gestion-proyectos.md",
-    "01-materias/sistemas-informacion-2/temas/3-tecnologias-herramientas-desarrollo/herramientas-generacion-modelos.md",
-    "01-materias/sistemas-informacion-2/temas/3-tecnologias-herramientas-desarrollo/herramientas-case.md",
-    "01-materias/sistemas-informacion-2/recursos/pdf/laudon-k-c_laudon-j-p_2016_sistemas-de-informacion-gerencial_14aed_pearson-educacion.pdf",
-    "01-materias/sistemas-informacion-2/recursos/pdf/kendall-k-e_kendall-j-e_2011_analisis-y-diseño-de-sistemas_8aed_pearson-educacion.pdf",
-    "01-materias/sistemas-informacion-2/recursos/pdf/pressman-r-s_maxin-b-r_2021_ingenieria-del-software-un-enfoque-practico_9aed_macgraw-hill-interamericana.pdf",
-    "01-materias/sistemas-informacion-2/recursos/pdf",
-    "01-materias/sistemas-informacion-2/recursos/pdf/programa_analitico_sistemas_informacion_2.pdf",
-    "01-materias/sistemas-informacion-2/temas/Sin nombre",
-    "01-materias/sistemas-informacion-2/temas/fundamentos-sistemas-informacion",
-    "01-materias/sistemas-informacion-2/proyectos/proy-01_proyecto-grupal/tareas",
-    "01-materias/sistemas-informacion-2/proyectos/proy-01_proyecto-grupal",
-    "scripts/nuevo_tema.js",
-    "03-recursos/excalidraw/estructura_general_boveda.svg",
-    "Sin título.canvas"
+    "Untitled Kanban.md",
+    "02_Projects/sistemas-informacion-2/SGD-gestion-documental-clinicas.md",
+    "01_Notes/Lectures/sistemas-informacion-2/clase-2026-03-11-inicio-grupos-tematicas.md",
+    "02_Projects/sistemas-informacion-2",
+    "01_Notes/Concepts/sistemas-informacion-2/sistemas-informacion-empresarial.md",
+    "03_Areas/sistemas-informacion-2/MOC-sistemas-informacion-2.md",
+    "01_Notes/Concepts/sistemas-informacion-2/gestion-documental.md",
+    "01_Notes/Concepts/sistemas-informacion-2/mrp-material-requirements-planning.md",
+    "01_Notes/Lectures/sistemas-informacion-2/clase-2026-04-01-parcial-1-especificacion-auxilio-automoviles.md",
+    "01_Notes/Lectures/sistemas-informacion-2/clase-2026-03-25-aclaracion-elementos-si-basado-computadoras.md",
+    "01_Notes/Lectures/sistemas-informacion-2/clase-2026-03-13-ponderacion-orden-presentacion-exposiciones.md",
+    "01_Notes/Lectures/sistemas-informacion-2/clase-2026-03-23-indicaciones-presentacion-perfil-del-proyecto.md",
+    "Dashboard-Global.md",
+    "_Templates/lecture-note.md",
+    "_Templates/project-note.md",
+    "_Templates/concept-note.md",
+    "_Templates/daily-note.md",
+    "Untitled.md",
+    "01_Notes/Lectures/sistemas-informacion-2/Sin nombre",
+    "04_Resources/sistemas-informacion-2",
+    "03_Areas/sistemas-informacion-2",
+    "01_Notes/Concepts/sistemas-informacion-2",
+    "01_Notes/Lectures/sistemas-informacion-2",
+    "LEEME.md",
+    "Sin título.md",
+    "_Templates/moc-materia.md",
+    "sistemas-informacion-2.md",
+    "03_Areas/MOC-Carrera.md",
+    "_Templates/new-materia.md",
+    "03_Areas/calculito/MOC-calculito.md",
+    "03_Areas/calculito",
+    "01_Notes/Concepts/calculito",
+    "01_Notes/Lectures/calculito",
+    "Calculito.md",
+    "03_Areas/calculo-5/MOC-calculo-5.md",
+    "03_Areas/calculo-5"
   ]
 }

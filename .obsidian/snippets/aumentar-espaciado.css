@@ -1,0 +1,43 @@
+/* Aumentar espaciado general del documento */
+body {
+  line-height: 1.6 !important; /* valor estándar: 1.5, lo subimos un poco */
+}
+
+/* Para párrafos normales */
+p {
+  line-height: 1.6 !important;
+  margin-bottom: 1.2em !important;
+}
+
+/* Para listas (viñetas y numeradas) */
+ul, ol {
+  line-height: 1.6 !important;
+  margin-bottom: 1.2em !important;
+}
+
+li {
+  line-height: 1.6 !important;
+  margin-bottom: 0.3em !important; /* separación entre ítems de la misma lista */
+}
+
+/* Para bloques de código normales y los bloques especiales de Cornell (que usan ```) */
+.markdown-preview-view pre, 
+.markdown-source-view pre,
+.cm-s-obsidian pre,
+.cm-s-obsidian .HyperMD-codeblock,
+.cornell-block pre,    /* clase que podría usar el plugin */
+.code-block pre {
+  line-height: 1.6 !important;
+}
+
+/* Para los callouts (como el resumen al final) */
+.callout {
+  line-height: 1.6 !important;
+}
+
+/* Para el contenido dentro de los bloques cornell (más específico) */
+.cornell-marginalia-block,
+.cornell-marginalia-container,
+.markdown-preview-view .cornell-block {
+  line-height: 1.6 !important;
+}
