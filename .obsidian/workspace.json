@@ -4,28 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "d0f7790f0b701129",
+        "id": "94a17f628df2e638",
         "type": "tabs",
         "children": [
           {
-            "id": "0591a7134700e80b",
+            "id": "d7d3d220ba5c4907",
             "type": "leaf",
             "state": {
-              "type": "kanban",
+              "type": "markdown",
               "state": {
-                "file": "02_Projects/sistemas-informacion-2/SGD-gestion-documental-clinicas.md",
-                "kanbanViewState": {
-                  "kanban-plugin": "board",
-                  "list-collapse": [
-                    null,
-                    null,
-                    null,
-                    null
-                  ]
-                }
+                "file": "01_Notes/Lectures/sistemas-informacion-2/clase-2026-03-11-inicio-grupos-tematicas.md",
+                "mode": "source",
+                "source": true
               },
-              "icon": "lucide-trello",
-              "title": "SGD-gestion-documental-clinicas"
+              "icon": "lucide-file",
+              "title": "clase-2026-03-11-inicio-grupos-tematicas"
             }
           }
         ]
@@ -85,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "4a95802edab643fa",
@@ -203,20 +195,22 @@
       "periodic-notes:Open today": false
     }
   },
-  "active": "0591a7134700e80b",
+  "active": "d7d3d220ba5c4907",
   "lastOpenFiles": [
-    "Untitled Kanban.md",
-    "02_Projects/sistemas-informacion-2/SGD-gestion-documental-clinicas.md",
-    "01_Notes/Lectures/sistemas-informacion-2/clase-2026-03-11-inicio-grupos-tematicas.md",
-    "02_Projects/sistemas-informacion-2",
-    "01_Notes/Concepts/sistemas-informacion-2/sistemas-informacion-empresarial.md",
-    "03_Areas/sistemas-informacion-2/MOC-sistemas-informacion-2.md",
-    "01_Notes/Concepts/sistemas-informacion-2/gestion-documental.md",
-    "01_Notes/Concepts/sistemas-informacion-2/mrp-material-requirements-planning.md",
-    "01_Notes/Lectures/sistemas-informacion-2/clase-2026-04-01-parcial-1-especificacion-auxilio-automoviles.md",
-    "01_Notes/Lectures/sistemas-informacion-2/clase-2026-03-25-aclaracion-elementos-si-basado-computadoras.md",
     "01_Notes/Lectures/sistemas-informacion-2/clase-2026-03-13-ponderacion-orden-presentacion-exposiciones.md",
     "01_Notes/Lectures/sistemas-informacion-2/clase-2026-03-23-indicaciones-presentacion-perfil-del-proyecto.md",
+    "01_Notes/Lectures/sistemas-informacion-2/clase-2026-03-11-inicio-grupos-tematicas.md",
+    "01_Notes/Lectures/sistemas-informacion-2/clase-2026-04-06-definicion-de-la-documentacion-a-presentar-para-el-parcial-1.md",
+    "01_Notes/Lectures/sistemas-informacion-2/clase-2026-04-01-parcial-1-especificacion-auxilio-automoviles.md",
+    "04_Resources/pdf/debrauwer-l_van-der-heyde-f_2016_uml-2-5-iniciacion-ejemplos-y-ejercicios-corregidos_4aed_ediciones-eni.pdf",
+    "03_Areas/sistemas-informacion-2/MOC-sistemas-informacion-2.md",
+    "02_Projects/sistemas-informacion-2/SGD-gestion-documental-clinicas.md",
+    "Untitled Kanban.md",
+    "02_Projects/sistemas-informacion-2",
+    "01_Notes/Concepts/sistemas-informacion-2/sistemas-informacion-empresarial.md",
+    "01_Notes/Concepts/sistemas-informacion-2/gestion-documental.md",
+    "01_Notes/Concepts/sistemas-informacion-2/mrp-material-requirements-planning.md",
+    "01_Notes/Lectures/sistemas-informacion-2/clase-2026-03-25-aclaracion-elementos-si-basado-computadoras.md",
     "Dashboard-Global.md",
     "_Templates/lecture-note.md",
     "_Templates/project-note.md",
@@ -237,9 +231,6 @@
     "03_Areas/calculito/MOC-calculito.md",
     "03_Areas/calculito",
     "01_Notes/Concepts/calculito",
-    "01_Notes/Lectures/calculito",
-    "Calculito.md",
-    "03_Areas/calculo-5/MOC-calculo-5.md",
-    "03_Areas/calculo-5"
+    "01_Notes/Lectures/calculito"
   ]
 }

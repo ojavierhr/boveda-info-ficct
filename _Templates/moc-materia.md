@@ -11,26 +11,31 @@ QUÉ ES UN MOC:
   la materia en tiempo real: clases, conceptos, proyectos, tareas.
 
   Cuando abrís el MOC de una materia, ves inmediatamente:
-  - Qué clases tomaste y cuáles están sin procesar
-  - Qué conceptos tenés y cuáles son difíciles
-  - Qué proyectos están activos y cuándo vencen
-  - Qué tareas pendientes hay
+
+- Qué clases tomaste y cuáles están sin procesar
+- Qué conceptos tenés y cuáles son difíciles
+- Qué proyectos están activos y cuándo vencen
+- Qué tareas pendientes hay
 ============================================================ %%
 
 ---
+
 tipo: moc
 materia: <% tp.file.title %>
 %% ↑ Templater usa el nombre del archivo como slug de materia.
    Cuando lo usa el script nueva-materia.js esto se llena automáticamente. %%
 tags: [moc]
+
 ---
 
 # 🗺️ MOC — <% tp.file.title %>
+
 > FICCT · UAGRM · Ing. Informática
 
 ---
 
 ## 📚 Clases
+
 %% Esta consulta Dataview busca automáticamente todas las notas de clase
    que tengan materia = al slug de esta nota. Se actualiza sola. %%
 
@@ -44,6 +49,7 @@ SORT fecha DESC
 ---
 
 ## 🧩 Conceptos
+
 %% Muestra todos los conceptos de la materia ordenados por dificultad.
    Los 🔴 alta aparecen primero para que los priorices. %%
 
@@ -78,6 +84,7 @@ SORT fecha-entrega ASC
 ---
 
 ## ✅ Tareas pendientes
+
 %% El plugin Tasks busca tareas (líneas con - [ ]) en toda la carpeta de la materia. %%
 
 ```tasks
@@ -89,13 +96,11 @@ path includes <% tp.file.title %>
 
 ## 📊 Ponderación
 
-| Actividad | % | Nota |
-|---|---|---|
-|  |  |  |
-| **Total** | **100%** | |
+| Actividad | %        | Nota |
+|-----------|----------|------|
+|           |          |      |
+| **Total** | **100%** |      |
 
 ---
 
 ## 📖 Bibliografía
-
-

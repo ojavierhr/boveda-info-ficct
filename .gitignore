@@ -14,21 +14,6 @@ desktop.ini
 *.swp
 *.swo
 
-# ── Notas personales (solo la estructura vacía se comparte) ──────────────────
-# Las carpetas se incluyen, pero los archivos .md dentro de ellas NO
-00_Inbox/Daily/*.md
-01_Notes/Lectures/**/*.md
-01_Notes/Concepts/**/*.md
-02_Projects/*.md
-03_Areas/**/*.md
-05_Reviews/Weekly/*.md
-
-# Las carpetas Resources y Archive se incluyen (vacías), pero no su contenido
-04_Resources/**/*
-06_Archive/**/*
-!04_Resources/.gitkeep
-!06_Archive/.gitkeep
-
 # ── Excepciones: archivos y carpetas que SÍ se comparten ────────────────────
 !Dashboard-Global.md
 !LEEME.md

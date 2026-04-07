@@ -1,0 +1,15 @@
+/* Comentarios %% ... %% en modo edición */
+.cm-comment,
+.HyperMD-codeblock .cm-comment,
+.cm-line .cm-comment {
+  color: #9bba8b !important;  /* Verde suave (como comentarios de código) */
+  font-style: italic !important;
+  font-size: 0.9em !important;
+  background-color: transparent !important;
+}
+
+/* Para vista de lectura (si alguien usa un tema que los muestra) */
+.markdown-preview-view .cm-comment {
+  color: #9bba8b;
+  font-style: italic;
+}

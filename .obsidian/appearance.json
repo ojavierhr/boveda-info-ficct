@@ -2,7 +2,8 @@
   "cssTheme": "Minimal",
   "enabledCssSnippets": [
     "lectura",
-    "mejor-listas"
+    "mejor-listas",
+    "comentarios-visibles"
   ],
   "interfaceFontFamily": "Inter",
   "textFontFamily": "Inter",
