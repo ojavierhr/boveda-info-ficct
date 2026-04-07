@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD041 -->
 %% ============================================================
 PLANTILLA: REVISIÓN SEMANAL
 
@@ -13,6 +14,7 @@ PROPÓSITO:
   Si saltás las revisiones semanales, el sistema se desordena en 2–3 semanas.
 
 QUÉ HACÉS EN LA REVISIÓN:
+
   1. Ver qué hiciste esta semana (10 min)
   2. Procesar clases que quedaron pendientes (20 min)
   3. Completar links entre conceptos del Zettelkasten (10 min)
@@ -21,10 +23,12 @@ QUÉ HACÉS EN LA REVISIÓN:
 ============================================================ %%
 
 ---
+
 tipo: weekly-review
 semana: <% tp.date.now("YYYY-[W]WW") %>
 %% ↑ Ej: 2026-W15. Templater lo genera automáticamente. %%
 tags: [review]
+
 ---
 
 # 🔄 Revisión Semanal — <% tp.date.now("YYYY-[W]WW") %>
@@ -32,14 +36,14 @@ tags: [review]
 ---
 
 ## ✅ ¿Qué completé esta semana?
+
 %% Lista libre. Sirve para darte cuenta de lo que sí lograste,
    que a veces no es obvio cuando uno solo ve lo que falta. %%
-
-
 
 ---
 
 ## 🟡 Clases pendientes de procesar
+
 %% Dataview busca todas las notas de clase que todavía están en 🟡 sin-revisar.
    Si hay muchas → es la prioridad #1 de esta semana. %%
 
@@ -53,14 +57,15 @@ SORT fecha ASC
 ---
 
 ## 🔗 Conexiones Zettelkasten pendientes
-%% Notas atómicas que creaste pero todavía no enlazaste con otras.
-   Una nota sin links es una isla — pierde todo su valor.
-   Revisá tus notas en borrador y agregá al menos 2–3 links por nota. %%
-- 
+
+%% Notas atómicas que creaste pero todavía no enlazaste con otras. Una nota sin links es una isla — pierde todo su valor. Revisá tus notas en borrador y agregá al menos 2–3 links por nota. %%
+
+-
 
 ---
 
 ## 📊 Estado de proyectos activos
+
 %% Revisá fechas de entrega. Si algo vence en menos de 7 días → acción urgente. %%
 
 ```dataview
@@ -73,6 +78,7 @@ SORT fecha-entrega ASC
 ---
 
 ## 🃏 Estado Anki esta semana
+
 %% Revisá las estadísticas en Anki (Estadísticas → Hoy).
    El objetivo es no tener días sin repasar. %%
 
@@ -84,8 +90,8 @@ SORT fecha-entrega ASC
 ---
 
 ## 🎯 Prioridades de la semana siguiente
-%% Máximo 3. Si ponés más, ninguna es realmente prioritaria. %%
-1. 
-2. 
-3. 
 
+%% Máximo 3. Si ponés más, ninguna es realmente prioritaria. %%
+1.
+2.
+3.

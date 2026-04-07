@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD041 MD003 -->
 <%*
 // Script para crear una nueva materia en Obsidian.
 // Se activa a través de una "Template Choice" de QuickAdd.
@@ -40,7 +41,9 @@ tipo: moc
 materia: ${materia}
 semestre: ${semestre}
 tags: [moc]
+
 ---
+
 # 🗺️ MOC — ${nombreMOC}
 
 > Índice maestro.
@@ -108,6 +111,7 @@ tags: [moc, carrera]
 # 🧠 MOC General — Carrera
 
 ## 📚 Materias
+
 ${enlace}
 `;
     await vault.create(mocCarreraPath, carreraContent);

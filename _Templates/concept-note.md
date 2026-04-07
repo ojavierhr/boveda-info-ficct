@@ -48,7 +48,7 @@ tags: [concepto]
 
 ---
 %% ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
-Slug de la materia. Se obtiene automáticamente de la carpeta. No borrar ni renombrar estos campos.
+No borrar ni renombrar estos campos.
 
 Estos campos pueden tener estos valores...
 Dificultad: 🟢 baja | 🟡 media | 🔴 alta
@@ -62,6 +62,7 @@ CUÁNDO USARLA: Cada vez que procesás una clase y encontrás un concepto que me
 DÓNDE GUARDARLA: 01_Notes/Concepts/[slug-materia]/
 
 NOMBRE DE ARCHIVO RECOMENDADO:
+
   nombre-del-concepto (en minúsculas con guiones)
   ej: mrp-material-requirements-planning
 

@@ -3,7 +3,7 @@ tipo: daily
 fecha: <% tp.date.now("YYYY-MM-DD") %>
 tags: [daily]
 ---
-
+<!-- markdownlint-disable MD041 -->
 %% ============================================================
 PLANTILLA: NOTA DIARIA
 

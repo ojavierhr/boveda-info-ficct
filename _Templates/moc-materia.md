@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD041 -->
 %% ============================================================
 PLANTILLA: MOC (Map of Content) — ÍNDICE MAESTRO DE MATERIA
 
