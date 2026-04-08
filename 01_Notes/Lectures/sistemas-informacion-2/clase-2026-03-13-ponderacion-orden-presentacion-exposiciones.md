@@ -4,17 +4,34 @@ materia: sistemas-informacion-2
 semestre: 7
 fecha: 2026-03-13
 docente: Martinez Canedo Rolando Antoni
-estado: 🟡 sin-revisar
+estado: 🟢 procesada
 tags:
   - clase
 ---
-%% ↑↑ El frontmatter son los metadatos de la nota.↑↑
-NO borrar ni renombrar estos campos.
-Dataview los usa para filtrar y mostrar información en el MOC y Dashboard. 
-Estados posibles: 
-	🟡 sin-revisar
-	🟢 procesada cuando completes preguntas + resumen + conceptos
+
+%% ↑↑↑↑↑↑↑↑↑↑↑↑
+No borrar ni renombrar estos campos de arriba. Son meta-datos que se usan para algunas configuraciones no están pensados tanto para la lectura.
+
+Los campos que si se pueden editar son:
+estado: 🟡 sin-revisar, 🟢 procesada (cuando completes preguntas + resumen + conceptos)
 %%
+
+%% ============================================================
+PLANTILLA: NOTA DE CLASE (formato Cornell)
+
+CUÁNDO USARLA: Al inicio de cada clase. Una nota por sesión.
+
+DÓNDE GUARDARLA: 01_Notes/Lectures/[slug-materia]/
+
+NOMBRE DE ARCHIVO GENERADO AUTOMÁTICAMENTE: clase-YYYY-MM-DD-tema-central
+
+FLUJO DE USO:
+
+ 1. Durante la clase → completar solo "Notas de Clase"
+ 2. Post-clase → completar "Preguntas" y "Resumen" SIN mirar las notas
+ 3. Después → crear las notas atómicas marcadas en "Conceptos para procesar"
+ 4. Cambiar estado a 🟢 procesada cuando todo esté hecho
+============================================================ %%
 
 # Clase-2026-03-13 Ponderación de la materia y definición de la forma de presentar las exposiciones
 
@@ -29,6 +46,19 @@ Estados posibles:
 ---
 
 ## 📝 Notas de Clase
+
+%%
+ZONA DE CAPTURA
+
+Durante la clase, escribís aquí todo lo que el docente dice. No te preocupes por la estructura. Capturá todo sin filtrar.
+
+Podés usar::
+
+- Viñetas
+- Código
+- Tablas
+- Lo que sea más rápido.
+%%
 
 ### 📊 Tabla de ponderación
 
@@ -73,6 +103,14 @@ Estados posibles:
 
 ## ❓ Preguntas y Palabras Clave
 
+%%
+ZONA DE ACTIVE RECALL
+
+Completar DESPUÉS de clase, SIN mirar las notas de arriba.
+El objetivo es intentar recordar los conceptos clave por tu cuenta.
+Si no podés responder una pregunta → ahí está tu laguna de conocimiento.
+%%
+
 | Pregunta / Keyword | Respuesta corta |
 |---|---|
 | ¿Cuál es la ponderación del proyecto final? | 30% |
@@ -91,32 +129,63 @@ Estados posibles:
 
 ## 💡 Resumen
 
+%%
+ZONA DE SÍNTESIS
+
+Explicar con tus propias palabras de qué trató la clase. Máximo 5-8 líneas. Sin copiar de las notas de arriba.
+Si no podés resumirlo, todavía no lo entendiste.
+%%
+
 > La materia tiene ponderación: parciales (40%), proyecto (30%), examen final (30%). Los parciales son en parejas, desarrollando sistemas con PUDS y UML. Las exposiciones comienzan el 16/03 y son la primera actividad calificada del proyecto. Se debe investigar: conceptos, 3 aplicaciones (una open source, una comercial, con demostración), 3 casos de estudio reales y una innovación. Todo se presenta con informe impreso (dos carátulas, 3 fuentes) y dos diapositivas.
 
 ---
 
 ## 🔗 Conceptos para procesar en notas atómicas
 
-- [ ] [[puds-proceso-unificado-desarrollo-software]]
-- [ ] [[uml-2-5]]
-- [ ] [[sistemas-gestion-empresarial]]
-- [ ] [[open-source-vs-comercial]]
-- [ ] [[casos-de-estudio-empresas]]
-- [ ] [[innovacion-aplicaciones-empresariales]]
+%%
+Lista de conceptos de esta clase que merecen su propia nota atómica.
+Una vez que creés la nota atómica, marcás el checkbox como hecho [x].
+Cada [[link]] va a crear la nota cuando hagas clic en él.
+%%
+
+- [x] [[puds-proceso-unificado-desarrollo-software]] ✅ 2026-04-07
+- [x] [[uml-2-5]] ✅ 2026-04-07
+- [x] [[sistemas-gestion-empresarial]] ✅ 2026-04-07
+- [x] [[open-source-vs-comercial]] ✅ 2026-04-07
+- [x] [[casos-de-estudio-empresas]] ✅ 2026-04-07
+- [x] [[innovacion-aplicaciones-empresariales]] ✅ 2026-04-07
 
 ---
 
 ## ✅ Tareas de la clase
 
-- [ ] 📅 2026-03-15 Preparar informe impreso sobre MRP (dos carátulas, mínimo 3 fuentes).
-- [ ] 📅 2026-03-15 Preparar dos diapositivas para exposición del Grupo 8 (MRP).
-- [ ] 📅 2026-03-15 Buscar tres aplicaciones de MRP (una open source, una comercial) y preparar demostración.
-- [ ] 📅 2026-03-15 Realizar tres casos de estudio mediante entrevistas a empresas (documentar en informe).
-- [ ] Investigar una innovación para el sistema MRP (competitividad).
+%%
+Anotá aquí las tareas entregables, lecturas, ejercicios o cualquier acción que surja de la clase.
+
+Usá el formato estándar de tareas:
+
+- [ ] Descripción de la tarea
+- [ ] 📅 YYYY-MM-DD Descripción con fecha (opcional)
+
+Estas tareas aparecerán automáticamente en el Dashboard (bloque \`\`\`tasks).
+Si la tarea pertenece a un proyecto grande, mejor anotarla directamente en la nota del proyecto.
+%%
+
+- [x] 📅 2026-03-15 Preparar informe impreso sobre **Gestión documental** (dos carátulas, mínimo 3 fuentes). ✅ 2026-04-07
+- [x] 📅 2026-03-15 Preparar dos diapositivas para exposición del Grupo 5 (Gestión documental). ✅ 2026-04-07
+- [x] 📅 2026-03-15 Buscar tres aplicaciones de **gestión documental** (una open source, una comercial) y preparar demostración. ✅ 2026-04-07
+- [x] 📅 2026-03-15 Realizar tres casos de estudio mediante entrevistas a empresas (documentar en informe). ✅ 2026-04-07
+- [x] Investigar una innovación para el sistema de **gestión documental** (competitividad). ✅ 2026-04-07
 
 ---
 
 ## 🃏 Flashcards → Anki
+
+%%
+Cada bloque START/END se convierte en una tarjeta en Anki.
+Para sincronizar: abrí Anki → en Obsidian Ctrl+P → "Obsidian to Anki: Sync"
+Tipo "Básico" = una pregunta, una respuesta.
+%%
 
 START
 Básico

@@ -1,4 +1,3 @@
-<!-- markdownlint-disable MD041 -->
 <%*
   // 1. Pedir el nombre del concepto (slug)
   let titulo = await tp.system.prompt("Nombre del concepto (ej: mrp-material-requirements-planning)");
@@ -43,16 +42,16 @@ materia: <% slug %>
 semestre: <% semestre %>
 fecha-creacion: <% fecha %>
 dificultad: <% dificultad %>
-estado: 🟡 borrador
+estado: 🔵 borrador
 tags: [concepto]
 
 ---
 %% ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
-No borrar ni renombrar estos campos.
+No borrar ni renombrar estos campos de arriba. Son meta-datos que se usan para algunas configuraciones no están pensados tanto para la lectura.
 
-Estos campos pueden tener estos valores...
+Los campos que si se pueden editar son:
 Dificultad: 🟢 baja | 🟡 media | 🔴 alta
-Estado: 🟡 borrador → 🟢 revisada cuando esté completa
+Estado: 🔵 borrador → 🟢 revisada cuando esté completa
 %%
 %% ============================================================
 PLANTILLA: NOTA ATÓMICA DE CONCEPTO (Zettelkasten + Feynman)
@@ -62,19 +61,18 @@ CUÁNDO USARLA: Cada vez que procesás una clase y encontrás un concepto que me
 DÓNDE GUARDARLA: 01_Notes/Concepts/[slug-materia]/
 
 NOMBRE DE ARCHIVO RECOMENDADO:
-
-  nombre-del-concepto (en minúsculas con guiones)
-  ej: mrp-material-requirements-planning
+ nombre-del-concepto (en minúsculas con guiones)
+ ej: mrp-material-requirements-planning
 
 REGLA FUNDAMENTAL: UNA nota = UNA sola idea. Si la nota toca dos conceptos → partila en dos notas separadas.
 
 FLUJO DE USO (Método Feynman):
 
-  1. Definición simple → como si se lo explicaras a alguien que no sabe nada
-  2. Explicación técnica → la versión precisa y completa
-  3. Ejemplo concreto → preferiblemente del parcial o proyecto actual
-  4. Errores comunes → qué confunde a la gente con este concepto
-  5. Flashcards → completar los bloques START/END y sincronizar con Anki
+ 1. Definición simple → como si se lo explicaras a alguien que no sabe nada
+ 2. Explicación técnica → la versión precisa y completa
+ 3. Ejemplo concreto → preferiblemente del parcial o proyecto actual
+ 4. Errores comunes → qué confunde a la gente con este concepto
+ 5. Flashcards → completar los bloques START/END y sincronizar con Anki
 ============================================================ %%
 
 # <% titulo %>

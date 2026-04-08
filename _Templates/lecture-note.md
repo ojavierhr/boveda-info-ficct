@@ -62,30 +62,27 @@ tags: [clase]
 ---
 
 %% ↑↑↑↑↑↑↑↑↑↑↑↑
-El frontmatter son los metadatos de la nota.↑↑
-NO borrar ni renombrar estos campos.
-Dataview los usa para filtrar y mostrar información en el MOC y Dashboard.
-El campo "materia" es el "Slug" de la materia. Debe coincidir EXACTAMENTE con el nombre de carpeta.
-Estados posibles:
- 🟡 sin-revisar
- 🟢 procesada cuando completes preguntas + resumen + conceptos
+No borrar ni renombrar estos campos de arriba. Son meta-datos que se usan para algunas configuraciones no están pensados tanto para la lectura.
+
+Los campos que si se pueden editar son:
+estado: 🟡 sin-revisar, 🟢 procesada (cuando completes preguntas + resumen + conceptos)
 %%
 
 %% ============================================================
 PLANTILLA: NOTA DE CLASE (formato Cornell)
 
 CUÁNDO USARLA: Al inicio de cada clase. Una nota por sesión.
+
 DÓNDE GUARDARLA: 01_Notes/Lectures/[slug-materia]/
 
-NOMBRE DE ARCHIVO GENERADO AUTOMÁTICAMENTE:
-  clase-YYYY-MM-DD-tema-central
+NOMBRE DE ARCHIVO GENERADO AUTOMÁTICAMENTE: clase-YYYY-MM-DD-tema-central
 
 FLUJO DE USO:
 
-  1. Durante la clase → completar solo "Notas de Clase"
-  2. Post-clase → completar "Preguntas" y "Resumen" SIN mirar las notas
-  3. Después → crear las notas atómicas marcadas en "Conceptos para procesar"
-  4. Cambiar estado a 🟢 procesada cuando todo esté hecho
+ 1. Durante la clase → completar solo "Notas de Clase"
+ 2. Post-clase → completar "Preguntas" y "Resumen" SIN mirar las notas
+ 3. Después → crear las notas atómicas marcadas en "Conceptos para procesar"
+ 4. Cambiar estado a 🟢 procesada cuando todo esté hecho
 ============================================================ %%
 
 # <% titulo %>
@@ -102,17 +99,30 @@ FLUJO DE USO:
 
 ## 📝 Notas de Clase
 
-%% ZONA DE CAPTURA — Durante la clase, escribís aquí todo lo que el docente dice.
-   No te preocupes por la estructura. Capturá todo sin filtrar.
-   Podés usar viñetas, código, tablas, lo que sea más rápido. %%
+%%
+ZONA DE CAPTURA
+
+Durante la clase, escribís aquí todo lo que el docente dice. No te preocupes por la estructura. Capturá todo sin filtrar.
+
+Podés usar::
+
+- Viñetas
+- Código
+- Tablas
+- Lo que sea más rápido.
+%%
 
 ---
 
 ## ❓ Preguntas y Palabras Clave
 
-%% ZONA DE ACTIVE RECALL — Completar DESPUÉS de clase, SIN mirar las notas de arriba.
-   El objetivo es intentar recordar los conceptos clave por tu cuenta.
-   Si no podés responder una pregunta → ahí está tu laguna de conocimiento. %%
+%%
+ZONA DE ACTIVE RECALL
+
+Completar DESPUÉS de clase, SIN mirar las notas de arriba.
+El objetivo es intentar recordar los conceptos clave por tu cuenta.
+Si no podés responder una pregunta → ahí está tu laguna de conocimiento.
+%%
 
 | Pregunta / Keyword | Respuesta corta |
 |--------------------|-----------------|
@@ -124,17 +134,22 @@ FLUJO DE USO:
 
 ## 💡 Resumen
 
-%% ZONA DE SÍNTESIS — Explicar con tus propias palabras de qué trató la clase.
-   Máximo 5-8 líneas. Sin copiar de las notas de arriba.
-   Si no podés resumirlo, todavía no lo entendiste. %%
+%%
+ZONA DE SÍNTESIS
+
+Explicar con tus propias palabras de qué trató la clase. Máximo 5-8 líneas. Sin copiar de las notas de arriba.
+Si no podés resumirlo, todavía no lo entendiste.
+%%
 
 ---
 
 ## 🔗 Conceptos para procesar en notas atómicas
 
-%% Lista de conceptos de esta clase que merecen su propia nota atómica.
-   Una vez que creés la nota atómica, marcás el checkbox como hecho [x].
-   Cada [[link]] va a crear la nota cuando hagas clic en él. %%
+%%
+Lista de conceptos de esta clase que merecen su propia nota atómica.
+Una vez que creés la nota atómica, marcás el checkbox como hecho [x].
+Cada [[link]] va a crear la nota cuando hagas clic en él.
+%%
 
 - [ ] [[]]
 - [ ] [[]]
@@ -143,12 +158,17 @@ FLUJO DE USO:
 
 ## ✅ Tareas de la clase
 
-%% Anotá aquí las tareas entregables, lecturas, ejercicios o cualquier acción que surja de la clase.
-   Usá el formato estándar de tareas:
-     - [ ] Descripción de la tarea
-     - [ ] 📅 YYYY-MM-DD Descripción con fecha (opcional)
-   Estas tareas aparecerán automáticamente en el Dashboard (bloque \`\`\`tasks).
-   Si la tarea pertenece a un proyecto grande, mejor anotarla directamente en la nota del proyecto. %%
+%%
+Anotá aquí las tareas entregables, lecturas, ejercicios o cualquier acción que surja de la clase.
+
+Usá el formato estándar de tareas:
+
+- [ ] Descripción de la tarea
+- [ ] 📅 YYYY-MM-DD Descripción con fecha (opcional)
+
+Estas tareas aparecerán automáticamente en el Dashboard (bloque \`\`\`tasks).
+Si la tarea pertenece a un proyecto grande, mejor anotarla directamente en la nota del proyecto.
+%%
 
 - [ ]
 
@@ -156,9 +176,11 @@ FLUJO DE USO:
 
 ## 🃏 Flashcards → Anki
 
-%% Cada bloque START/END se convierte en una tarjeta en Anki.
-   Para sincronizar: abrí Anki → en Obsidian Ctrl+P → "Obsidian to Anki: Sync"
-   Tipo "Básico" = una pregunta, una respuesta. %%
+%%
+Cada bloque START/END se convierte en una tarjeta en Anki.
+Para sincronizar: abrí Anki → en Obsidian Ctrl+P → "Obsidian to Anki: Sync"
+Tipo "Básico" = una pregunta, una respuesta.
+%%
 
 START
 Básico

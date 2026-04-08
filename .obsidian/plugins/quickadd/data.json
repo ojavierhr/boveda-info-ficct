@@ -38,6 +38,26 @@
           }
         ]
       }
+    },
+    {
+      "id": "dad5556a-8310-4f64-8516-17746ba9b717",
+      "name": "Nuevo Proyecto Grande",
+      "type": "Macro",
+      "command": true,
+      "runOnStartup": false,
+      "macro": {
+        "name": "Nuevo Proyecto Grande",
+        "id": "fad4fd42-6650-4683-9fd7-88c6b9566bd5",
+        "commands": [
+          {
+            "name": "nuevo-proyecto-grande",
+            "type": "UserScript",
+            "id": "27582bfc-8aa5-481b-b89f-45cd5b037f31",
+            "path": "_scripts/nuevo-proyecto-grande.js",
+            "settings": {}
+          }
+        ]
+      }
     }
   ],
   "inputPrompt": "single-line",

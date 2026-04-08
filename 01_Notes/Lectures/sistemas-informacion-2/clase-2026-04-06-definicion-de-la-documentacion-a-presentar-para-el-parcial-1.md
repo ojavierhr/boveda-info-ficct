@@ -1,16 +1,41 @@
 ---
 tipo: clase
 materia: sistemas-informacion-2
-semestre: "7"
+semestre: 7
 fecha: 2026-04-06
 docente: Martinez Canedo Rolando Antoni
-estado: 🟡 sin-revisar
+estado: 🟢 procesada
 tags:
   - clase
   - parcial1
+  - documentacion
 ---
 
-# clase-2026-04-06 Definición de las partes del documento para el parcial 1
+%% ↑↑↑↑↑↑↑↑↑↑↑↑
+No borrar ni renombrar estos campos de arriba. Son meta-datos que se usan para algunas configuraciones no están pensados tanto para la lectura.
+
+Los campos que si se pueden editar son:
+estado: 🟡 sin-revisar, 🟢 procesada (cuando completes preguntas + resumen + conceptos)
+%%
+
+%% ============================================================
+PLANTILLA: NOTA DE CLASE (formato Cornell)
+
+CUÁNDO USARLA: Al inicio de cada clase. Una nota por sesión.
+
+DÓNDE GUARDARLA: 01_Notes/Lectures/[slug-materia]/
+
+NOMBRE DE ARCHIVO GENERADO AUTOMÁTICAMENTE: clase-YYYY-MM-DD-tema-central
+
+FLUJO DE USO:
+
+ 1. Durante la clase → completar solo "Notas de Clase"
+ 2. Post-clase → completar "Preguntas" y "Resumen" SIN mirar las notas
+ 3. Después → crear las notas atómicas marcadas en "Conceptos para procesar"
+ 4. Cambiar estado a 🟢 procesada cuando todo esté hecho
+============================================================ %%
+
+# Clase-2026-04-06 Definición de las partes del documento para el parcial 1
 
 ## 📋 Información
 - **Materia:** `=this.materia`
@@ -22,6 +47,19 @@ tags:
 ---
 
 ## 📝 Notas de Clase
+
+%%
+ZONA DE CAPTURA
+
+Durante la clase, escribís aquí todo lo que el docente dice. No te preocupes por la estructura. Capturá todo sin filtrar.
+
+Podés usar::
+
+- Viñetas
+- Código
+- Tablas
+- Lo que sea más rápido.
+%%
 
 ### Formato de presentación
 - La documentación debe estar **avalada por referencias** bibliográficas y se debe traer (física o virtualmente) el día de la presentación.
@@ -51,7 +89,7 @@ Debe cubrir todas las tecnologías y conceptos que sustentan el proyecto:
 - **Despliegue de aplicaciones**: descripción del servicio (ej. AWS, Google Cloud) y estructura de precios.
 
 #### 2. Proceso de desarrollo de software
-- Explicar **cómo se aplicó** el proceso de desarrollo al proyecto (metodología, sprints, herramientas de gestión, control de versiones).
+- Explicar **cómo se aplicó** el proceso de desarrollo al proyecto (metodología, iteraciones, herramientas de gestión, control de versiones).
 
 #### 3. Guías de uso
 - Manuales o tutoriales (escritos, en video, etc.) para enseñar al cliente a usar el sistema.
@@ -69,6 +107,14 @@ Debe cubrir todas las tecnologías y conceptos que sustentan el proyecto:
 
 ## ❓ Preguntas y Palabras Clave (Active Recall)
 
+%%
+ZONA DE ACTIVE RECALL
+
+Completar DESPUÉS de clase, SIN mirar las notas de arriba.
+El objetivo es intentar recordar los conceptos clave por tu cuenta.
+Si no podés responder una pregunta → ahí está tu laguna de conocimiento.
+%%
+
 | Pregunta / Keyword | Respuesta corta |
 |---|---|
 | ¿Qué partes debe contener el documento del parcial? | Fundamento teórico, proceso de desarrollo, guías de uso. |
@@ -83,23 +129,48 @@ Debe cubrir todas las tecnologías y conceptos que sustentan el proyecto:
 
 ## 💡 Resumen
 
+%%
+ZONA DE SÍNTESIS
+
+Explicar con tus propias palabras de qué trató la clase. Máximo 5-8 líneas. Sin copiar de las notas de arriba.
+Si no podés resumirlo, todavía no lo entendiste.
+%%
+
 > El docente definió la estructura del documento para el parcial 1: **fundamento teórico** (cubriendo web, móvil, backend, IA, PUDS, UML, despliegue), **proceso de desarrollo** (cómo se aplicó la metodología) y **guías de uso**. La presentación será el **28 de abril**: por la mañana se entrega el documento (solo dos carátulas impresas) y por la tarde se demuestra el software funcionando. Es obligatorio traer referencias bibliográficas. También se debe entregar el alcance del otro proyecto, aunque aún no se revisará.
 
 ---
 
 ## 🔗 Conceptos para procesar en notas atómicas
 
-- [ ] [[desarrollo-web-caracteristicas]]
-- [ ] [[fastapi-python-backend]]
-- [ ] [[ia-reconocimiento-imagenes]]
-- [ ] [[ia-reconocimiento-audio]]
-- [ ] [[ia-modelos-supervisados-no-supervisados]]
-- [ ] [[despliegue-aplicaciones-nube]]
-- [ ] [[guias-uso-software]]
+%%
+Lista de conceptos de esta clase que merecen su propia nota atómica.
+Una vez que creés la nota atómica, marcás el checkbox como hecho [x].
+Cada [[link]] va a crear la nota cuando hagas clic en él.
+%%
+
+- [x] [[desarrollo-web-caracteristicas]] ✅ 2026-04-07
+- [x] [[fastapi-python-backend]] ✅ 2026-04-07
+- [x] [[ia-reconocimiento-imagenes]] ✅ 2026-04-07
+- [x] [[ia-reconocimiento-audio]] ✅ 2026-04-07
+- [x] [[ia-modelos-supervisados-no-supervisados]] ✅ 2026-04-07
+- [x] [[despliegue-aplicaciones-nube]] ✅ 2026-04-07
+- [x] [[guias-uso-software]] ✅ 2026-04-07
 
 ---
 
 ## ✅ Tareas de la clase
+
+%%
+Anotá aquí las tareas entregables, lecturas, ejercicios o cualquier acción que surja de la clase.
+
+Usá el formato estándar de tareas:
+
+- [ ] Descripción de la tarea
+- [ ] 📅 YYYY-MM-DD Descripción con fecha (opcional)
+
+Estas tareas aparecerán automáticamente en el Dashboard (bloque \`\`\`tasks).
+Si la tarea pertenece a un proyecto grande, mejor anotarla directamente en la nota del proyecto.
+%%
 
 - [ ] 📅 2026-04-08 Redactar la parte de fundamentos teóricos y los títulos generales del documento.
 - [ ] Investigar referencias bibliográficas para cada tecnología listada.
@@ -109,6 +180,12 @@ Debe cubrir todas las tecnologías y conceptos que sustentan el proyecto:
 ---
 
 ## 🃏 Flashcards → Anki
+
+%%
+Cada bloque START/END se convierte en una tarjeta en Anki.
+Para sincronizar: abrí Anki → en Obsidian Ctrl+P → "Obsidian to Anki: Sync"
+Tipo "Básico" = una pregunta, una respuesta.
+%%
 
 START
 Básico

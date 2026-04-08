@@ -2,8 +2,7 @@
 
 # 🎓 Obsidian Student Vault
 
-**Sistema de estudio y gestión académica para Obsidian**  
-Diseñado para estudiantes universitarios de Ingeniería Informática
+**Sistema de estudio y gestión académica para Obsidian** diseñado para estudiantes universitarios de Ingeniería
 
 [![Obsidian](https://img.shields.io/badge/Obsidian-483699?style=for-the-badge&logo=obsidian&logoColor=white)](https://obsidian.md)
 [![Anki](https://img.shields.io/badge/Anki-0091EA?style=for-the-badge&logo=anki&logoColor=white)](https://apps.ankiweb.net)
@@ -31,9 +30,10 @@ cada clase en un ciclo activo de captura → procesamiento → memoria → repas
 - 📝 **Apuntes en formato Cornell** — estructura que fuerza el active recall post-clase
 - 🧩 **Notas atómicas (Zettelkasten)** — una idea por nota, interconectadas con `[[links]]`
 - 🃏 **Flashcards integradas con Anki** — los bloques `START/END` se sincronizan directo a Anki
-- 🚀 **Gestión de proyectos con Kanban** — tableros visuales dentro de cada nota de proyecto
+- 🚀 **Gestión de proyectos con Kanban** — tableros visuales dentro de cada nota de proyecto (para proyectos chicos)
+- 🏗️ **Proyectos grandes** — estructura de carpetas por proyecto, tareas atómicas, tablero Kanban independiente (archivo `.kanban.md`), dashboard automático con Dataview y validación de fechas
 - 📊 **Dashboard automático con Dataview** — consultas que muestran todo en tiempo real
-- ⚡ **Automatización** — comando para crear una nueva materia completa con un atajo de teclado
+- ⚡ **Automatización** — comandos para crear una nueva materia o un proyecto grande con un atajo de teclado
 - 📖 **Documentación interna** — cada plantilla tiene comentarios explicativos invisibles en lectura
 - 🗺️ **MOC por materia** — índice maestro que conecta clases, conceptos y proyectos
 
@@ -56,30 +56,40 @@ cada clase en un ciclo activo de captura → procesamiento → memoria → repas
 ```text
 obsidian-student-vault/
 │
-├── 00_Inbox/ # Captura rápida sin procesar
-│ └── Daily/ # Notas diarias automáticas
+├── 00_Inbox/                # Captura rápida sin procesar
+│   └── Daily/               # Notas diarias automáticas
 ├── 01_Notes/
-│ ├── Lectures/ # Apuntes de clase (formato Cornell)
-│ └── Concepts/ # Notas atómicas (una idea = un archivo)
-├── 02_Projects/ # Proyectos, parciales y prácticos
-├── 03_Areas/ # MOC (índice maestro) por materia
-├── 04_Resources/ # PDFs, bibliografía, recursos externos
+│   ├── Lectures/            # Apuntes de clase (formato Cornell)
+│   └── Concepts/            # Notas atómicas (una idea = un archivo)
+├── 02_Projects/             # Proyectos, parciales y prácticos
+│   ├── proyecto-chico.md    # Proyecto simple (una nota)
+│   └── nombre-proyecto-grande/   # Carpeta con estructura interna
+│       ├── _proyecto.md
+│       ├── _tablero.kanban.md
+│       ├── tareas/
+│       ├── recursos/
+│       └── reuniones/
+├── 03_Areas/                # MOC (índice maestro) por materia
+├── 04_Resources/            # PDFs, bibliografía, recursos externos
 ├── 05_Reviews/
-│ └── Weekly/ # Revisiones semanales
-├── 06_Archive/ # Contenido inactivo o terminado
+│   └── Weekly/              # Revisiones semanales
+├── 06_Archive/              # Contenido inactivo o terminado
 │
-├── _Templates/ # Todas las plantillas
-│ ├── lecture-note.md # Apunte de clase (Cornell)
-│ ├── concept-note.md # Nota atómica (Zettelkasten + Feynman)
-│ ├── project-note.md # Proyecto con Kanban integrado
-│ ├── moc-materia.md # Índice maestro de materia
-│ ├── daily-note.md # Nota diaria
-│ ├── weekly-review.md # Revisión semanal
-│ └── scripts/
-│ └── nueva-materia.js # Automatización QuickAdd
+├── _Templates/              # Todas las plantillas
+│   ├── lecture-note.md
+│   ├── concept-note.md
+│   ├── project-note.md      # Para proyectos simples
+│   ├── tarea-proyecto.md    # Para tareas de proyectos grandes
+│   ├── moc-materia.md
+│   ├── daily-note.md
+│   └── weekly-review.md
 │
-├── Dashboard-Global.md # Panel central con consultas Dataview
-└── LEEME.md # Guía de uso completa (en español)
+├── scripts/
+│   ├── nueva-materia.js
+│   └── nuevo-proyecto-grande.js
+│
+├── Dashboard-Global.md      # Panel central con consultas Dataview
+└── LEEME.md                 # Guía de uso completa (en español)
 ```
 
 ---
@@ -88,17 +98,19 @@ obsidian-student-vault/
 
 ### Requisitos previos
 
-- [Obsidian](https://obsidian.md) v1.4 o superior
-- [Anki](https://apps.ankiweb.net) con el plugin [AnkiConnect](https://ankiweb.net/shared/info/2055492159) (código: `2055492159`)
+- [Obsidian](https://obsidian.md/) v1.4 o superior
+    
+- [Anki](https://apps.ankiweb.net/) con el plugin [AnkiConnect](https://ankiweb.net/shared/info/2055492159) (código: `2055492159`)
+    
 
 ### Paso 1 — Usar este template
 
-Hacé clic en **"Use this template"** → **"Create a new repository"** en GitHub.  
+Hacé clic en **"Use this template"** → **"Create a new repository"** en GitHub.  
 Luego clonalo en tu máquina:
 
-```bash
+bash
+
 git clone https://github.com/TU-USUARIO/TU-REPO.git
-```
 
 O descargá el ZIP desde GitHub → Code → Download ZIP.
 
@@ -116,9 +128,9 @@ Los plugins ya están descargados dentro de `.obsidian/plugins/`. Solo hay que 
 |---|---|
 |**Templater**|Plantillas dinámicas con variables|
 |**Dataview**|Consultas automáticas en el Dashboard y MOC|
-|**QuickAdd**|Automatización para crear materias|
+|**QuickAdd**|Automatización para crear materias y proyectos grandes|
 |**Tasks**|Gestión de tareas con fechas|
-|**Obsidian Kanban**|Tableros visuales en proyectos|
+|**Obsidian Kanban**|Tableros visuales en proyectos (archivos `.kanban.md`)|
 |**Calendar**|Vista de calendario lateral|
 |**Periodic Notes**|Notas diarias y semanales automáticas|
 |**Obsidian to Anki**|Sincronización de flashcards con Anki|
@@ -130,7 +142,9 @@ Los plugins ya están descargados dentro de `.obsidian/plugins/`. Solo hay que 
 
 ### Listo! Ya puedes usarlo
 
-Usalo para aprender todo lo que quieras, espero que sea util.
+Usalo para aprender todo lo que quieras, espero que sea útil.
+
+---
 
 ## 📋 Flujo de trabajo
 
@@ -160,24 +174,22 @@ Abrís Anki cada mañana y repasás las tarjetas del día. El algoritmo SM-2 dec
 
 ### 6. Revisión semanal (sábado, 1 hora)
 
-La nota `weekly-review` se genera automáticamente. Las consultas Dataview muestran qué clases quedaron sin procesar y el estado de los proyectos.
+La nota `weekly-review` se genera automáticamente. Las consultas Dataview muestran qué clases quedaron sin procesar y el estado de los proyectos (incluyendo los grandes).
 
 ---
 
-## ⌨️ Atajos de teclado (personalizar en los atajos de obsidian de ser necesario)
+## ⌨️ Atajos de teclado (personalizar en los atajos de Obsidian de ser necesario)
 
 |Acción|Atajo|
 |---|---|
 |Paleta de comandos|`Ctrl+P`|
 |Crear nueva materia (personalizado)|`Ctrl+Alt+M`|
-|Crear nueva materia|`Ctrl+P` → QuickAdd: Nueva Materia|
+|Crear nuevo proyecto grande (personalizado)|`Ctrl+Alt+G`|
 |Sincronizar con Anki (personalizado)|`Ctrl+Alt+A`|
-|Sincronizar con Anki|`Ctrl+P` → Obsidian to Anki: Sync|
 |Insertar plantilla|`Alt+N`|
-|Insertar plantilla|`Ctrl+P` → Templater: Create new note from template|
 |Abrir nota diaria|Plugin Calendar (panel lateral)|
 
-> *Los atajos "personalizados", podrian necesitar asignarse manualmente en los atajos de obsidian.
+> _Los atajos "personalizados" pueden necesitar asignarse manualmente en Configuración → Atajos de teclado._
 
 ---
 
@@ -202,7 +214,7 @@ END
 ## 📖 Documentación
 
 La guía completa de uso (en español) está en [`LEEME.md`](https://leeme.md/) dentro de la bóveda.  
-Cubre: estructura de carpetas, atajos, flujo completo, estados de notas, solución a problemas comunes.
+Cubre: estructura de carpetas, atajos, flujo completo, estados de notas, solución a problemas comunes, y **gestión de proyectos grandes con Kanban independiente**.
 
 ---
 
@@ -233,6 +245,7 @@ Las contribuciones son bienvenidas. Si encontrás un bug o tenés una mejora:
     
 5. Abrí un Pull Request
     
+
 ---
 
 ## 📄 Licencia
@@ -245,4 +258,4 @@ Distribuido bajo la licencia MIT. Ver [`LICENSE`](https://license/) para más 
 
 Hecho con ❤️ para estudiantes de Ingeniería
 
-</div>
+</div> 

@@ -4,12 +4,36 @@ materia: sistemas-informacion-2
 semestre: 7
 fecha: 2026-04-01
 docente: Martinez Canedo Rolando Antoni
-estado: 🟡 sin-revisar
+estado: 🟢 procesada
 tags:
   - clase
   - proyecto
   - auxilio-mecanico
 ---
+
+%% ↑↑↑↑↑↑↑↑↑↑↑↑
+No borrar ni renombrar estos campos de arriba. Son meta-datos que se usan para algunas configuraciones no están pensados tanto para la lectura.
+
+Los campos que si se pueden editar son:
+estado: 🟡 sin-revisar, 🟢 procesada (cuando completes preguntas + resumen + conceptos)
+%%
+
+%% ============================================================
+PLANTILLA: NOTA DE CLASE (formato Cornell)
+
+CUÁNDO USARLA: Al inicio de cada clase. Una nota por sesión.
+
+DÓNDE GUARDARLA: 01_Notes/Lectures/[slug-materia]/
+
+NOMBRE DE ARCHIVO GENERADO AUTOMÁTICAMENTE: clase-YYYY-MM-DD-tema-central
+
+FLUJO DE USO:
+
+ 1. Durante la clase → completar solo "Notas de Clase"
+ 2. Post-clase → completar "Preguntas" y "Resumen" SIN mirar las notas
+ 3. Después → crear las notas atómicas marcadas en "Conceptos para procesar"
+ 4. Cambiar estado a 🟢 procesada cuando todo esté hecho
+============================================================ %%
 
 # Clase-2026-04-01 Especificación del parcial 1 sistema de auxilio automóvil
 
@@ -23,6 +47,19 @@ tags:
 ---
 
 ## 📝 Notas de Clase
+
+%%
+ZONA DE CAPTURA
+
+Durante la clase, escribís aquí todo lo que el docente dice. No te preocupes por la estructura. Capturá todo sin filtrar.
+
+Podés usar::
+
+- Viñetas
+- Código
+- Tablas
+- Lo que sea más rápido.
+%%
 
 ### Problema central
 %%> ? ¿Cuál es el problema central? %%
@@ -188,6 +225,14 @@ Si el tiempo lo permite, integrar servicios para compañías de seguros (validac
 
 ## ❓ Preguntas y Palabras Clave (Active Recall)
 
+%%
+ZONA DE ACTIVE RECALL
+
+Completar DESPUÉS de clase, SIN mirar las notas de arriba.
+El objetivo es intentar recordar los conceptos clave por tu cuenta.
+Si no podés responder una pregunta → ahí está tu laguna de conocimiento.
+%%
+
 | Pregunta / Keyword | Respuesta corta |
 |---|---|
 | ¿Cuál es el problema central que resuelve el sistema? | Conductores varados sin ayuda rápida; talleres sin plataforma organizada. |
@@ -208,27 +253,52 @@ Si el tiempo lo permite, integrar servicios para compañías de seguros (validac
 
 ## 💡 Resumen
 
+%%
+ZONA DE SÍNTESIS
+
+Explicar con tus propias palabras de qué trató la clase. Máximo 5-8 líneas. Sin copiar de las notas de arriba.
+Si no podés resumirlo, todavía no lo entendiste.
+%%
+
 > El parcial consiste en desarrollar un sistema inteligente de auxilio mecánico que conecta conductores con talleres. El cliente reporta emergencias con ubicación, audio, fotos y texto; una IA clasifica el incidente y asigna el taller más adecuado según distancia, disponibilidad, costos y reputación. El taller recibe notificación push; si acepta, se coordina el servicio. Incluye pasarela de pagos, doble calificación, reportes y despliegue en la nube. El plazo es de 4 semanas (hasta el 03/05). El stack es Flutter, Angular, FastAPI, PostgreSQL. Se debe entregar un MVP con funcionalidades claras, y hay una lista extensa de preguntas para afinar la especificación.
 
 ---
 
 ## 🔗 Conceptos para procesar en notas atómicas
 
-- [ ] [[sistema-auxilio-mecanico-flujo]]
-- [ ] [[ia-clasificacion-incidentes]]
-- [ ] [[motor-asignacion-talleres]]
-- [ ] [[notificaciones-push-firebase]]
-- [ ] [[pasarela-pagos-integracion]]
-- [ ] [[doble-calificacion-sistemas]]
-- [ ] [[reportes-eficientes-sistemas]]
-- [ ] [[stack-flutter-angular-fastapi]]
-- [ ] [[despliegue-aws-ec2-rds-s3]]
-- [ ] [[seguridad-roles-jwt]]
-- [ ] [[extension-seguros]]
+%%
+Lista de conceptos de esta clase que merecen su propia nota atómica.
+Una vez que creés la nota atómica, marcás el checkbox como hecho [x].
+Cada [[link]] va a crear la nota cuando hagas clic en él.
+%%
+
+- [x] [[sistema-auxilio-mecanico-flujo]] ✅ 2026-04-07
+- [x] [[ia-clasificacion-incidentes]] ✅ 2026-04-07
+- [x] [[motor-asignacion-talleres]] ✅ 2026-04-07
+- [x] [[notificaciones-push-firebase]] ✅ 2026-04-07
+- [x] [[pasarela-pagos-integracion]] ✅ 2026-04-07
+- [x] [[doble-calificacion-sistemas]] ✅ 2026-04-07
+- [x] [[reportes-eficientes-sistemas]] ✅ 2026-04-07
+- [x] [[stack-flutter-angular-fastapi]] ✅ 2026-04-07
+- [x] [[despliegue-google-cloud]] ✅ 2026-04-07
+- [x] [[seguridad-roles-jwt]] ✅ 2026-04-07
+- [x] [[extension-seguros]] ✅ 2026-04-07
 
 ---
 
 ## ✅ Tareas de la clase
+
+%%
+Anotá aquí las tareas entregables, lecturas, ejercicios o cualquier acción que surja de la clase.
+
+Usá el formato estándar de tareas:
+
+- [ ] Descripción de la tarea
+- [ ] 📅 YYYY-MM-DD Descripción con fecha (opcional)
+
+Estas tareas aparecerán automáticamente en el Dashboard (bloque \`\`\`tasks).
+Si la tarea pertenece a un proyecto grande, mejor anotarla directamente en la nota del proyecto.
+%%
 
 - [ ] 📅 2026-05-03 Completar el desarrollo del sistema de auxilio mecánico (MVP).
 - [ ] Responder las 39 preguntas de especificación para aclarar requisitos.
@@ -245,6 +315,12 @@ Si el tiempo lo permite, integrar servicios para compañías de seguros (validac
 ---
 
 ## 🃏 Flashcards → Anki
+
+%%
+Cada bloque START/END se convierte en una tarjeta en Anki.
+Para sincronizar: abrí Anki → en Obsidian Ctrl+P → "Obsidian to Anki: Sync"
+Tipo "Básico" = una pregunta, una respuesta.
+%%
 
 START
 Básico
