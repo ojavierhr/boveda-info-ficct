@@ -35,13 +35,41 @@
       "key": "M"
     }
   ],
-  "obsidian-to-anki-plugin:anki-scan-vault": [
+  "obsidian-excalidraw-plugin:save": [],
+  "quickadd:choice:2198ed3d-85b3-4b91-8acc-8ceffc5cd761": [
     {
       "modifiers": [
         "Alt",
         "Mod"
       ],
-      "key": "A"
+      "key": "M"
+    }
+  ],
+  "quickadd:choice:cd1c7c0a-3cde-4afe-a0a1-5705617df8c5": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod"
+      ],
+      "key": "G"
+    }
+  ],
+  "quickadd:choice:3a70550e-78ff-436c-aa08-1340cc7b82be": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod"
+      ],
+      "key": "Backspace"
+    }
+  ],
+  "templater-obsidian:create-new-note-from-template": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod"
+      ],
+      "key": "N"
     }
   ]
 }

@@ -24,24 +24,23 @@
 
 .cm-cornell-margin {
     /* 1. EL NUEVO MOTOR DE APILAMIENTO (Reemplaza a position: absolute) */
-    position: relative !important;
-    display: block !important;
-    float: var(--cornell-float) !important;
-    clear: var(--cornell-float) !important;
+    position: relative ;
+    display: block ;
+    float: var(--cornell-float) ;
+    clear: var(--cornell-float) ;
     
-    width: var(--cornell-width) !important;
-    margin-left: var(--cornell-margin-left) !important;
-    margin-right: var(--cornell-margin-right) !important;
+    width: var(--cornell-width) ;
+    margin-left: var(--cornell-margin-left) ;
+    margin-right: var(--cornell-margin-right) ;
     
     /* Espaciado para que no se peguen cuando hay varias */
-    margin-top: 4px !important;
-    margin-bottom: 12px !important;
+    margin-top: 4px ;
+    margin-bottom: 12px ;
     
     /* 2. TU ESTÉTICA ORIGINAL (Intacta) */
     background-color: var(--cornell-bg);
     border-left: var(--cornell-border-l);
     border-right: var(--cornell-border-r);
-    
     font-size: var(--cornell-font-size); 
     font-family: var(--cornell-font-family);
     
@@ -60,13 +59,9 @@
 
 /* 3. TUS REGLAS PARA HIJOS Y ENLACES (Intactas) */
 .cm-cornell-margin * { pointer-events: auto; }
-.cm-cornell-margin p { margin: 0 !important; display: inline; }
+.cm-cornell-margin p { margin: 0 ; display: inline; }
 .cm-cornell-margin a { color: inherit; text-decoration: underline; }
 
-/* Forzar que el contenido herede el color del borde/contenedor */
-.cm-cornell-margin * {
-    color: inherit !important;
-}
 
 /* ======================================================
    🔄 LÓGICA PARA LA FLECHA INVERSA (%%<)
@@ -75,22 +70,22 @@
 /* 🛡️ BLINDAJE: :not(.reading-mode-margin) evita que el CSS empuje
    la nota al doble en Modo Lectura. El JS ya se encarga de eso. */
 .cm-cornell-margin.cornell-reverse-align:not(.reading-mode-margin) {
-    float: var(--cornell-float-rev) !important;
-    clear: var(--cornell-float-rev) !important;
-    margin-left: var(--cornell-margin-left-rev) !important;
-    margin-right: var(--cornell-margin-right-rev) !important;
+    float: var(--cornell-float-rev) ;
+    clear: var(--cornell-float-rev) ;
+    margin-left: var(--cornell-margin-left-rev) ;
+    margin-right: var(--cornell-margin-right-rev) ;
 }
 
 body[style*="--cornell-float: right"] .cm-cornell-margin.cornell-reverse-align {
-    text-align: right !important;
-    border-right: 2px solid var(--text-accent) !important;
-    border-left: none !important;
+    text-align: right ;
+    border-right: 2px solid var(--text-accent) ;
+    border-left: none ;
 }
 
 body[style*="--cornell-float: left"] .cm-cornell-margin.cornell-reverse-align {
-    text-align: left !important;
-    border-left: 2px solid var(--text-accent) !important;
-    border-right: none !important;
+    text-align: left ;
+    border-left: 2px solid var(--text-accent) ;
+    border-right: none ;
 }
 
 
@@ -99,11 +94,11 @@ body[style*="--cornell-float: left"] .cm-cornell-margin.cornell-reverse-align {
 /* Si la pantalla es pequeña (celular/tablet vertical) */
 @media (max-width: 768px) {
     .cm-cornell-margin {
-        position: relative !important; /* Ya no es absoluto */
-        width: 100% !important;        /* Ocupa todo el ancho */
-        left: auto !important;
-        right: auto !important;
-        top: auto !important;
+        position: relative; /* Ya no es absoluto */
+        width: 100%;        /* Ocupa todo el ancho */
+        left: auto;
+        right: auto;
+        top: auto;
         
         /* Lo convertimos en un bloque debajo del texto */
         display: block;
@@ -112,13 +107,13 @@ body[style*="--cornell-float: left"] .cm-cornell-margin.cornell-reverse-align {
         
         /* CORRECCIÓN: Usamos 'currentColor' para que el borde herede 
            el color de la nota (amarillo, rojo, etc.) y no el del tema */
-        border-left: 4px solid currentColor !important; 
-        border-right: none !important;
+        border-left: 4px solid currentColor; 
+        border-right: none;
         
         background-color: var(--background-secondary);
         border-radius: 4px;
         padding: 8px 12px;
-        text-align: left !important;
+        text-align: left;
         
         pointer-events: auto;
     }
@@ -130,12 +125,12 @@ body[style*="--cornell-float: left"] .cm-cornell-margin.cornell-reverse-align {
 
 /* 1. El Contenedor Maestro (Envuelve texto + notas) */
 .cornell-reading-container {
-    position: relative !important; 
+    position: relative; 
     width: 100%;
     min-height: 30px; 
     margin-bottom: 1em; 
     clear: both; 
-    overflow: visible !important; /* Vital para que la nota no se corte */
+    overflow: visible; /* Vital para que la nota no se corte */
 }
 
 /* 🚨 SE ELIMINÓ EL OVERFLOW AGRESIVO PARA DEVOLVER EL SCROLL A OBSIDIAN 🚨 */
@@ -147,20 +142,20 @@ body[style*="--cornell-float: left"] .cm-cornell-margin.cornell-reverse-align {
 
 /* 3. La Marginalia en Modo Lectura (Corregida) */
 .reading-mode-margin {
-    position: relative !important; 
-    width: 100% !important; /* Llena su columna, no el documento */
+    position: relative ; 
+    width: 100% ; /* Llena su columna, no el documento */
     
     /* 🚨 MATAR EL DOBLE MARGEN: El JS ya movió la columna, la nota debe quedarse en 0 */
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
+    margin-left: 0 ;
+    margin-right: 0 ;
+    left: 0 ;
+    right: 0 ;
     
-    font-size: var(--cornell-font-size) !important;
-    font-family: var(--cornell-font-family) !important;
-    text-align: var(--cornell-text-align) !important;
-    border-right: var(--cornell-border-r) !important;
-    border-left: var(--cornell-border-l) !important;
+    font-size: var(--cornell-font-size) ;
+    font-family: var(--cornell-font-family) ;
+    text-align: var(--cornell-text-align) ;
+    border-right: var(--cornell-border-r) ;
+    border-left: var(--cornell-border-l) ;
 
     padding: 5px 10px;
     background-color: var(--cornell-bg);
@@ -173,15 +168,15 @@ body[style*="--cornell-float: left"] .cm-cornell-margin.cornell-reverse-align {
 /* 4. Marginalia Inversa (%%<) en Modo Lectura */
 /* El JS ya pone la columna en la derecha, así que el CSS solo cambia el borde y el texto */
 body[style*="--cornell-float: left"] .reading-mode-margin.cornell-reverse-align {
-    text-align: left !important;
-    border-left: 2px solid var(--text-accent) !important;
-    border-right: none !important;
+    text-align: left ;
+    border-left: 2px solid var(--text-accent) ;
+    border-right: none ;
 }
 
 body[style*="--cornell-float: right"] .reading-mode-margin.cornell-reverse-align {
-    text-align: right !important;
-    border-right: 2px solid var(--text-accent) !important;
-    border-left: none !important;
+    text-align: right ;
+    border-right: 2px solid var(--text-accent) ;
+    border-left: none ;
 }
 
 /* ======================================================
@@ -195,8 +190,8 @@ body.cornell-active-recall-on .cm-line.cornell-flashcard-target + .cm-embed-bloc
 body.cornell-active-recall-on .cm-line.cornell-flashcard-target + .cm-embed-block *:not(.cm-cornell-margin):not(.cm-cornell-margin *),
 body.cornell-active-recall-on .cm-line.cornell-flashcard-target + .cm-callout,
 body.cornell-active-recall-on .cm-line.cornell-flashcard-target + .cm-callout *:not(.cm-cornell-margin):not(.cm-cornell-margin *) {
-    color: transparent !important;
-    text-shadow: 0 0 12px var(--text-normal) !important;
+    color: transparent ;
+    text-shadow: 0 0 12px var(--text-normal) ;
     cursor: help;
     transition: color 0.2s ease, text-shadow 0.2s ease;
 }
@@ -206,9 +201,9 @@ body.cornell-active-recall-on .cornell-flashcard-target .cm-cornell-margin,
 body.cornell-active-recall-on .cornell-flashcard-target .cm-cornell-margin *,
 body.cornell-active-recall-on .cm-line.cornell-flashcard-target + .cm-embed-block .cm-cornell-margin,
 body.cornell-active-recall-on .cm-line.cornell-flashcard-target + .cm-embed-block .cm-cornell-margin * {
-    text-shadow: none !important;
-    filter: none !important;
-    opacity: 1 !important;
+    text-shadow: none ;
+    filter: none ;
+    opacity: 1 ;
 }
 
 /* 3. Difuminar Multimedia */
@@ -217,8 +212,8 @@ body.cornell-active-recall-on .cornell-flashcard-target img:not(.cm-cornell-marg
 body.cornell-active-recall-on .cm-line.cornell-flashcard-target + .cm-embed-block mjx-container,
 body.cornell-active-recall-on .cm-line.cornell-flashcard-target + .cm-embed-block img:not(.cm-cornell-margin img),
 body.cornell-active-recall-on .cm-line.cornell-flashcard-target + .cm-callout img {
-    filter: blur(8px) opacity(0.6) !important;
-    transition: filter 0.2s ease, opacity 0.2s ease !important;
+    filter: blur(8px) opacity(0.6) ;
+    transition: filter 0.2s ease, opacity 0.2s ease ;
 }
 
 /* 4. Cinta Censuradora en Markdown (PDF++ Embeds) */
@@ -226,12 +221,12 @@ body.cornell-active-recall-on .cornell-flashcard-target .pdf-plus-backlink,
 body.cornell-active-recall-on .cornell-flashcard-target .rect-highlight,
 body.cornell-active-recall-on .cm-line.cornell-flashcard-target + .cm-embed-block .pdf-plus-backlink,
 body.cornell-active-recall-on .cm-line.cornell-flashcard-target + .cm-embed-block .rect-highlight {
-    opacity: 1 !important; 
-    filter: brightness(0.2) contrast(200%) !important; 
-    backdrop-filter: blur(8px) !important;
-    -webkit-backdrop-filter: blur(8px) !important;
-    pointer-events: auto !important; 
-    transition: all 0.2s ease !important;
+    opacity: 1 ; 
+    filter: brightness(0.2) contrast(200%) ; 
+    backdrop-filter: blur(8px) ;
+    -webkit-backdrop-filter: blur(8px) ;
+    pointer-events: auto ; 
+    transition: all 0.2s ease ;
 }
 
 /* 👁️ HOVER EN MARKDOWN */
@@ -241,26 +236,26 @@ body.cornell-active-recall-on .cm-line.cornell-flashcard-target + .cm-embed-bloc
 body.cornell-active-recall-on .cm-line.cornell-flashcard-target + .cm-embed-block:hover *:not(.cm-cornell-margin):not(.cm-cornell-margin *),
 body.cornell-active-recall-on .cm-line.cornell-flashcard-target + .cm-callout:hover,
 body.cornell-active-recall-on .cm-line.cornell-flashcard-target + .cm-callout:hover *:not(.cm-cornell-margin):not(.cm-cornell-margin *) {
-    color: var(--text-normal) !important;
-    text-shadow: none !important;
+    color: var(--text-normal) ;
+    text-shadow: none ;
 }
 
-body.cornell-active-recall-on .cornell-flashcard-target mjx-container:hover,
+body.cornell-active-recall-on .cornell-flashcard-target [class*="mjx-container"]:hover,
 body.cornell-active-recall-on .cornell-flashcard-target img:not(.cm-cornell-margin img):hover,
-body.cornell-active-recall-on .cm-line.cornell-flashcard-target + .cm-embed-block mjx-container:hover,
+body.cornell-active-recall-on .cm-line.cornell-flashcard-target + .cm-embed-block [class*="mjx-container"]:hover,
 body.cornell-active-recall-on .cm-line.cornell-flashcard-target + .cm-embed-block img:not(.cm-cornell-margin img):hover,
 body.cornell-active-recall-on .cm-line.cornell-flashcard-target + .cm-callout img:hover {
-    filter: blur(0px) opacity(1) !important;
+    filter: blur(0px) opacity(1) ;
 }
 
 body.cornell-active-recall-on .cornell-flashcard-target .pdf-plus-backlink:hover,
 body.cornell-active-recall-on .cornell-flashcard-target .rect-highlight:hover,
 body.cornell-active-recall-on .cm-line.cornell-flashcard-target + .cm-embed-block .pdf-plus-backlink:hover,
 body.cornell-active-recall-on .cm-line.cornell-flashcard-target + .cm-embed-block .rect-highlight:hover {
-    filter: none !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    opacity: 0.3 !important; 
+    filter: none ;
+    backdrop-filter: none ;
+    -webkit-backdrop-filter: none ;
+    opacity: 0.3 ; 
 }
 
 
@@ -301,67 +296,64 @@ body.cornell-active-recall-on .cm-line.cornell-flashcard-target + .cm-embed-bloc
 }
 
 
+
 /* ======================================================
    🖨️ SOPORTE PARA EXPORTACIÓN A PDF (VERSIÓN FLOAT BLINDADA)
    ====================================================== */
 
 @media print {
     /* 1. La "Caja Fuerte" (El Párrafo) - Direccionalidad Izquierda (%%>) */
-    p:has(.cornell-print-margin[data-direction=">"]),
-    li:has(.cornell-print-margin[data-direction=">"]),
-    blockquote:has(.cornell-print-margin[data-direction=">"]) {
-        position: relative !important;
-        padding-left: 28% !important; /* Deja espacio a la izquierda */
-        page-break-inside: avoid !important;
-        break-inside: avoid !important;
-        display: flow-root !important; 
+    .cornell-print-parent-left {
+        position: relative;
+        padding-left: 28%; /* Deja espacio a la izquierda */
+        page-break-inside: avoid;
+        break-inside: avoid;
+        display: flow-root; 
     }
 
     /* 1b. La "Caja Fuerte" (El Párrafo) - Direccionalidad Derecha (%%<) */
-    p:has(.cornell-print-margin[data-direction="<"]),
-    li:has(.cornell-print-margin[data-direction="<"]),
-    blockquote:has(.cornell-print-margin[data-direction="<"]) {
-        position: relative !important;
-        padding-right: 28% !important; /* Deja espacio a la derecha */
-        page-break-inside: avoid !important;
-        break-inside: avoid !important;
-        display: flow-root !important; 
+    .cornell-print-parent-right {
+        position: relative;
+        padding-right: 28%; /* Deja espacio a la derecha */
+        page-break-inside: avoid;
+        break-inside: avoid;
+        display: flow-root; 
     }
 
     /* 2. Clase base de Marginalia */
     .cornell-print-margin {
-        width: 35% !important;
-        display: block !important;
-        background-color: transparent !important;
-        font-size: 9.5pt !important;
-        line-height: 1.2 !important;
+        width: 35% ;
+        display: block ;
+        background-color: transparent ;
+        font-size: 9.5pt ;
+        line-height: 1.2 ;
     }
 
     /* 2a. Flotante a la Izquierda (%%>) */
     .cornell-print-margin[data-direction=">"] {
-        float: left !important;
-        clear: left !important;
-        margin-left: -38% !important; 
-        text-align: right !important;
-        padding-right: 10px !important;
+        float: left ;
+        clear: left ;
+        margin-left: -38% ; 
+        text-align: right ;
+        padding-right: 10px ;
     }
 
     /* 2b. Flotante a la Derecha (%%<) */
     .cornell-print-margin[data-direction="<"] {
-        float: right !important;
-        clear: right !important;
-        margin-right: -38% !important; 
-        text-align: left !important;
-        padding-left: 10px !important;
+        float: right ;
+        clear: right ;
+        margin-right: -38% ; 
+        text-align: left ;
+        padding-left: 10px ;
     }
 
     /* 3. Seguro anti-blur */
     body.cornell-active-recall-on .cornell-flashcard-target {
-        color: black !important;
-        text-shadow: none !important;
+        color: black ;
+        text-shadow: none ;
     }
     body.cornell-active-recall-on .cornell-flashcard-target * {
-        color: black !important; 
+        color: black ; 
     }
 }
 
@@ -478,7 +470,7 @@ body.cornell-active-recall-on .cm-line.cornell-flashcard-target + .cm-embed-bloc
 
 /* Ocultamos a todos los hijos cuando el contenedor tiene esta clase */
 .cornell-thread-tree.is-collapsed {
-    display: none !important; 
+    display: none ; 
 }
 
 /* ======================================================
@@ -570,8 +562,8 @@ body.cornell-active-recall-on .cm-line.cornell-flashcard-target + .cm-embed-bloc
 .cm-cornell-margin .external-embed,
 .cm-cornell-margin img {
     display: block;
-    max-width: 100% !important; /* Fuerza bruta para que no desborde */
-    width: 100% !important;
+    max-width: 100% ; /* Fuerza bruta para que no desborde */
+    width: 100% ;
     height: auto;
     object-fit: contain; 
     
@@ -592,7 +584,7 @@ body.cornell-active-recall-on .cm-line.cornell-flashcard-target + .cm-embed-bloc
 .cm-cornell-margin .external-embed:hover,
 .cm-cornell-margin img:hover {
     transform: scale(1.9); /* Zoom casi al doble */
-    z-index: 9999 !important; /* Asegura que flote sobre todo lo demás */
+    z-index: 9999 ; /* Asegura que flote sobre todo lo demás */
     box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
 
@@ -656,8 +648,8 @@ body.cornell-active-recall-on .cm-line.cornell-flashcard-target + .cm-embed-bloc
    ====================================================== */
 .cornell-sidebar-item.cornell-drop-target {
     /* Un fondo brillante y un borde punteado para indicar que es un área de caída válida */
-    background-color: rgba(var(--interactive-accent), 0.15) !important;
-    border: 2px dashed var(--interactive-accent) !important;
+    background-color: rgba(var(--interactive-accent), 0.15) ;
+    border: 2px dashed var(--interactive-accent) ;
     transform: scale(1.02);
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
@@ -720,22 +712,22 @@ body.cornell-active-recall-on .cm-line.cornell-flashcard-target + .cm-embed-bloc
    🫥 CONTENEDOR INVISIBLE PARA AGRUPAR BLOQUES (WORKAROUND)
    ====================================================== */
 .callout[data-callout*="cornell" i] {
-    background-color: transparent !important;
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
+    background-color: transparent ;
+    background: transparent ;
+    border: none ;
+    box-shadow: none ;
+    padding: 0 ;
+    margin: 0 ;
 }
 
 /* Ocultamos el título y el icono por completo */
 .callout[data-callout*="cornell" i] .callout-title {
-    display: none !important;
+    display: none ;
 }
 
 /* Quitamos el margen interno para que el texto fluya natural */
 .callout[data-callout*="cornell" i] .callout-content {
-    padding: 0 !important;
+    padding: 0 ;
 }
 
 /* 🎨 INVERSIÓN INTELIGENTE PARA DOODLES EN MODO OSCURO */
@@ -750,16 +742,7 @@ body.theme-dark .cornell-rhizome-node img[src*="doodle_"] {
     transition: filter 0.3s ease, opacity 0.3s ease; 
 }
 
-/* 🧼 LIMPIEZA TOTAL DE BORDES PARA DOODLES (Efecto "Tinta en Papel") */
-.cm-cornell-margin img[src*="doodle_"],
-.reading-mode-margin img[src*="doodle_"],
-.cornell-rhizome-node img[src*="doodle_"] {
-    border: none !important; 
-    box-shadow: none !important;
-    background: transparent !important;
-    padding: 0 !important;
-    outline: none !important;
-}
+
 
 /* 🧼 LIMPIEZA TOTAL DE BORDES PARA DOODLES (Efecto "Tinta en Papel") */
 
@@ -767,15 +750,15 @@ body.theme-dark .cornell-rhizome-node img[src*="doodle_"] {
 .cm-cornell-margin img[src*="doodle_"],
 .reading-mode-margin img[src*="doodle_"] {
     /* Elimina cualquier línea sólida que ponga el tema */
-    border: none !important; 
+    border: none ; 
     /* Elimina sombras o resplandores alrededor de la imagen */
-    box-shadow: none !important;
+    box-shadow: none ;
     /* Asegura que el fondo del contenedor de la imagen sea transparente */
-    background: transparent !important;
+    background: transparent ;
     /* Elimina el "relleno" entre la imagen y el borde invisible */
-    padding: 0 !important;
+    padding: 0 ;
     /* Opcional: si algún tema usa 'outline' en lugar de border */
-    outline: none !important;
+    outline: none ;
 }
 
 
@@ -937,7 +920,7 @@ button.cornell-qc-submit:active {
 /* Estilo táctico/secundario para la caja de búsqueda */
 input.cornell-search-bar {
     width: 100%;
-    padding-left: 30px !important; /* Espacio para la lupa */
+    padding-left: 30px ; /* Espacio para la lupa */
     background-color: transparent; /* Se funde con el fondo para ser menos llamativa */
     border: 1px solid var(--background-modifier-border);
     border-radius: 20px; /* Bordes redondeados típicos de cajas de búsqueda */
@@ -951,35 +934,32 @@ input.cornell-search-bar:focus {
     background-color: var(--background-modifier-form-field);
 }
 
-/* 🛡️ ESCUDO ANTI-ROBO DE HOVER PARA LA BARRA LATERAL */
-/* Convierte las miniaturas en fantasmas para el ratón, permitiendo que la caja principal detecte el hover y muestre el texto de la nota */
-/* .cornell-sidebar-item-text .internal-embed,
-/*.cornell-sidebar-item-text img {
-/*    pointer-events: none !important;
-/* }
-
-
 
 /* ======================================================
    👻 CLASE PARA OCULTAR TEXTO CRUDO EN MODO EDICIÓN
    ====================================================== */
 .cornell-hide-raw {
-    display: none !important;
+    display: none ;
 }
 
 
 /* ======================================================
-   🎮 GAMIFICATION ADDON STYLES
+    🎮 GAMIFICATION ADDON STYLES (UNIFICADO)
    ====================================================== */
+
 .cornell-profile-widget {
+    /* Estructura base del contenedor */
     display: flex;
     align-items: center;
     gap: 12px;
-    background-color: var(--background-secondary);
-    border: 1px solid var(--background-modifier-border);
     border-radius: 8px;
     padding: 10px;
     margin-bottom: 15px;
+
+    /* Actualización: Efecto Glassmorphism */
+    background-color: rgba(var(--background-secondary-rgb), 0.6);
+    backdrop-filter: blur(8px); 
+    border: 1px solid rgba(var(--background-modifier-border-rgb), 0.3);
 }
 
 .cornell-profile-avatar {
@@ -993,6 +973,16 @@ input.cornell-search-bar:focus {
     align-items: center;
     justify-content: center;
     border: 2px solid var(--interactive-accent);
+}
+
+/* Actualización: Soporte para imágenes de perfil personalizadas */
+.cornell-profile-avatar-img {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--interactive-accent);
+    flex-shrink: 0;
 }
 
 .cornell-profile-info {
@@ -1035,6 +1025,15 @@ input.cornell-search-bar:focus {
     text-align: right;
 }
 
+/* Actualización: Texto de motivación o citas debajo del perfil */
+.cornell-profile-quote {
+    font-size: 0.8em;
+    font-style: italic;
+    color: var(--text-muted);
+    margin-top: 6px;
+    line-height: 1.2;
+}
+
 /* ======================================================
    🖼️ CUSTOM BACKGROUND ADDON STYLES (VERSIÓN DEFINITIVA OBSIDIAN)
    ====================================================== */
@@ -1049,8 +1048,8 @@ input.cornell-search-bar:focus {
 /* 2. EL HACK: Anclamos el fondo al panel maestro de Obsidian (Que NO hace scroll) */
 .workspace-leaf-content:has(.cornell-sidebar-container) {
     position: relative;
-    overflow: hidden !important; /* Escudo: Evita que el blur se salga a otros paneles */
-    background-color: var(--background-primary) !important;
+    overflow: hidden ; /* Escudo: Evita que el blur se salga a otros paneles */
+    background-color: var(--background-primary);
 }
 
 /* 3. La imagen y el Blur se inyectan en el panel maestro (inmóvil) */
@@ -1081,35 +1080,12 @@ input.cornell-search-bar:focus {
 
 /* 5. Volvemos transparente la caja de scroll de Obsidian para ver el fondo */
 .workspace-leaf-content:has(.cornell-sidebar-container) .view-content {
-    background-color: transparent !important;
+    background-color: transparent ;
     position: relative;
     z-index: 2; /* El texto y tus funciones de Drag & Drop siguen intactas */
 }
 
-/* --- ACTUALIZACIONES DEL PERFIL --- */
-.cornell-profile-widget {
-    /* Hacemos la tarjeta un poco transparente tipo "Glassmorphism" */
-    background-color: rgba(var(--background-secondary-rgb), 0.6) !important;
-    backdrop-filter: blur(8px); 
-    border-color: rgba(var(--background-modifier-border-rgb), 0.3) !important;
-}
 
-.cornell-profile-avatar-img {
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid var(--interactive-accent);
-    flex-shrink: 0;
-}
-
-.cornell-profile-quote {
-    font-size: 0.8em;
-    font-style: italic;
-    color: var(--text-muted);
-    margin-top: 6px;
-    line-height: 1.2;
-}
 
 /* ======================================================
    🌱 RHIZOME TIME MACHINE STYLES
@@ -1121,28 +1097,28 @@ input.cornell-search-bar:focus {
     background-image: radial-gradient(circle, var(--background-modifier-border) 1px, transparent 1px);
     background-size: 25px 25px;
     overflow: hidden; 
-    display: block; /* 👈 Cambiado a block */
+    display: block;
 }
 
-/* 1. El Marco de la Ventana (El que maneja las barras de scroll) */
+/* 1. El Marco de la Ventana (Maneja las barras de scroll - Consolidado) */
 .cornell-rhizome-scroll {
-    display: block; /* 👈 Ya no es flex, ahora es una simple ventana */
+    display: block;
     width: 100%;
     height: 100%;
     overflow: auto; /* Permite scroll en ambas direcciones */
     position: relative;
 }
 
-/* 2. El Lienzo Elástico (El que hace zoom y agrupa las columnas) */
+/* 2. El Lienzo Elástico (Crea las columnas horizontales - Consolidado) */
 .cornell-rhizome-content {
-    display: flex; /* 👈 ESTO CREA LAS COLUMNAS HORIZONTALES */
+    display: flex; 
     flex-direction: row;
     gap: 60px;
     align-items: flex-start;
     padding: 60px;
-    min-width: max-content; /* 👈 MAGIA: Obliga al lienzo a crecer hacia la derecha infinitamente */
+    min-width: max-content; /* Obliga al lienzo a crecer hacia la derecha infinitamente */
     transform-origin: top left;
-    transition: zoom 0.2s ease;
+    transition: zoom 0.2s ease; /* Animación fluida al hacer clic en los botones */
 }
 
 .cornell-rhizome-day-column {
@@ -1151,7 +1127,7 @@ input.cornell-search-bar:focus {
     align-items: center;
     position: relative;
     
-    /* 🛡️ EL ESCUDO: Forzamos un ancho estricto */
+    /* El Escudo: Forzamos un ancho estricto */
     width: 280px; 
     min-width: 280px;
     max-width: 280px; 
@@ -1162,7 +1138,7 @@ input.cornell-search-bar:focus {
     content: '';
     position: absolute;
     top: 30px;
-    bottom: -3000px; /* 👈 Cambiamos el -100vh problemático por un valor estático seguro */
+    bottom: -3000px; /* Valor estático seguro para evitar problemas de desborde */
     width: 2px;
     background: var(--background-modifier-border-hover);
     z-index: 0;
@@ -1189,8 +1165,10 @@ input.cornell-search-bar:focus {
     width: 100%;
 }
 
-/* Las tarjetas de las Marginalias */
+/* Las tarjetas de las Marginalias (Consolidado) */
 .cornell-rhizome-node {
+    position: relative;
+    z-index: 2; 
     background: var(--background-primary);
     border-left: 4px solid; /* El color se inyecta por JS */
     border-top: 1px solid var(--background-modifier-border);
@@ -1202,14 +1180,17 @@ input.cornell-search-bar:focus {
     font-size: 0.85em;
     color: var(--text-normal);
     cursor: pointer;
-    transition: all 0.2s ease;
     line-height: 1.4;
+    
     /* Efecto Glassmorphism ligero */
     backdrop-filter: blur(4px);
     background-color: rgba(var(--background-primary-rgb), 0.85);
+    
+    /* Transición avanzada para interactividad fluida */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/*  rompe palabras */
+/* Rompe palabras dentro de los nodos */
 .cornell-rhizome-node span {
     display: block;
     white-space: normal;      
@@ -1221,11 +1202,8 @@ input.cornell-search-bar:focus {
     transform: translateY(-3px) scale(1.02);
     background: var(--background-secondary);
 }
-/* --- SVG Y HILOS SEMÁNTICOS --- */
-.cornell-rhizome-scroll {
-    position: relative; 
-}
 
+/* --- SVG Y HILOS SEMÁNTICOS --- */
 .cornell-rhizome-svg-overlay {
     position: absolute;
     top: 0; left: 0;
@@ -1236,35 +1214,29 @@ input.cornell-search-bar:focus {
 .cornell-semantic-thread {
     stroke-dasharray: 6 6;
     animation: cornell-flow 15s linear infinite;
-    opacity: 0; /* 👈 MAGIA: Invisibles por defecto */
+    opacity: 0; /* Invisibles por defecto */
     transition: opacity 0.3s ease, stroke-width 0.3s ease;
 }
 
-/* Cuando el ratón pasa por una nota, el JS le pone esta clase a sus hilos */
+/* Cuando el ratón pasa por una nota, el JS activa esta clase */
 .cornell-semantic-thread.is-visible {
     opacity: 0.8;
     stroke-width: 3px;
     filter: drop-shadow(0 0 4px var(--interactive-accent));
 }
 
-.cornell-rhizome-node {
-    z-index: 2; 
-    position: relative;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-/* Efecto para la nota que estás tocando */
+/* Efecto para la nota activa */
 .cornell-rhizome-node.is-hovered {
     transform: translateY(-3px) scale(1.05);
     z-index: 10;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4) !important;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4) ;
 }
 
-/* Efecto para las notas conectadas en el otro extremo del tiempo */
+/* Efecto para las notas conectadas en los extremos */
 .cornell-rhizome-node.is-connected {
     transform: scale(1.02);
-    border-color: var(--interactive-accent) !important;
-    box-shadow: 0 0 20px var(--interactive-accent) !important;
+    border-color: var(--interactive-accent) ;
+    box-shadow: 0 0 20px var(--interactive-accent) ;
     z-index: 9;
 }
 
@@ -1284,7 +1256,7 @@ input.cornell-search-bar:focus {
     border-radius: 8px;
     border: 1px solid var(--background-modifier-border);
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    z-index: 100; /* Siempre por encima de todo */
+    z-index: 100;
 }
 
 .cornell-rhizome-zoom-controls button {
@@ -1305,27 +1277,18 @@ input.cornell-search-bar:focus {
     transform: translateY(-2px);
 }
 
-/* El nuevo contenedor interno flex */
-.cornell-rhizome-content {
-    display: flex;
-    gap: 60px;
-    align-items: flex-start;
-    transform-origin: top left; /* El zoom se hace desde la esquina superior izquierda */
-    transition: zoom 0.2s ease; /* Animación fluida al hacer clic en los botones */
-}
-
 /* ======================================================
    🎯 MODO FOCO SEMÁNTICO & BOTONERA DE ACCIONES (COSIDO)
    ====================================================== */
 
 /* Ocultar tarjetas que no están en el foco */
 .cornell-rhizome-node.is-dimmed {
-    display: none !important;
+    display: none ;
 }
 
 /* Ocultar columnas de días que se quedaron vacías */
 .cornell-rhizome-day-column.is-empty {
-    display: none !important;
+    display: none ;
 }
 
 /* 🛠️ NUEVA BOTONERA MÚLTIPLE (Reemplaza al viejo cornell-focus-btn) */
@@ -1362,8 +1325,8 @@ input.cornell-search-bar:focus {
 
 /* Efecto Mágico: Cuando seleccionas una nota como origen del cosido */
 .cornell-rhizome-node.is-stitching-source {
-    border-color: var(--color-blue) !important;
-    box-shadow: 0 0 20px var(--color-blue) !important;
+    border-color: var(--color-blue) ;
+    box-shadow: 0 0 20px var(--color-blue) ;
     transform: scale(1.05);
     z-index: 10;
 }
@@ -1388,16 +1351,16 @@ input.cornell-search-bar:focus {
 }
 
 .cornell-stitch-cancel {
-    background: rgba(0,0,0,0.2) !important;
-    color: white !important;
-    border: none !important;
+    background: rgba(0,0,0,0.2) ;
+    color: white ;
+    border: none ;
     cursor: pointer;
-    padding: 4px 12px !important;
-    border-radius: 15px !important;
+    padding: 4px 12px ;
+    border-radius: 15px ;
 }
 
 .cornell-stitch-cancel:hover {
-    background: rgba(0,0,0,0.4) !important;
+    background: rgba(0,0,0,0.4) ;
 }
 
 @keyframes cornell-pop-up {
@@ -1505,6 +1468,8 @@ input.cornell-search-bar:focus {
     display: flex;
     flex-direction: column;
     height: 100%;
+    position: relative; /* Integrado desde la sección de fondo */
+    overflow: hidden;   /* Evita que el fondo se desborde */
 }
 
 .cornell-rhizome-topbar {
@@ -1561,11 +1526,6 @@ input.cornell-search-bar:focus {
    🌌 FONDO CUSTOMIZABLE PARA LA MÁQUINA DEL TIEMPO
    ====================================================== */
 
-.cornell-rhizome-wrapper {
-    position: relative;
-    overflow: hidden; /* Evita que el fondo se desborde */
-}
-
 /* La imagen de fondo pura */
 .cornell-rhizome-custom-bg {
     position: absolute;
@@ -1575,24 +1535,21 @@ input.cornell-search-bar:focus {
     background-attachment: fixed;
     z-index: 0;
     pointer-events: none; /* Te permite hacer clic a través de ella */
-    
 }
 
-/* 💎 MAGIA: Si hay fondo, el canvas se vuelve transparente, 
-   pero CONSERVA los puntos de radial-gradient por defecto */
+/* 💎 Si hay fondo, el canvas se vuelve transparente, pero CONSERVA el gradiente radial */
 .cornell-rhizome-canvas.has-custom-bg {
-    background-color: transparent !important;
+    background-color: transparent;
     z-index: 1; /* Sube por encima del fondo */
 }
 
-/* 💎 EFECTO CRISTAL (Glassmorphism) para la barra superior */
+/* 💎 Efecto Cristal (Glassmorphism) para la barra superior */
 .cornell-rhizome-wrapper:has(.cornell-rhizome-custom-bg) .cornell-rhizome-topbar {
-    background: rgba(var(--background-secondary-rgb), 0.5) !important;
+    background: rgba(var(--background-secondary-rgb), 0.5);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
-
 /* ======================================================
    🔍 LIGHTBOX PARA DOODLES Y VISUALIZADOR DE IMÁGENES
    ====================================================== */
@@ -1644,9 +1601,9 @@ body.theme-dark .cornell-pinboard-item img[src*="doodle_"] {
 /* 🧼 Limpieza de bordes: Aseguramos el efecto "Tinta sobre papel" en el panel */
 .cornell-sidebar-item img[src*="doodle_"],
 .cornell-pinboard-item img[src*="doodle_"] {
-    border: none !important; 
-    box-shadow: none !important;
-    background: transparent !important;
+    border: none ; 
+    box-shadow: none ;
+    background: transparent ;
 }
 
 /* ======================================================
@@ -1660,9 +1617,9 @@ body.theme-dark .cornell-pinboard-item img[src*="doodle_"] {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 9999 !important; 
+    z-index: 9999 ; 
     
-    /* IMPORTANTE: Quitamos el !important de aquí para que JS pueda actuar */
+    /* IMPORTANTE: Quitamos el  de aquí para que JS pueda actuar */
     pointer-events: auto; 
     background-color: rgba(255, 204, 0, 0.05); 
     cursor: crosshair; 
@@ -1671,8 +1628,8 @@ body.theme-dark .cornell-pinboard-item img[src*="doodle_"] {
 /* Modo Reposo (cuando hacemos doble clic) */
 .cornell-pdf-overlay.is-resting {
     /* Dejamos pasar los clics para poder seleccionar el texto de Obsidian */
-    pointer-events: none !important; 
-    background-color: transparent !important;
+    pointer-events: none ; 
+    background-color: transparent ;
 }
 
 .cornell-pdf-overlay canvas {
@@ -1686,10 +1643,10 @@ body.theme-dark .cornell-pinboard-item img[src*="doodle_"] {
     position: absolute;
     bottom: 20px;
     right: 20px;
-    z-index: 10000 !important;
+    z-index: 10000 ;
     
     /* Aunque el padre sea intocable, el botón SÍ recibe clics */
-    pointer-events: auto !important; 
+    pointer-events: auto ; 
     
     background-color: var(--interactive-accent);
     color: white;
@@ -1714,11 +1671,11 @@ body.theme-dark .cornell-pinboard-item img[src*="doodle_"] {
 
 /* Asegura que la línea roja/de color no se desborde del contenedor principal */
 .cornell-editorial-margin {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    padding-top: 5px !important;
-    padding-bottom: 5px !important;
-    border-radius: 0 !important; /* Bordes rectos para un look más de revista */
+    margin-top: 0 ;
+    margin-bottom: 0 ;
+    padding-top: 5px ;
+    padding-bottom: 5px ;
+    border-radius: 0 ; /* Bordes rectos para un look más de revista */
 }
 
 /* Evita que listas muy largas creen un scroll horizontal fantasma */
@@ -1729,8 +1686,8 @@ body.theme-dark .cornell-pinboard-item img[src*="doodle_"] {
 
 /* Evitar que los bloques editoriales se partan a la mitad en el PDF y rompan la línea lateral */
     .cornell-editorial-wrapper {
-        page-break-inside: avoid !important;
-        break-inside: avoid !important;
+        page-break-inside: avoid ;
+        break-inside: avoid ;
     }
 
 /* ======================================================
@@ -1741,22 +1698,22 @@ body.theme-dark .cornell-pinboard-item img[src*="doodle_"] {
 .markdown-source-view.mod-cm6 .cm-line:has(.block-language-cornell),
 .markdown-source-view.mod-cm6 .cm-embed-block:has(.block-language-cornell),
 .markdown-source-view.mod-cm6 .cm-embed-block:has(.block-language-cornell) > div {
-    contain: none !important;
-    overflow: visible !important;
-    clip-path: none !important;
+    contain: none ;
+    overflow: visible ;
+    clip-path: none ;
     
     /* 2. LA MAGIA: Elevamos el contexto de apilamiento para que la nota flote SOBRE las demás líneas */
-    z-index: 99 !important; 
-    position: relative !important;
+    z-index: 99 ; 
+    position: relative ;
 }
 
 /* 3. Liberamos el contenedor exacto donde Obsidian inyecta tu procesador */
 .markdown-source-view.mod-cm6 .markdown-rendered.block-language-cornell {
-    contain: none !important;
-    overflow: visible !important;
-    background-color: transparent !important;
-    border: none !important;
-    padding: 0 !important;
+    contain: none ;
+    overflow: visible ;
+    background-color: transparent ;
+    border: none ;
+    padding: 0 ;
 }
 
 /* ======================================================
@@ -1776,32 +1733,32 @@ body.cornell-responsive-mode .workspace-leaf-content {
 /* Ocultamos el texto de las explicaciones si el ajuste está activo */
 body.cornell-active-recall-on.cornell-blur-explanatory .cornell-flashcard-target .is-explanatory,
 body.cornell-active-recall-on.cornell-blur-explanatory .cornell-flashcard-target .is-explanatory *:not(img) {
-    color: transparent !important;
-    text-shadow: 0 0 12px var(--text-accent) !important;
+    color: transparent ;
+    text-shadow: 0 0 12px var(--text-accent) ;
     transition: color 0.3s ease, text-shadow 0.3s ease;
     cursor: help;
 }
 
 /* Difuminamos las imágenes que estén dentro de la explicación */
 body.cornell-active-recall-on.cornell-blur-explanatory .cornell-flashcard-target .is-explanatory img {
-    filter: blur(8px) opacity(0.6) !important;
-    transition: filter 0.3s ease, opacity 0.3s ease !important;
+    filter: blur(8px) opacity(0.6) ;
+    transition: filter 0.3s ease, opacity 0.3s ease ;
 }
 
 /* HOVER: Recuperamos la visión al pasar el mouse por encima de la explicación */
 body.cornell-active-recall-on.cornell-blur-explanatory .cornell-flashcard-target .is-explanatory:hover,
 body.cornell-active-recall-on.cornell-blur-explanatory .cornell-flashcard-target .is-explanatory:hover * {
-    color: inherit !important;
-    text-shadow: none !important;
+    color: inherit ;
+    text-shadow: none ;
 }
 
 body.cornell-active-recall-on.cornell-blur-explanatory .cornell-flashcard-target .is-explanatory:hover img {
-    filter: blur(0px) opacity(1) !important;
+    filter: blur(0px) opacity(1) ;
 }
 
 
 /* ======================================================
-   🚀 CORNELL ULTIMATE DASHBOARD (V2 - Layout)
+   🚀 CORNELL ULTIMATE DASHBOARD (V2 - Layout & Grid Engine)
    ====================================================== */
 
 /* Contenedor principal: apila verticalmente (Timeline arriba, Columnas abajo) */
@@ -1810,8 +1767,10 @@ body.cornell-active-recall-on.cornell-blur-explanatory .cornell-flashcard-target
     flex-direction: column;
     gap: 20px;
     padding: 20px;
+    padding-bottom: 20px;
+    margin-top: 15px;
     height: 100%;
-    overflow-y: auto;
+    overflow: hidden; /* Evita scrolls dobles no deseados en el contenedor padre */
 }
 
 /* ⏳ Contenedor del Timeline (Ocupa todo el ancho arriba) */
@@ -1829,26 +1788,36 @@ body.cornell-active-recall-on.cornell-blur-explanatory .cornell-flashcard-target
     display: flex;
     overflow-x: auto;
     padding: 10px 0;
-    /* Ocultar barra de scroll en navegadores webkit para que se vea más limpio */
-    scrollbar-width: thin; 
+    scrollbar-width: thin; /* Barra de scroll limpia en navegadores modernos */
 }
 
-/* 🏗️ Contenedor de las 3 columnas (El Grid se mueve aquí) */
+/* 🏗️ 🏛️ Contenedor de las columnas (Aquí se fusiona el Grid Engine) */
 .dashboard-columns-container {
     display: grid;
+    /* Estructura base de 3 columnas (V2 usa proporciones, ajusta si el TS inyecta cambios) */
     grid-template-columns: 1fr 1.5fr 1fr; 
     gap: 20px;
-    flex-grow: 1; /* Para que ocupe el resto del espacio vertical si la pantalla es grande */
+    flex-grow: 1; /* Ocupa el resto del espacio vertical disponible */
+    min-height: 0; /* Crucial para que los scrolls internos de las columnas funcionen en Flex/Grid */
 }
 
-/* Estilo básico para cada caja/columna */
-.dashboard-col {
+/* 🎯 Asignación Semántica Estricta (Previene solapamientos) */
+.dashboard-planner   { grid-area: planner; }
+.dashboard-subjects  { grid-area: subjects; }
+.dashboard-tracker   { grid-area: tracker; }
+.dashboard-dailyNote { grid-area: dailyNote; }
+
+/* 📦 Estilo Unificado para cada Caja/Columna (Consolidado) */
+.dashboard-col { 
     background-color: var(--background-secondary);
     border: 1px solid var(--background-modifier-border);
     border-radius: 12px;
     padding: 15px;
-    display: flex;
-    flex-direction: column;
+    padding-right: 10px; /* Espacio para no encimar la barra de scroll */
+    display: flex; 
+    flex-direction: column; 
+    min-height: 0;        /* Permite que el contenedor colapse y active el scroll interno */
+    overflow-y: auto;     /* Activa el scroll vertical interno cuando el contenido desborda */
 }
 
 /* Títulos de todas las secciones */
@@ -1857,6 +1826,52 @@ body.cornell-active-recall-on.cornell-blur-explanatory .cornell-flashcard-target
     border-bottom: 2px solid var(--text-accent);
     padding-bottom: 10px;
     font-size: 1.2em;
+}
+
+/* ======================================================
+   💎 WIDGETS & TRABAJO CON COMPONENTES INTERNOS
+   ====================================================== */
+
+/* Recuadros de thread */
+.collection-box {
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 6px;
+    margin: 8px 0;
+    padding: 2px;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Requisito de UX: Brillar ligeramente al pasar el mouse */
+.collection-box:hover {
+    border-color: var(--interactive-accent);
+    box-shadow: 0 0 5px rgba(var(--interactive-accent-rgb), 0.3);
+}
+
+.collection-header {
+    cursor: pointer;
+    font-weight: bold;
+    padding: 6px;
+    background-color: var(--background-secondary);
+    border-radius: 4px;
+}
+
+.collection-body {
+    padding-left: 15px; /* Indentación visual para la jerarquía */
+    padding-top: 8px;
+}
+
+.marginalia-card {
+    background-color: var(--background-primary);
+    border-left: 3px solid var(--interactive-accent);
+    padding: 8px;
+    margin-bottom: 6px;
+    border-radius: 4px;
+    cursor: grab; /* Preparando el terreno para el Drag & Drop */
+}
+
+.collection-box.drag-over {
+    border-color: var(--color-green); 
+    background-color: rgba(var(--color-green-rgb), 0.1);
 }
 /* ======================================================
    🍅 MARGIDORO - KOREAN TRACKER & REVIEW
@@ -2366,75 +2381,7 @@ body.cornell-active-recall-on.cornell-blur-explanatory .cornell-flashcard-target
 .folder-chip.is-clickable:active {
     transform: scale(0.95);
 }
-/* ======================================================
-   🏛️ DASHBOARD CSS GRID ENGINE (MODULAR & WIDGETS)
-   ====================================================== */
-.cornell-ultimate-dashboard {
-    display: grid;
-    /* La estructura base de las columnas. Las filas las inyecta el TS */
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    height: 100%;
-    overflow: hidden;
-    padding-bottom: 20px;
-    margin-top: 15px;
-}
 
-/* 🎯 Asignación Semántica Estricta (Esto previene el solapamiento en [1,1]) */
-.dashboard-timeline-container { grid-area: timeline; min-height: 0; display: flex; flex-direction: column; }
-.dashboard-planner  { grid-area: planner; }
-.dashboard-subjects { grid-area: subjects; }
-.dashboard-tracker  { grid-area: tracker; }
-.dashboard-dailyNote{ grid-area: dailyNote; }
-
-.dashboard-col { 
-    display: flex; 
-    flex-direction: column; 
-    min-height: 0; 
-    overflow-y: auto; 
-    padding-right: 10px; 
-}
-
-/* recuadros de thread */
-.collection-box {
-    border: 1px solid var(--background-modifier-border);
-    border-radius: 6px;
-    margin: 8px 0;
-    padding: 2px;
-    transition: all 0.2s ease-in-out;
-}
-
-/* Requisito de UX: Brillar ligeramente al pasar el mouse */
-.collection-box:hover {
-    border-color: var(--interactive-accent);
-    box-shadow: 0 0 5px rgba(var(--interactive-accent-rgb), 0.3);
-}
-
-.collection-header {
-    cursor: pointer;
-    font-weight: bold;
-    padding: 6px;
-    background-color: var(--background-secondary);
-    border-radius: 4px;
-}
-
-.collection-body {
-    padding-left: 15px; /* Indentación visual para la jerarquía */
-    padding-top: 8px;
-}
-
-.marginalia-card {
-    background-color: var(--background-primary);
-    border-left: 3px solid var(--interactive-accent);
-    padding: 8px;
-    margin-bottom: 6px;
-    border-radius: 4px;
-    cursor: grab; /* Preparando el terreno para el Drag & Drop */
-}
-.collection-box.drag-over {
-    border-color: var(--color-green); /* O el color de éxito que uses en Obsidian */
-    background-color: rgba(var(--color-green-rgb), 0.1);
-}
 /* ======================================================
    🧠 MODO ACTIVE RECALL PARA EL VISOR DE PDF
    ====================================================== */
@@ -2444,14 +2391,14 @@ body.cornell-pdf-active-recall .pdf-plus-backlink,
 body.cornell-pdf-active-recall .rect-highlight,
 body.cornell-pdf-active-recall .pdf-highlight,
 body.cornell-pdf-active-recall .textLayer .highlight {
-    opacity: 1 !important; 
-    filter: brightness(0.2) contrast(200%) !important; 
-    backdrop-filter: blur(8px) !important;
-    -webkit-backdrop-filter: blur(8px) !important;
-    transition: all 0.15s ease !important;
-    cursor: help !important;
-    border-radius: 4px !important;
-    pointer-events: auto !important; 
+    opacity: 1 ; 
+    filter: brightness(0.2) contrast(200%) ; 
+    backdrop-filter: blur(8px) ;
+    -webkit-backdrop-filter: blur(8px) ;
+    transition: all 0.15s ease ;
+    cursor: help ;
+    border-radius: 4px ;
+    pointer-events: auto ; 
 }
 
 /* 2. La Revelación Controlada por JS */
@@ -2459,10 +2406,10 @@ body.cornell-pdf-active-recall .cornell-reveal-sync,
 body.cornell-pdf-active-recall .cornell-reveal-sync .rect-highlight,
 body.cornell-pdf-active-recall .cornell-reveal-sync .pdf-highlight,
 body.cornell-pdf-active-recall .cornell-reveal-sync .highlight {
-    filter: none !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    opacity: 0.3 !important; 
+    filter: none ;
+    backdrop-filter: none ;
+    -webkit-backdrop-filter: none ;
+    opacity: 0.3 ; 
 }
 
 /* ======================================================
@@ -2485,7 +2432,7 @@ body.cornell-pdf-active-recall .cornell-reveal-sync .highlight {
     z-index: 100;
     box-shadow: 0 2px 8px rgba(0,0,0,0.4);
     transition: transform 0.2s ease, background-color 0.2s ease;
-    pointer-events: auto !important; /* Vital para que detecte el ratón */
+    pointer-events: auto ; /* Vital para que detecte el ratón */
 }
 
 .cornell-pdf-pill:hover {
@@ -2528,6 +2475,6 @@ body.cornell-pdf-pills-mode .rect-highlight,
 body.cornell-pdf-pills-mode .pdf-highlight,
 body.cornell-pdf-pills-mode .textLayer .highlight,
 body.cornell-pdf-pills-mode .annotationLayer .highlight {
-    pointer-events: auto !important;
-    cursor: pointer !important; /* 👈 Reparado: Ahora es una manito normal, no un '?' */
+    pointer-events: auto ;
+    cursor: pointer ; /* 👈 Reparado: Ahora es una manito normal, no un '?' */
 }

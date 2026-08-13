@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "1bdb1f18cba19ea6",
+        "id": "aea5376019d17f17",
         "type": "tabs",
         "children": [
           {
-            "id": "6b006ba5dcee382e",
+            "id": "e21a35de1beeed5f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02_Projects/g4-p1-auxilio-mecanico/_proyecto.md",
+                "file": "03_Areas/ingenieria-software-1/MOC-ingenieria-software-1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "_proyecto"
+              "title": "MOC-ingenieria-software-1"
             }
           }
         ]
@@ -33,6 +33,7 @@
       {
         "id": "f1d8ff04961559fe",
         "type": "tabs",
+        "dimension": 53.103448275862064,
         "children": [
           {
             "id": "69df78645ea44bf2",
@@ -41,7 +42,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "Explorador de archivos"
@@ -75,10 +78,27 @@
             }
           }
         ]
+      },
+      {
+        "id": "28b487cef44f4a87",
+        "type": "tabs",
+        "dimension": 46.89655172413793,
+        "children": [
+          {
+            "id": "cb82d8811d1da54d",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Vista gráfica"
+            }
+          }
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 251.96484375
   },
   "right": {
     "id": "4a95802edab643fa",
@@ -87,6 +107,7 @@
       {
         "id": "c5c60aa4a81dcdb0",
         "type": "tabs",
+        "dimension": 49.609375,
         "children": [
           {
             "id": "03aea65545aeda34",
@@ -94,7 +115,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01_Notes/Lectures/sistemas-informacion-2/clase-2026-03-11-inicio-grupos-tematicas.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +124,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Enlaces entrantes de clase-2026-03-11-inicio-grupos-tematicas"
+              "title": "Enlaces entrantes"
             }
           },
           {
@@ -155,6 +175,7 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "03_Areas/ingenieria-software-1/MOC-ingenieria-software-1.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -162,76 +183,88 @@
               "icon": "lucide-list",
               "title": "Esquema"
             }
-          },
+          }
+        ],
+        "currentTab": 2
+      },
+      {
+        "id": "36ce4700b9c66ed4",
+        "type": "tabs",
+        "dimension": 50.390625,
+        "children": [
           {
-            "id": "e594ec56753c1e65",
+            "id": "4014ac8176484617",
             "type": "leaf",
             "state": {
               "type": "calendar",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "calendar"
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 272.265625
   },
   "left-ribbon": {
     "hiddenItems": {
+      "templater-obsidian:Templater": false,
+      "obsidian-kanban:Create new board": false,
+      "obsidian-to-anki-plugin:Obsidian_to_Anki - Scan Vault": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "obsidian-excalidraw-plugin:Nuevo Bosquejo": false,
       "switcher:Abrir selector rápido": false,
-      "graph:Abrir vista gráfica": false,
       "canvas:Crear nuevo lienzo": false,
       "daily-notes:Abrir la nota de hoy": false,
       "templates:Insertar plantilla": false,
       "command-palette:Abrir paleta de comandos": false,
       "bases:Crear nueva base": false,
-      "templater-obsidian:Templater": false,
-      "obsidian-kanban:Create new board": false,
-      "obsidian-to-anki-plugin:Obsidian_to_Anki - Scan Vault": false,
+      "graph:Abrir vista gráfica": false,
+      "omnisearch:Omnisearch": false,
       "periodic-notes:Open today": false
     }
   },
-  "active": "6b006ba5dcee382e",
+  "active": "411a2efbd9d77f98",
   "lastOpenFiles": [
-    "01_Notes/Lectures/sistemas-informacion-2/clase-2026-04-06-definicion-de-la-documentacion-a-presentar-para-el-parcial-1.md",
-    "01_Notes/Lectures/sistemas-informacion-2/clase-2026-04-01-parcial-1-especificacion-auxilio-automoviles.md",
-    "02_Projects/g4-p1-auxilio-mecanico/_proyecto.md",
-    "03_Areas/sistemas-informacion-2/MOC-sistemas-informacion-2.md",
-    "02_Projects/g4-p1-auxilio-mecanico/tareas/Preparar-repositorio-entrega.md",
-    "02_Projects/g4-p1-auxilio-mecanico/_tablero.kanban.md",
-    "02_Projects/g4-p1-auxilio-mecanico/tareas/inception-vision-del-proyecto.md",
-    "02_Projects/g4-p1-auxilio-mecanico/tareas/transition-documentacion-tecnica.md",
-    "02_Projects/g4-p1-auxilio-mecanico/tareas/transition-manual-usuario.md",
-    "02_Projects/g4-p1-auxilio-mecanico/tareas/transition-despliegue-google-cloud.md",
-    "02_Projects/g4-p1-auxilio-mecanico/tareas/construction-pruebas-unitarias.md",
-    "02_Projects/g4-p1-auxilio-mecanico/tareas/construction-epica7-reportes-administrador.md",
-    "02_Projects/g4-p1-auxilio-mecanico/tareas/construction-epica6-panel-taller.md",
-    "02_Projects/g4-p1-auxilio-mecanico/tareas/construction-epica5-seguimiento-pagos.md",
-    "02_Projects/g4-p1-auxilio-mecanico/tareas/construction-epica4-asignacion-inteligente.md",
-    "02_Projects/g4-p1-auxilio-mecanico/tareas/construction-epica3-ia-basica.md",
-    "02_Projects/g4-p1-auxilio-mecanico/tareas/construction-epica2-reporte-emergencia.md",
-    "02_Projects/g4-p1-auxilio-mecanico/tareas/construction-epica1-autenticacion-perfiles.md",
-    "02_Projects/g4-p1-auxilio-mecanico/tareas/elaboration-plan-de-iteraciones.md",
-    "02_Projects/g4-p1-auxilio-mecanico/tareas/elaboration-diagrama-clases-uml.md",
-    "02_Projects/g4-p1-auxilio-mecanico/tareas/elaboration-arquitectura-base.md",
-    "02_Projects/g4-p1-auxilio-mecanico/tareas/inception-identificacion-riesgos.md",
-    "02_Projects/g4-p1-auxilio-mecanico/tareas/inception-casos-de-uso-clave.md",
-    "02_Projects/g4-p1-auxilio-mecanico/tareas",
-    "01_Notes/Lectures/sistemas-informacion-2/clase-2026-03-23-indicaciones-presentacion-perfil-del-proyecto.md",
-    "02_Projects/g4-p1-auxilio-mecanico/tareas/tarea-ejemplo-investigacion.md",
-    "02_Projects/g4-p1-auxilio-mecanico/reuniones",
-    "02_Projects/g4-p1-auxilio-mecanico/recursos",
-    "02_Projects/g4-p1-auxilio-mecanico/tareas",
-    "02_Projects/g4-p1-auxilio-mecanico",
-    "02_Projects/g5-sgdc/_proyecto.md",
-    "02_Projects/g5-sgdc/reuniones",
-    "02_Projects/g5-sgdc/recursos",
-    "02_Projects/g5-sgdc/tareas",
-    "02_Projects/g5-sgdc",
-    "02_Projects/G5-SGDC/reuniones"
+    "_Templates/moc-materia.md",
+    "_Templates/daily-note.md",
+    "_Templates/concept-note.md",
+    "03_Areas/ingenieria-software-1/MOC-ingenieria-software-1.md",
+    "04_Resources/ingenieria-software-1",
+    "03_Areas/ingenieria-software-1",
+    "01_Notes/Concepts/ingenieria-software-1",
+    "01_Notes/Lectures/ingenieria-software-1",
+    "00_Inbox/Daily/2026-08-13.md",
+    "_Templates/weekly-review.md",
+    "00_Inbox/Daily",
+    "00_Inbox",
+    "_Templates/tarea-proyecto.md",
+    "_Templates/project-note.md",
+    "_Templates/new-materia.md",
+    "_Templates/lecture-note.md",
+    "01_Notes/Lectures/ia-1/clase-2026-08-13-tema-super-serio.md",
+    "01_Notes/Concepts/ia-1/backpropagation.md",
+    "03_Areas/ia-1/MOC-ia-1.md",
+    "backpropagation.md",
+    "Sin título.md",
+    "Backpropagation.md",
+    "clase-2026-08-13-tema-super-serio.md",
+    "clase-2026-08-13-tema-serio.md",
+    "clase-2026-08-13-clase-toda-rara.md",
+    "clase-2026-08-13-aplicaciones-varias.md",
+    "clase-2026-08-13-redes-neuronales-multicapa.md",
+    "04_Resources/ia-1",
+    "03_Areas/ia-1",
+    "01_Notes/Concepts/ia-1",
+    "01_Notes/Lectures/ia-1",
+    "03_Areas/matematica-2/MOC-matematica-2.md",
+    "Dashboard-Global.md",
+    "04_Resources/imagen/svg/logo-ficct.ink.svg",
+    "LEEME.md",
+    "README.md",
+    "Untitled Kanban.md",
+    "Sin título.canvas"
   ]
 }

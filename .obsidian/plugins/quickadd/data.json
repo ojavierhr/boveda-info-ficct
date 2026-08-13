@@ -1,59 +1,60 @@
 {
   "choices": [
     {
-      "id": "071d68dc-36bf-4bff-9e89-4d07d2264ce2",
+      "id": "2198ed3d-85b3-4b91-8acc-8ceffc5cd761",
       "name": "Nueva Materia",
       "type": "Macro",
-      "command": false,
+      "command": true,
       "runOnStartup": false,
       "macro": {
         "name": "Nueva Materia",
-        "id": "02643c66-308f-491e-86ab-b6a2c3e6f43d",
+        "id": "4051a2c7-8ab7-44eb-8670-b66db42a02cc",
         "commands": [
           {
             "name": "nueva-materia",
             "type": "UserScript",
-            "id": "80ab9b0b-3bc4-4069-a374-4ad9eda83e9d",
-            "path": "_Templates/scripts/nueva-materia.js",
+            "id": "c913eb1b-799a-4fd2-b788-57ff48ad30df",
+            "path": "_scripts/nueva-materia.js",
             "settings": {}
           }
         ]
       }
     },
     {
-      "id": "9867fbde-efa4-46b6-8d7d-ebd470f04e1a",
-      "name": "Nueva Materia",
+      "id": "cd1c7c0a-3cde-4afe-a0a1-5705617df8c5",
+      "name": "Nuevo Proyecto G",
       "type": "Macro",
       "command": true,
       "runOnStartup": false,
       "macro": {
-        "name": "Nueva Materia",
-        "id": "eb48461a-276c-4f74-82f2-62cfe90c182f",
+        "name": "Nuevo Proyecto G",
+        "id": "8d87c04c-5c34-41a0-87e0-6413e4007781",
         "commands": [
           {
-            "name": "Nueva Materia",
-            "type": "Choice",
-            "id": "51b2ef5a-706a-479b-9cbb-972bb84700d0",
-            "choiceId": "071d68dc-36bf-4bff-9e89-4d07d2264ce2"
+            "name": "nuevo-proyecto-grande",
+            "type": "UserScript",
+            "id": "77f563d8-e12d-429b-a297-d9be7b84cbca",
+            "path": "_scripts/nuevo-proyecto-grande.js",
+            "settings": {}
           }
         ]
       }
     },
     {
-      "id": "dad5556a-8310-4f64-8516-17746ba9b717",
-      "name": "Nuevo Proyecto Grande",
+      "id": "3a70550e-78ff-436c-aa08-1340cc7b82be",
+      "name": "Eliminar Materia",
       "type": "Macro",
       "command": true,
       "runOnStartup": false,
       "macro": {
-        "name": "Nuevo Proyecto Grande",
-        "id": "fad4fd42-6650-4683-9fd7-88c6b9566bd5",
+        "name": "Eliminar Materia",
+        "id": "6ec1d6a2-fcc2-498e-a192-248f0f4827be",
         "commands": [
           {
-            "name": "nuevo-proyecto-grande",
+            "name": "eliminar-materia",
             "type": "UserScript",
-            "id": "27582bfc-8aa5-481b-b89f-45cd5b037f31",
-            "path": "_scripts/nuevo-proyecto-grande.js",
+            "id": "faceddab-d5a6-4433-88bc-0406776662af",
+            "path": "_scripts/eliminar-materia.js",
             "settings": {}
           }
         ]
@@ -63,13 +64,16 @@
   "inputPrompt": "single-line",
   "persistInputPromptDrafts": true,
   "useSelectionAsCaptureValue": true,
+  "searchNestedChoices": true,
+  "templateFolderLauncherRow": "bottom",
   "devMode": false,
-  "templateFolderPath": "",
+  "templateFolderPaths": [],
   "announceUpdates": "major",
-  "version": "2.12.0",
+  "version": "2.22.0",
   "globalVariables": {},
   "onePageInputEnabled": false,
   "disableOnlineFeatures": true,
+  "enableUriCallbacks": false,
   "enableRibbonIcon": false,
   "showCaptureNotification": true,
   "showInputCancellationNotification": false,
@@ -113,28 +117,73 @@
             "maxTokens": 8192
           },
           {
-            "name": "gpt-4-32k",
-            "maxTokens": 32768
-          },
-          {
-            "name": "gpt-4-1106-preview",
-            "maxTokens": 128000
-          },
-          {
             "name": "gpt-4-turbo",
             "maxTokens": 128000
           },
           {
             "name": "gpt-4o",
-            "maxTokens": 128000
+            "maxTokens": 128000,
+            "maxOutputTokens": 16384,
+            "supportsTemperature": true
           },
           {
             "name": "gpt-4o-mini",
-            "maxTokens": 128000
+            "maxTokens": 128000,
+            "maxOutputTokens": 16384,
+            "supportsTemperature": true
+          },
+          {
+            "name": "gpt-5.5",
+            "maxTokens": 1050000,
+            "maxOutputTokens": 128000,
+            "supportsTemperature": false
+          },
+          {
+            "name": "gpt-5.4",
+            "maxTokens": 1050000,
+            "maxOutputTokens": 128000,
+            "supportsTemperature": false
+          },
+          {
+            "name": "gpt-5.4-mini",
+            "maxTokens": 400000,
+            "maxOutputTokens": 128000,
+            "supportsTemperature": false
+          },
+          {
+            "name": "gpt-5.4-nano",
+            "maxTokens": 400000,
+            "maxOutputTokens": 128000,
+            "supportsTemperature": false
+          },
+          {
+            "name": "gpt-4.1",
+            "maxTokens": 1047576,
+            "maxOutputTokens": 32768,
+            "supportsTemperature": true
+          },
+          {
+            "name": "gpt-4.1-mini",
+            "maxTokens": 1047576,
+            "maxOutputTokens": 32768,
+            "supportsTemperature": true
+          },
+          {
+            "name": "o3",
+            "maxTokens": 200000,
+            "maxOutputTokens": 100000,
+            "supportsTemperature": false
+          },
+          {
+            "name": "o4-mini",
+            "maxTokens": 200000,
+            "maxOutputTokens": 100000,
+            "supportsTemperature": false
           }
         ],
-        "autoSyncModels": false,
-        "modelSource": "modelsDev"
+        "autoSyncModels": true,
+        "modelSource": "modelsDev",
+        "id": "openai"
       },
       {
         "name": "Gemini",
@@ -142,20 +191,57 @@
         "apiKey": "",
         "models": [
           {
-            "name": "gemini-1.5-pro",
-            "maxTokens": 1000000
+            "name": "gemini-3.5-flash",
+            "maxTokens": 1048576,
+            "maxOutputTokens": 65536,
+            "supportsTemperature": true
           },
           {
-            "name": "gemini-1.5-flash",
-            "maxTokens": 1000000
+            "name": "gemini-3.1-pro-preview",
+            "maxTokens": 1048576,
+            "maxOutputTokens": 65536,
+            "supportsTemperature": true
           },
           {
-            "name": "gemini-1.5-flash-8b",
-            "maxTokens": 1000000
+            "name": "gemini-3.1-flash-lite",
+            "maxTokens": 1048576,
+            "maxOutputTokens": 65536,
+            "supportsTemperature": true
+          },
+          {
+            "name": "gemini-3-pro-preview",
+            "maxTokens": 1048576,
+            "maxOutputTokens": 65536,
+            "supportsTemperature": true
+          },
+          {
+            "name": "gemini-3-flash-preview",
+            "maxTokens": 1048576,
+            "maxOutputTokens": 65536,
+            "supportsTemperature": true
+          },
+          {
+            "name": "gemini-2.5-pro",
+            "maxTokens": 1048576,
+            "maxOutputTokens": 65536,
+            "supportsTemperature": true
+          },
+          {
+            "name": "gemini-2.5-flash",
+            "maxTokens": 1048576,
+            "maxOutputTokens": 65536,
+            "supportsTemperature": true
+          },
+          {
+            "name": "gemini-2.5-flash-lite",
+            "maxTokens": 1048576,
+            "maxOutputTokens": 65536,
+            "supportsTemperature": true
           }
         ],
-        "autoSyncModels": false,
-        "modelSource": "modelsDev"
+        "autoSyncModels": true,
+        "modelSource": "modelsDev",
+        "id": "gemini"
       }
     ]
   },
@@ -170,6 +256,11 @@
     "migrateFileOpeningSettings": true,
     "backfillFileOpeningDefaults": true,
     "setProviderModelDiscoveryMode": true,
-    "migrateProviderApiKeysToSecretStorage": true
+    "migrateProviderApiKeysToSecretStorage": true,
+    "consolidateFileExistsBehavior": true,
+    "repairTemplateFileExistsBehavior": true,
+    "migrateToMultipleTemplateFolders": true,
+    "refreshStaleDefaultModelSeeds": true,
+    "pinAiModelRefs": true
   }
 }

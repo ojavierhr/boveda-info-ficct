@@ -373,51 +373,6 @@ function getHybridCroppedCanvas(originalCanvas, bounds, padding = 20) {
   }
   return croppedCanvas;
 }
-function getOCROptimizedCanvas(originalCanvas, bounds) {
-  const cropped = getHybridCroppedCanvas(originalCanvas, bounds, 30);
-  const scale = 2;
-  const ocrCanvas = document.createElement("canvas");
-  ocrCanvas.width = cropped.width * scale;
-  ocrCanvas.height = cropped.height * scale;
-  const ctx = ocrCanvas.getContext("2d", { willReadFrequently: true });
-  if (ctx) {
-    ctx.fillStyle = "#ffffff";
-    ctx.fillRect(0, 0, ocrCanvas.width, ocrCanvas.height);
-    ctx.imageSmoothingEnabled = false;
-    ctx.drawImage(cropped, 0, 0, ocrCanvas.width, ocrCanvas.height);
-    const imageData = ctx.getImageData(0, 0, ocrCanvas.width, ocrCanvas.height);
-    const data = imageData.data;
-    for (let i = 0; i < data.length; i += 4) {
-      const r = data[i];
-      const g = data[i + 1];
-      const b = data[i + 2];
-      const alpha = data[i + 3];
-      if (alpha > 20 && (r + g + b) / 3 < 220) {
-        data[i] = 0;
-        data[i + 1] = 0;
-        data[i + 2] = 0;
-        data[i + 3] = 255;
-      } else {
-        data[i] = 255;
-        data[i + 1] = 255;
-        data[i + 2] = 255;
-        data[i + 3] = 255;
-      }
-    }
-    ctx.putImageData(imageData, 0, 0);
-  }
-  return ocrCanvas;
-}
-async function loadTesseract() {
-  if (window.Tesseract) return window.Tesseract;
-  return new Promise((resolve, reject) => {
-    const script = document.createElement("script");
-    script.src = "https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js";
-    script.onload = () => resolve(window.Tesseract);
-    script.onerror = () => reject(new Error("Error cargando Tesseract. Revisa tu conexi\xF3n a internet."));
-    document.head.appendChild(script);
-  });
-}
 var CornellAddon2 = class {
   constructor(plugin) {
     this.plugin = plugin;
@@ -839,113 +794,6 @@ var SuperDoodleAddon = class extends CornellAddon2 {
       clearBtn.style.boxShadow = "none";
       clearBtn.onclick = () => {
         api.clear();
-      };
-      const ocrBtn = rightGrp.createEl("button", { text: "\u{1F524} OCR", title: "Convert handwriting to editable text" });
-      ocrBtn.style.backgroundColor = "var(--background-modifier-success)";
-      ocrBtn.style.color = "var(--text-on-accent)";
-      ocrBtn.onclick = async () => {
-        let ocrTargetCanvas;
-        let startX = 0, startY = 0, boxWidth = 300, boxHeight = 100;
-        let isSelectionMode = false;
-        const phase = api.getSelectionPhase();
-        const fCanvas = api.getFloatingCanvas();
-        const rect = api.getSelectionRect();
-        if (phase === "floating" && fCanvas) {
-          isSelectionMode = true;
-          startX = rect.x;
-          startY = rect.y;
-          boxWidth = rect.w;
-          boxHeight = rect.h;
-          ocrTargetCanvas = getOCROptimizedCanvas(fCanvas, { minX: 0, minY: 0, maxX: fCanvas.width, maxY: fCanvas.height });
-        } else {
-          const bounds = api.getBounds();
-          if (bounds.minX === Infinity) {
-            new import_obsidian3.Notice("\xA1El lienzo est\xE1 vac\xEDo! Dibuja o selecciona letras primero.");
-            return;
-          }
-          startX = bounds.minX;
-          startY = bounds.minY;
-          boxWidth = bounds.maxX - bounds.minX;
-          boxHeight = bounds.maxY - bounds.minY;
-          ocrTargetCanvas = getOCROptimizedCanvas(view.zenCanvasEl, bounds);
-          api.commitSelection();
-        }
-        const notice = new import_obsidian3.Notice("\u23F3 Iniciando motor OCR... (Puede tardar la primera vez)", 0);
-        try {
-          const Tesseract = await loadTesseract();
-          const imageData = ocrTargetCanvas.toDataURL("image/png");
-          notice.setMessage("\u{1F50D} Analizando trazos...");
-          const worker = await Tesseract.createWorker("spa+eng");
-          await worker.setParameters({
-            tessedit_char_whitelist: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\xE1\xE9\xED\xF3\xFA\xC1\xC9\xCD\xD3\xDA\xF1\xD1.,\xBF?\xA1!-() "
-          });
-          const result = await worker.recognize(imageData);
-          const text = result.data.text.trim();
-          await worker.terminate();
-          if (text) {
-            await navigator.clipboard.writeText(text);
-            if (isSelectionMode) api.clearSelection();
-            else api.fillWhiteRect(startX - 10, startY - 10, boxWidth + 20, boxHeight + 20);
-            const input = document.createElement("textarea");
-            input.value = text;
-            input.style.position = "absolute";
-            input.style.left = `${startX}px`;
-            input.style.top = `${startY}px`;
-            input.style.width = `${Math.max(250, boxWidth + 50)}px`;
-            input.style.height = `${Math.max(60, boxHeight + 50)}px`;
-            input.style.background = "#ffffff";
-            input.style.color = api.getColor() === "#ffffff" ? "#000000" : api.getColor();
-            const fontSize = Math.max(24, api.getSize() * 6);
-            input.style.fontSize = `${fontSize}px`;
-            input.style.fontFamily = "sans-serif";
-            input.style.border = "2px dashed var(--interactive-accent)";
-            input.style.borderRadius = "8px";
-            input.style.padding = "10px";
-            input.style.outline = "none";
-            input.style.resize = "both";
-            input.style.zIndex = "1000";
-            scrollWrapper.appendChild(input);
-            input.focus();
-            const finalizeText = () => {
-              const finalStr = input.value;
-              if (finalStr) {
-                const finalX = parseInt(input.style.left) + 10;
-                const finalY = parseInt(input.style.top) + 10;
-                const finalW = parseInt(input.style.width);
-                const finalH = parseInt(input.style.height);
-                api.fillWhiteRect(parseInt(input.style.left), parseInt(input.style.top), finalW, finalH);
-                view.zenCtx.font = `${fontSize}px sans-serif`;
-                view.zenCtx.fillStyle = input.style.color;
-                view.zenCtx.textBaseline = "top";
-                const lines = finalStr.split("\n");
-                let currentY = finalY;
-                const lineHeight = fontSize * 1.2;
-                lines.forEach((line) => {
-                  view.zenCtx.fillText(line, finalX, currentY);
-                  api.forceUpdateBounds(finalX, currentY, fontSize * line.length);
-                  currentY += lineHeight;
-                });
-              }
-              input.remove();
-            };
-            input.onblur = finalizeText;
-            input.onkeydown = (e) => {
-              if (e.key === "Enter" && !e.shiftKey) {
-                e.preventDefault();
-                input.blur();
-              }
-            };
-            notice.hide();
-            new import_obsidian3.Notice(`\u2705 \xA1Texto inyectado! Ed\xEDtalo y presiona Enter para fijarlo.`, 6e3);
-          } else {
-            notice.hide();
-            new import_obsidian3.Notice("\u274C No se reconoci\xF3 ning\xFAn texto claro.");
-          }
-        } catch (error) {
-          console.error("OCR Error:", error);
-          notice.hide();
-          new import_obsidian3.Notice("\u26A0\uFE0F Hubo un error procesando el OCR.");
-        }
       };
       const attachBtn = rightGrp.createEl("button", { text: "\u{1F4CC} Attach to Board", title: "Save and add to Pinboard" });
       attachBtn.onclick = async () => {
@@ -1666,7 +1514,6 @@ var AnkiSyncAddon = class extends CornellAddon {
     }
     new AnkiDeckModal(this.plugin.app, this, activeFile).open();
   }
-  // 🚀 NUEVO MOTOR: ESCÁNER MASIVO DE BÓVEDA
   async syncAllVaultCards() {
     const mappings = this.plugin.settings.ankiTagToDeck;
     if (!mappings || Object.keys(mappings).length === 0) {
@@ -1768,7 +1615,8 @@ var AnkiSyncAddon = class extends CornellAddon {
     const imgRegex = /!\[\[(.*?\.(?:png|jpg|jpeg|gif|svg))\]\]/gi;
     let imgMatch;
     while ((imgMatch = imgRegex.exec(processedText)) !== null) {
-      const filename = imgMatch[1].trim();
+      const filenameRaw = imgMatch[1].trim();
+      const filename = filenameRaw.replace(/^\/+/, "");
       const file = this.plugin.app.metadataCache.getFirstLinkpathDest(filename, "");
       if (file) {
         const arrayBuffer = await this.plugin.app.vault.readBinary(file);
@@ -1779,7 +1627,48 @@ var AnkiSyncAddon = class extends CornellAddon {
     }
     return processedText;
   }
-  // 🚀 FUNCIÓN ENVOLTORIO PARA EL COMANDO INDIVIDUAL
+  /**
+   * Resuelve enlaces de bloques e incorpora un pipeline estricto de limpieza
+   * para remover la sintaxis de metadatos generada por Zotflow.
+   */
+  async resolveBlockEmbeds(text, sourceFile) {
+    var _a, _b;
+    const blockEmbedRegex = /!\[\[([^#\]|]+)#\^([a-zA-Z0-9-]+)\]\]/g;
+    let processedText = text;
+    const matches = Array.from(text.matchAll(blockEmbedRegex));
+    for (const match of matches) {
+      const [fullMatch, linkPath, blockId] = match;
+      let targetFile = this.plugin.app.metadataCache.getFirstLinkpathDest(linkPath.trim(), sourceFile.path);
+      if (!targetFile) {
+        const cleanPath = linkPath.trim();
+        targetFile = this.plugin.app.vault.getAbstractFileByPath(cleanPath) || this.plugin.app.vault.getAbstractFileByPath(cleanPath + ".md");
+      }
+      if (targetFile instanceof import_obsidian6.TFile) {
+        const cache = this.plugin.app.metadataCache.getFileCache(targetFile);
+        const blockData = ((_a = cache == null ? void 0 : cache.blocks) == null ? void 0 : _a[blockId.toLowerCase()]) || ((_b = cache == null ? void 0 : cache.blocks) == null ? void 0 : _b[blockId]);
+        let extractedText = "";
+        if (blockData) {
+          const content = await this.plugin.app.vault.read(targetFile);
+          extractedText = content.substring(blockData.position.start.offset, blockData.position.end.offset);
+        } else {
+          const content = await this.plugin.app.vault.read(targetFile);
+          const lines = content.split("\n");
+          const targetLine = lines.find((l) => l.includes(`^${blockId}`));
+          if (targetLine) extractedText = targetLine;
+        }
+        if (extractedText) {
+          let cleanText = extractedText.replace(new RegExp(`\\^${blockId}`, "gi"), "");
+          cleanText = cleanText.replace(/\[!zotflow-[^\]]+\]/gi, "");
+          cleanText = cleanText.replace(/(?<!!)\[\[.*?\]\]/g, "");
+          cleanText = cleanText.replace(/>/g, "").trim();
+          processedText = processedText.replace(fullMatch, cleanText);
+        }
+      } else {
+        console.warn(`AnkiSync: No se pudo encontrar el archivo de cita: ${linkPath}`);
+      }
+    }
+    return processedText;
+  }
   async processAndSendCards(file, deckName) {
     new import_obsidian6.Notice(`\u23F3 Syncing ${file.basename} with Anki...`);
     try {
@@ -1793,7 +1682,6 @@ var AnkiSyncAddon = class extends CornellAddon {
       new import_obsidian6.Notice(`\u274C Anki Error: ${error.message}`);
     }
   }
-  // 🚀 EL NÚCLEO (SILENCIOSO) QUE HACE EL TRABAJO DURO
   async syncSingleFileCore(file, deckName) {
     var _a;
     const decks = await this.invokeAnki("deckNames");
@@ -1813,11 +1701,13 @@ var AnkiSyncAddon = class extends CornellAddon {
     let content = await this.plugin.app.vault.read(file);
     const cache = this.plugin.app.metadataCache.getFileCache(file);
     const noteTags = cache ? ((_a = (0, import_obsidian6.getAllTags)(cache)) == null ? void 0 : _a.map((t) => t.replace("#", ""))) || [] : [];
-    const flashcardRegex = /%%([><])\s*([\s\S]*?)\s*;;\s*([\s\S]*?)%%/g;
+    const flashcardRegex = /%%([><])\s*([\s\S]*?)\s*; Nano\s*([\s\S]*?)%%/g;
+    const standardRegex = /%%([><])\s*([\s\S]*?)\s*;;\s*([\s\S]*?)%%/g;
+    const activeRegex = content.match(standardRegex) ? standardRegex : flashcardRegex;
     let match;
     let added = 0, updated = 0;
     const replacements = [];
-    while ((match = flashcardRegex.exec(content)) !== null) {
+    while ((match = activeRegex.exec(content)) !== null) {
       const fullMatch = match[0];
       const direction = match[1];
       const questionRaw = match[2].trim();
@@ -1830,15 +1720,14 @@ var AnkiSyncAddon = class extends CornellAddon {
       blockEnd = blockEnd === -1 ? content.length : blockEnd;
       const fullBlock = content.substring(blockStart, blockEnd);
       let answerRaw = fullBlock.replace(fullMatch, "");
-      answerRaw = answerRaw.replace(/^---[\s\S]*?---\s*/, "");
-      answerRaw = answerRaw.replace(/\s*[\^~“][a-zA-Z0-9-]{5,}\s*/g, " ");
-      answerRaw = answerRaw.trim();
+      answerRaw = await this.resolveBlockEmbeds(answerRaw, file);
       const questionHtml = await this.processMediaInText(questionRaw);
       const answerHtml = await this.processMediaInText(answerRaw);
+      let finalAnswer = answerHtml.replace(/^---[\s\S]*?---\s*/, "").replace(/(?<!#)[\^~“][a-zA-Z0-9-]{5,}/g, "").trim();
       const noteParams = {
         deckName,
         modelName,
-        fields: { [frontField]: questionHtml, [backField]: answerHtml },
+        fields: { [frontField]: questionHtml, [backField]: finalAnswer },
         options: { allowDuplicate: false },
         tags: noteTags
       };
@@ -1864,7 +1753,6 @@ var AnkiSyncAddon = class extends CornellAddon {
             if (foundIds && foundIds.length > 0) {
               finalAnkiId = foundIds[0].toString();
               await this.invokeAnki("updateNoteFields", {
-                // 👇 FIX: Le decimos explícitamente a TypeScript que aquí finalAnkiId ES un string
                 note: { id: parseInt(finalAnkiId, 10), fields: noteParams.fields }
               });
               updated++;
@@ -1881,14 +1769,12 @@ var AnkiSyncAddon = class extends CornellAddon {
         } else {
           newTrailingData = `^anki-${finalAnkiId} ` + newTrailingData;
         }
-        const updatedMatch = `%%${direction} ${questionRaw} ;; ${newTrailingData.trim()} %%`;
-        if (updatedMatch !== fullMatch) {
-          replacements.push({
-            start: match.index,
-            end: match.index + fullMatch.length,
-            text: updatedMatch
-          });
-        }
+        const updatedMatch = activeRegex === standardRegex ? `%%${direction} ${questionRaw} ;; ${newTrailingData.trim()} %%` : `%%${direction} ${questionRaw} ; ${newTrailingData.trim()} %%`;
+        replacements.push({
+          start: match.index,
+          end: match.index + fullMatch.length,
+          text: updatedMatch
+        });
       }
     }
     if (replacements.length > 0) {
@@ -1912,7 +1798,7 @@ var AnkiDeckModal = class extends import_obsidian6.Modal {
     contentEl.empty();
     contentEl.createEl("h3", { text: "\u{1F9E0} Sync with Anki" });
     const inputDiv = contentEl.createDiv({ attr: { style: "margin-bottom: 15px;" } });
-    inputDiv.createEl("label", { text: "Deck Name (e.g. Programming::JavaScript): ", attr: { style: "display:block; margin-bottom:5px;" } });
+    inputDiv.createEl("label", { text: "Deck Name (e.g. Med::Cardio): ", attr: { style: "display:block; margin-bottom:5px;" } });
     this.deckInput = inputDiv.createEl("input", { type: "text", placeholder: "Deck::Subdeck" });
     this.deckInput.style.width = "100%";
     if (this.addon.recentDecks && this.addon.recentDecks.length > 0) {
@@ -1938,7 +1824,7 @@ var AnkiDeckModal = class extends import_obsidian6.Modal {
       const rawDeckName = this.deckInput.value;
       const safeDeckName = sanitizeAnkiDeckName(rawDeckName);
       if (!safeDeckName) {
-        new import_obsidian6.Notice("\u26A0\uFE0F Invalid deck name. Please use alphanumeric characters.");
+        new import_obsidian6.Notice("\u26A0\uFE0F Invalid deck name.");
         return;
       }
       if (!this.addon.recentDecks) this.addon.recentDecks = [];
@@ -6086,11 +5972,41 @@ Guardada en tu b\xF3veda como: ${fileName}`, 6e3);
           const lines = content.split("\n");
           if (node.line >= 0 && node.line < lines.length) {
             const originalLine = lines[node.line];
-            const marginaliaRegex = /%%[><]([\s\S]*?)%%/;
+            const marginaliaRegex = /(?:%%\\?[><](.*?)%%|\\marginalia\{([\s\S]*?)\}|\\\\([\s\S]*?)\\\\)/;
             const match = originalLine.match(marginaliaRegex);
-            if (match && match[1].includes(";;")) {
-              let question = match[1].split(";;")[0].trim();
-              let answer = originalLine.replace(/%%[\s\S]*?%%/g, "").trim();
+            const marginaliaContent = match ? match[1] || match[2] || match[3] : null;
+            if (marginaliaContent && marginaliaContent.includes(";;")) {
+              let question = marginaliaContent.split(";;")[0].trim();
+              question = question.replace(/^\\>/, "").trim();
+              let answer = originalLine.replace(marginaliaRegex, "").trim();
+              if (originalLine.trim().startsWith(">") || answer.startsWith(">")) {
+                let startLineIdx = node.line;
+                while (startLineIdx > 0 && lines[startLineIdx - 1].trim().startsWith(">")) {
+                  startLineIdx--;
+                }
+                let endLineIdx = node.line;
+                while (endLineIdx < lines.length - 1) {
+                  const nextLine = lines[endLineIdx + 1].trim();
+                  if (nextLine.startsWith(">")) {
+                    endLineIdx++;
+                  } else if (nextLine === "" && endLineIdx + 2 < lines.length && lines[endLineIdx + 2].trim().startsWith(">")) {
+                    endLineIdx += 2;
+                  } else {
+                    break;
+                  }
+                }
+                const calloutLines = [];
+                for (let i = startLineIdx; i <= endLineIdx; i++) {
+                  if (i === node.line) {
+                    let cleanLine = lines[i].replace(marginaliaRegex, "").trim();
+                    if (cleanLine === "" || cleanLine === ">") cleanLine = ">";
+                    calloutLines.push(cleanLine);
+                  } else {
+                    calloutLines.push(lines[i].trim());
+                  }
+                }
+                answer = calloutLines.join("\n").trim();
+              }
               answer = answer.replace(/\s*\^[a-zA-Z0-9_-]+$/, "").trim();
               if (!answer && node.context) {
                 answer = node.context.trim();
@@ -6100,7 +6016,7 @@ Guardada en tu b\xF3veda como: ${fileName}`, 6e3);
                   front: question,
                   back: answer || "*(Sin contexto de respuesta)*",
                   sourcePath: file.path
-                  // 👈 CLAVE MAESTRA PARA QUE PDF++ FUNCIONE EN EL MODAL
+                  // Clave para la vinculación nativa en el modal
                 });
               }
             }
@@ -6116,6 +6032,9 @@ Guardada en tu b\xF3veda como: ${fileName}`, 6e3);
     new CanvasFlashcardModal(this.plugin.app, flashcards, this).open();
   }
 };
+
+// CornellParser.ts
+var UNIVERSAL_MARGINALIA_REGEX = /%%\s*[\\\/]?([><])([\s\S]*?)%%/g;
 
 // main.ts
 function sanitizeFileName(name) {
@@ -6627,7 +6546,7 @@ var createCornellExtension = (app, settings, getActiveRecallMode) => import_view
     const decorationsData = [];
     for (const { from, to } of view.visibleRanges) {
       const text = state.doc.sliceString(from, to);
-      const regex = /%%([><])([\s\S]*?)%%/g;
+      const regex = /%%\s*[\\\/]?([><])([\s\S]*?)%%/g;
       let match;
       while (match = regex.exec(text)) {
         const matchStart = from + match.index;
@@ -8643,9 +8562,9 @@ var _CornellNotesView = class _CornellNotesView extends import_obsidian10.ItemVi
         const content = await this.plugin.app.vault.cachedRead(file);
         const lines = content.split("\n");
         const fileItems = [];
+        const lineRegex = /%%\s*[\\\/]?[><](.*?)%%/g;
         for (let i = 0; i < lines.length; i++) {
           const line = lines[i];
-          const lineRegex = /%%[><](.*?)%%/g;
           let match;
           while ((match = lineRegex.exec(line)) !== null) {
             let noteContent = match[1].trim();
@@ -8685,7 +8604,7 @@ var _CornellNotesView = class _CornellNotesView extends import_obsidian10.ItemVi
             const existingBlockId = blockIdMatch ? blockIdMatch[1] : null;
             let startLine = i;
             let endLine = i;
-            let textWithoutMarginalia = lines[i].replace(/%%[><](.*?)%%/g, "").trim();
+            let textWithoutMarginalia = lines[i].replace(/%%\s*[\\\/]?[><](.*?)%%/g, "").trim();
             textWithoutMarginalia = textWithoutMarginalia.replace(/\^[a-zA-Z0-9_-]+$/, "").trim();
             let isTargetingCallout = false;
             if (lines[i].trim().startsWith(">")) {
@@ -8708,7 +8627,7 @@ var _CornellNotesView = class _CornellNotesView extends import_obsidian10.ItemVi
             }
             let fullContext = "";
             for (let j = startLine; j <= endLine; j++) {
-              let cleanLine = lines[j].replace(/%%[><](.*?)%%/g, "").trim();
+              let cleanLine = lines[j].replace(/%%\s*[\\\/]?[><](.*?)%%/g, "").trim();
               cleanLine = cleanLine.replace(/\^[a-zA-Z0-9_-]+$/, "").trim();
               if (cleanLine) fullContext += `${cleanLine}
 `;
@@ -10935,24 +10854,32 @@ ${sourceLink}`;
         const wikiRegex = /\[+([^\[\]]+\.pdf[^\]]*?)\]+/i;
         const mdRegex = /\[.*?\]\((.*?\.pdf.*?)\)/i;
         const fallbackRegex = /([a-zA-Z0-9_ \-\.]+\.pdf(?:#[a-zA-Z0-9=&,\-\.]+)?)/i;
-        let pdfLinkText = null;
+        const zoteroRegex = /!*\[\[([^\]]+\.md#\s*\^[a-zA-Z0-9_-]+)\]\]/i;
+        let resolvedLinkText = null;
         for (let j = startLine; j <= endLine; j++) {
           const lineStr = lines[j];
           const wikiMatch = lineStr.match(wikiRegex);
           const mdMatch = lineStr.match(mdRegex);
           const fallbackMatch = lineStr.match(fallbackRegex);
-          if (wikiMatch) pdfLinkText = wikiMatch[1].split("|")[0].trim();
-          else if (mdMatch) pdfLinkText = mdMatch[1].trim();
-          else if (fallbackMatch) pdfLinkText = fallbackMatch[1].trim();
-          if (pdfLinkText) break;
+          const zoteroMatch = lineStr.match(zoteroRegex);
+          if (wikiMatch) {
+            resolvedLinkText = wikiMatch[1].split("|")[0].trim();
+          } else if (mdMatch) {
+            resolvedLinkText = mdMatch[1].trim();
+          } else if (fallbackMatch) {
+            resolvedLinkText = fallbackMatch[1].trim();
+          } else if (zoteroMatch) {
+            resolvedLinkText = zoteroMatch[1].replace(/#\s*\^/, "#^").trim();
+          }
+          if (resolvedLinkText) break;
         }
-        if (pdfLinkText) {
+        if (resolvedLinkText) {
           this.plugin.app.workspace.trigger("hover-link", {
             event: e,
             source: "preview",
             hoverParent: itemDiv,
             targetEl: itemDiv,
-            linktext: pdfLinkText,
+            linktext: resolvedLinkText,
             sourcePath: item.file.path
           });
           return;
@@ -13704,13 +13631,41 @@ var CornellMarginalia = class extends import_obsidian10.Plugin {
     this.addCommand({
       id: "insert-cornell-note",
       name: "Insert Margin Note",
-      editorCallback: (editor) => {
-        const selection = editor.getSelection();
-        if (selection) editor.replaceSelection(`%%> ${selection} %%`);
-        else {
-          editor.replaceSelection(`%%>  %%`);
-          const cursor = editor.getCursor();
-          editor.setCursor({ line: cursor.line, ch: cursor.ch - 3 });
+      callback: () => {
+        var _a, _b;
+        let editor = (_a = this.app.workspace.activeEditor) == null ? void 0 : _a.editor;
+        if (!editor) {
+          const view = (_b = this.app.workspace.activeLeaf) == null ? void 0 : _b.view;
+          if (view && view.editor) {
+            editor = view.editor;
+          }
+        }
+        if (editor) {
+          const selection = editor.getSelection();
+          if (selection) {
+            editor.replaceSelection(`%%> ${selection} %%`);
+          } else {
+            editor.replaceSelection(`%%>  %%`);
+            const cursor = editor.getCursor();
+            editor.setCursor({ line: cursor.line, ch: cursor.ch - 3 });
+          }
+          return;
+        }
+        const activeEl = document.activeElement;
+        if (activeEl instanceof HTMLTextAreaElement || activeEl instanceof HTMLInputElement) {
+          const start = activeEl.selectionStart;
+          const end = activeEl.selectionEnd;
+          if (start !== null && end !== null) {
+            const text = activeEl.value;
+            const selection = text.substring(start, end);
+            const replacement = selection ? `%%> ${selection} %%` : `%%>  %%`;
+            activeEl.setRangeText(replacement, start, end, "end");
+            if (!selection) {
+              activeEl.setSelectionRange(start + 4, start + 4);
+            }
+            activeEl.dispatchEvent(new Event("input", { bubbles: true }));
+            activeEl.dispatchEvent(new Event("change", { bubbles: true }));
+          }
         }
       }
     });
@@ -14061,7 +14016,7 @@ ${selection}
     );
     this.registerMarkdownCodeBlockProcessor("cornell", async (source, el, ctx) => {
       if (!this.settings.enableReadingView) return;
-      const regex = /%%([><])([\s\S]*?)%%/g;
+      const regex = UNIVERSAL_MARGINALIA_REGEX;
       const matches = [...source.matchAll(regex)];
       const cleanSource = source.replace(regex, (match, direction, noteContent) => {
         if (!this.settings.visualHelper) return "";
@@ -14208,13 +14163,13 @@ ${selection}
       if (el.classList.contains("block-language-cornell") || el.querySelector(".cornell-editorial-wrapper")) {
         return;
       }
-      const isolateRegex = /(^|<br>)((?:(?!<br>).)*?%%[><][\s\S]*?;;[\s\S]*?%%(?:(?!<br>).)*)/g;
+      const isolateRegex = /(^|<br>)((?:(?!<br>).)*?%%\s*[\\\/]?[><][\s\S]*?;;[\s\S]*?%%(?:(?!<br>).)*)/g;
       if (isolateRegex.test(el.innerHTML)) {
         el.innerHTML = el.innerHTML.replace(isolateRegex, (match, br, content) => {
           return `${br}<span class="cornell-reading-flashcard-target" style="display:block; width:100%;">${content}</span>`;
         });
       }
-      const htmlRegex = /%%([><])([\s\S]*?)%%/g;
+      const htmlRegex = /%%\s*[\\\/]?([><])([\s\S]*?)%%/g;
       if (htmlRegex.test(el.innerHTML)) {
         el.innerHTML = el.innerHTML.replace(htmlRegex, (match, direction, noteContent) => {
           if (!this.settings.visualHelper) return "";
@@ -14250,7 +14205,7 @@ ${selection}
           }
           liIndex++;
         }
-        const regex = /%%([><])(.*?)%%/g;
+        const regex = /%%\s*[\\\/]?([><])(.*?)%%/g;
         let match;
         while ((match = regex.exec(line)) !== null) {
           const direction = match[1];
@@ -14281,7 +14236,7 @@ ${selection}
           marginDiv.className = "cm-cornell-margin reading-mode-margin";
           if (isFlashcard) {
             marginDiv.classList.add("is-flashcard");
-            let textWithoutMarginalia = line.replace(/%%[><](.*?)%%/g, "").replace(/\^[a-zA-Z0-9_-]+$/, "").trim();
+            let textWithoutMarginalia = line.replace(/%%\s*[\\\/]?[><](.*?)%%/g, "").replace(/\^[a-zA-Z0-9_-]+$/, "").trim();
             const isCalloutLine = textWithoutMarginalia.startsWith(">");
             let cleanTextForStandalone = textWithoutMarginalia;
             if (isCalloutLine) cleanTextForStandalone = cleanTextForStandalone.replace(/^>\s*/, "").trim();
@@ -14374,7 +14329,7 @@ ${selection}
           column.appendChild(marginDiv);
           if (isFlashcard) {
             currentTarget.classList.add("cornell-flashcard-target");
-            let tempTextForCallout = line.replace(/%%[><](.*?)%%/g, "").replace(/\^[a-zA-Z0-9_-]+$/, "").trim();
+            let tempTextForCallout = line.replace(/%%\s*[\\\/]?[><](.*?)%%/g, "").replace(/\^[a-zA-Z0-9_-]+$/, "").trim();
             if (tempTextForCallout === "") {
               setTimeout(() => {
                 let nextEl = currentTarget.nextElementSibling;
@@ -14399,6 +14354,20 @@ ${selection}
               currentTarget.style.minHeight = `${maxH + 10}px`;
             }
           }, 100);
+        }
+      });
+    });
+    this.registerMarkdownPostProcessor((el, ctx) => {
+      const printMargins = el.querySelectorAll(".cornell-print-margin");
+      printMargins.forEach((margin) => {
+        const parent = margin.closest("p, li, blockquote");
+        if (parent) {
+          const direction = margin.getAttribute("data-direction");
+          if (direction === ">") {
+            parent.classList.add("cornell-print-parent-left");
+          } else if (direction === "<") {
+            parent.classList.add("cornell-print-parent-right");
+          }
         }
       });
     });
@@ -14702,7 +14671,7 @@ ${secondCol}
     const docLines = content.split("\n");
     const finalLines = docLines.map((line) => {
       if (line.includes("cornell-print-block")) return line;
-      const inlineRegex = /%%([><])(.*?)%%/g;
+      const inlineRegex = /%%\s*[\\\/]?([><])(.*?)%%/g;
       let match;
       let marginaliasToInject = "";
       let cleanLine = line;
@@ -14797,3 +14766,5 @@ ${secondCol}
   sanitizeFileName,
   sanitizeForTemplater
 });
+
+/* nosourcemap */
