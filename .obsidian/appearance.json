@@ -5,7 +5,11 @@
     "mejor-listas",
     "comentarios-visibles"
   ],
-  "interfaceFontFamily": "Inter",
-  "textFontFamily": "Inter",
-  "monospaceFontFamily": "JetBrains Mono"
+  "interfaceFontFamily": "IBM Plex Sans",
+  "textFontFamily": "IBM Plex Sans",
+  "monospaceFontFamily": "JetBrains Mono",
+  "showViewHeader": false,
+  "showRibbon": true,
+  "nativeMenus": false,
+  "baseFontSize": 14
 }

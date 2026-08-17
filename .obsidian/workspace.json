@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "aea5376019d17f17",
+        "id": "f801a35b93ce0b6f",
         "type": "tabs",
         "children": [
           {
-            "id": "e21a35de1beeed5f",
+            "id": "1d347a0c2d1a8b31",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "03_Areas/ingenieria-software-1/MOC-ingenieria-software-1.md",
+                "file": "01_Notes/Lectures/lenguajes-formales/clase-2026-08-10-repaso-de-conceptos-previos-a-la-materia.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "MOC-ingenieria-software-1"
+              "title": "clase-2026-08-10-repaso-de-conceptos-previos-a-la-materia"
             }
           }
         ]
@@ -72,7 +72,10 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {},
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
               "icon": "lucide-bookmark",
               "title": "Marcadores"
             }
@@ -128,19 +131,6 @@
             }
           },
           {
-            "id": "9efb291e81e8e669",
-            "type": "leaf",
-            "state": {
-              "type": "outgoing-link",
-              "state": {
-                "linksCollapsed": false,
-                "unlinkedCollapsed": true
-              },
-              "icon": "links-going-out",
-              "title": "Enlaces salientes"
-            }
-          },
-          {
             "id": "411a2efbd9d77f98",
             "type": "leaf",
             "state": {
@@ -175,7 +165,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "03_Areas/ingenieria-software-1/MOC-ingenieria-software-1.md",
+                "file": "01_Notes/Lectures/lenguajes-formales/clase-2026-08-14-operaciones-de-palabras.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -183,9 +173,23 @@
               "icon": "lucide-list",
               "title": "Esquema"
             }
+          },
+          {
+            "id": "14fdea5c1f8e3584",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "01_Notes/Lectures/lenguajes-formales/clase-2026-08-10-repaso-de-conceptos-previos-a-la-materia.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Enlaces salientes"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       },
       {
         "id": "36ce4700b9c66ed4",
@@ -206,7 +210,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.265625
+    "width": 262.91796875
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -226,24 +230,37 @@
       "periodic-notes:Open today": false
     }
   },
-  "active": "411a2efbd9d77f98",
+  "active": "1d347a0c2d1a8b31",
   "lastOpenFiles": [
+    "01_Notes/Lectures/lenguajes-formales/clase-2026-08-10-objetivo-y-avance-de-la-materia.md",
+    "01_Notes/Lectures/lenguajes-formales/clase-2026-08-14-operaciones-de-palabras.md",
+    "03_Areas/redes-1/MOC-redes-1.md",
+    "01_Notes/Lectures/redes-1/clase-2026-08-11-introduccion-a-las-redes.md",
+    "01_Notes/Lectures/redes-1/clase-2026-08-11-contenido-de-la-materia.md",
+    "04_Resources/redes-1",
+    "03_Areas/redes-1",
+    "01_Notes/Concepts/redes-1",
+    "01_Notes/Lectures/redes-1",
+    "01_Notes/Lectures/lenguajes-formales/clase-2026-08-10-repaso-de-conceptos-previos-a-la-materia.md",
+    "04_Resources/lenguajes-formales/excalidraw/Drawing 2026-08-17 02.38.59.excalidraw.md",
+    "04_Resources/lenguajes-formales/excalidraw",
+    "03-recursos/excalidraw",
+    "03-recursos",
+    "03_Areas/lenguajes-formales/MOC-lenguajes-formales.md",
+    "Tema 1 Preliminares Formales.md",
+    "_Templates/lecture-note.md",
     "_Templates/moc-materia.md",
     "_Templates/daily-note.md",
     "_Templates/concept-note.md",
+    "04_Resources/lenguajes-formales",
+    "03_Areas/lenguajes-formales",
+    "01_Notes/Concepts/lenguajes-formales",
     "03_Areas/ingenieria-software-1/MOC-ingenieria-software-1.md",
-    "04_Resources/ingenieria-software-1",
-    "03_Areas/ingenieria-software-1",
-    "01_Notes/Concepts/ingenieria-software-1",
-    "01_Notes/Lectures/ingenieria-software-1",
     "00_Inbox/Daily/2026-08-13.md",
     "_Templates/weekly-review.md",
-    "00_Inbox/Daily",
-    "00_Inbox",
     "_Templates/tarea-proyecto.md",
     "_Templates/project-note.md",
     "_Templates/new-materia.md",
-    "_Templates/lecture-note.md",
     "01_Notes/Lectures/ia-1/clase-2026-08-13-tema-super-serio.md",
     "01_Notes/Concepts/ia-1/backpropagation.md",
     "03_Areas/ia-1/MOC-ia-1.md",
@@ -251,20 +268,7 @@
     "Sin título.md",
     "Backpropagation.md",
     "clase-2026-08-13-tema-super-serio.md",
-    "clase-2026-08-13-tema-serio.md",
-    "clase-2026-08-13-clase-toda-rara.md",
-    "clase-2026-08-13-aplicaciones-varias.md",
-    "clase-2026-08-13-redes-neuronales-multicapa.md",
-    "04_Resources/ia-1",
-    "03_Areas/ia-1",
-    "01_Notes/Concepts/ia-1",
-    "01_Notes/Lectures/ia-1",
-    "03_Areas/matematica-2/MOC-matematica-2.md",
-    "Dashboard-Global.md",
     "04_Resources/imagen/svg/logo-ficct.ink.svg",
-    "LEEME.md",
-    "README.md",
-    "Untitled Kanban.md",
     "Sin título.canvas"
   ]
 }
