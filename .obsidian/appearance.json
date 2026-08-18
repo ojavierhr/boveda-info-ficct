@@ -11,5 +11,6 @@
   "showViewHeader": false,
   "showRibbon": true,
   "nativeMenus": false,
-  "baseFontSize": 14
+  "baseFontSize": 15,
+  "baseFontSizeAction": true
 }

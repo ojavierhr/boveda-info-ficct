@@ -4,22 +4,23 @@
     "type": "split",
     "children": [
       {
-        "id": "f801a35b93ce0b6f",
+        "id": "d3489a0be616a2b5",
         "type": "tabs",
         "children": [
           {
-            "id": "1d347a0c2d1a8b31",
+            "id": "3a940b844c1e7d9a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01_Notes/Lectures/lenguajes-formales/clase-2026-08-10-repaso-de-conceptos-previos-a-la-materia.md",
+                "file": "01_Notes/Lectures/redes-1/clase-2026-08-06-introduccion-a-las-redes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "clase-2026-08-10-repaso-de-conceptos-previos-a-la-materia"
-            }
+              "title": "clase-2026-08-06-introduccion-a-las-redes"
+            },
+            "group": "5e0327883023b46d"
           }
         ]
       }
@@ -33,7 +34,6 @@
       {
         "id": "f1d8ff04961559fe",
         "type": "tabs",
-        "dimension": 53.103448275862064,
         "children": [
           {
             "id": "69df78645ea44bf2",
@@ -83,19 +83,19 @@
         ]
       },
       {
-        "id": "28b487cef44f4a87",
+        "id": "a6add855568d55d0",
         "type": "tabs",
-        "dimension": 46.89655172413793,
         "children": [
           {
-            "id": "cb82d8811d1da54d",
+            "id": "f44494e78395a155",
             "type": "leaf",
             "state": {
               "type": "graph",
               "state": {},
               "icon": "lucide-git-fork",
               "title": "Vista gráfica"
-            }
+            },
+            "group": "5e0327883023b46d"
           }
         ]
       }
@@ -165,7 +165,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01_Notes/Lectures/lenguajes-formales/clase-2026-08-14-operaciones-de-palabras.md",
+                "file": "01_Notes/Lectures/redes-1/clase-2026-08-06-introduccion-a-las-redes.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -180,16 +180,26 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "01_Notes/Lectures/lenguajes-formales/clase-2026-08-10-repaso-de-conceptos-previos-a-la-materia.md",
+                "file": "01_Notes/Lectures/redes-1/clase-2026-08-06-introduccion-a-las-redes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
               "title": "Enlaces salientes"
             }
+          },
+          {
+            "id": "8b0e83fb1fb4f6c7",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {},
+              "icon": "spreadsheet",
+              "title": "Advanced Tables"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       },
       {
         "id": "36ce4700b9c66ed4",
@@ -230,23 +240,30 @@
       "periodic-notes:Open today": false
     }
   },
-  "active": "1d347a0c2d1a8b31",
+  "active": "3a940b844c1e7d9a",
   "lastOpenFiles": [
-    "01_Notes/Lectures/lenguajes-formales/clase-2026-08-10-objetivo-y-avance-de-la-materia.md",
+    "01_Notes/Lectures/redes-1/clase-2026-08-11-introduccion-de-modelo-de-capas.md",
+    "01_Notes/Lectures/redes-1/clase-2026-08-13-modelo-tcpip.md",
+    "01_Notes/Lectures/redes-1/clase-2026-08-06-introduccion-a-las-redes.md",
+    "01_Notes/Lectures/redes-1/clase-2026-08-04-contenido-de-la-materia.md",
+    "Pasted image 20260818064640.png",
+    "Pasted image 20260818064600.png",
     "01_Notes/Lectures/lenguajes-formales/clase-2026-08-14-operaciones-de-palabras.md",
+    "01_Notes/Lectures/lenguajes-formales/clase-2026-08-10-objetivo-y-avance-de-la-materia.md",
+    "01_Notes/Lectures/lenguajes-formales/clase-2026-08-10-repaso-de-conceptos-previos-a-la-materia.md",
+    "04_Resources/imagen/Arquitectura OSI.png",
     "03_Areas/redes-1/MOC-redes-1.md",
-    "01_Notes/Lectures/redes-1/clase-2026-08-11-introduccion-a-las-redes.md",
-    "01_Notes/Lectures/redes-1/clase-2026-08-11-contenido-de-la-materia.md",
+    "03_Areas/lenguajes-formales/MOC-lenguajes-formales.md",
+    "Puertos de red.md",
+    "Dashboard-Global.md",
     "04_Resources/redes-1",
     "03_Areas/redes-1",
     "01_Notes/Concepts/redes-1",
     "01_Notes/Lectures/redes-1",
-    "01_Notes/Lectures/lenguajes-formales/clase-2026-08-10-repaso-de-conceptos-previos-a-la-materia.md",
     "04_Resources/lenguajes-formales/excalidraw/Drawing 2026-08-17 02.38.59.excalidraw.md",
     "04_Resources/lenguajes-formales/excalidraw",
     "03-recursos/excalidraw",
     "03-recursos",
-    "03_Areas/lenguajes-formales/MOC-lenguajes-formales.md",
     "Tema 1 Preliminares Formales.md",
     "_Templates/lecture-note.md",
     "_Templates/moc-materia.md",
@@ -264,10 +281,6 @@
     "01_Notes/Lectures/ia-1/clase-2026-08-13-tema-super-serio.md",
     "01_Notes/Concepts/ia-1/backpropagation.md",
     "03_Areas/ia-1/MOC-ia-1.md",
-    "backpropagation.md",
-    "Sin título.md",
-    "Backpropagation.md",
-    "clase-2026-08-13-tema-super-serio.md",
     "04_Resources/imagen/svg/logo-ficct.ink.svg",
     "Sin título.canvas"
   ]

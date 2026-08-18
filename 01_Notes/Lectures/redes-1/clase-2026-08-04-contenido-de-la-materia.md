@@ -2,7 +2,7 @@
 tipo: clase
 materia: redes-1
 semestre: 2/2026
-fecha: 2026-08-11
+fecha: 2026-08-04
 docente: Víctor Fernando Monrroy Dipp
 estado: 🟢 procesada
 tags:
@@ -28,7 +28,7 @@ FLUJO DE USO:
  4. Cambiar estado a 🟢 procesada cuando todo esté hecho
 ============================================================ %%
 
-# Clase 2026-08-11 Contenido de la Materia
+# Clase 2026-08-04 Contenido de la Materia
 
 ## 📋 Información
 
